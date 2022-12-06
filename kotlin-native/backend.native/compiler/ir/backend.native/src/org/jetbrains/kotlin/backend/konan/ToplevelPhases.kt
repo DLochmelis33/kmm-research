@@ -422,7 +422,8 @@ internal val bitcodePhase = SameTypeNamedCompilerPhase(
 private val bitcodePostprocessingPhase = SameTypeNamedCompilerPhase(
         name = "BitcodePostprocessing",
         description = "Optimize and rewrite bitcode",
-        lower = checkExternalCallsPhase then
+        lower = replaceWithAtomicOrderingPhase then
+                checkExternalCallsPhase then
                 bitcodeOptimizationPhase then
                 coveragePhase then
                 removeRedundantSafepointsPhase then

@@ -8,6 +8,7 @@ package org.jetbrains.kotlin.backend.konan.llvm
 import llvm.*
 import org.jetbrains.kotlin.backend.common.phaser.*
 import org.jetbrains.kotlin.backend.konan.*
+import org.jetbrains.kotlin.backend.konan.aopass.ReplaceWithAtomicOrderingPass
 import org.jetbrains.kotlin.backend.konan.descriptors.GlobalHierarchyAnalysis
 import org.jetbrains.kotlin.backend.konan.llvm.coverage.runCoveragePass
 import org.jetbrains.kotlin.backend.konan.lower.InlineClassPropertyAccessorsLowering
@@ -321,6 +322,17 @@ internal val removeRedundantSafepointsPhase = makeKonanModuleOpPhase(
             RemoveRedundantSafepointsPass(context).runOnModule(
                     module = context.generationState.llvm.module,
                     isSafepointInliningAllowed = context.shouldInlineSafepoints()
+            )
+        }
+)
+
+internal val replaceWithAtomicOrderingPhase = makeKonanModuleOpPhase(
+        name = "ReplaceWithAtomicOrdering",
+        description = "blah blah blah",
+        op = { context, _ ->
+            ReplaceWithAtomicOrderingPass(context).runOnModule(
+                    module = context.generationState.llvm.module,
+                    llvmTargetData = context.generationState.runtime.targetData
             )
         }
 )
