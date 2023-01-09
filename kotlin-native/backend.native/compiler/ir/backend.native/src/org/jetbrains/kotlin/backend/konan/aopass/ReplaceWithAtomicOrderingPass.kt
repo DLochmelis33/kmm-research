@@ -28,6 +28,7 @@ internal class ReplaceWithAtomicOrderingPass(
             LLVMSizeOfTypeInBits(llvmTargetData, inst.type) % 8L == 0L
 
     fun runOnModule(module: LLVMModuleRef, llvmTargetData: LLVMTargetDataRef) {
+//        llvmTargetData.also { println("used") }
         getFunctions(module)
                 .flatMap { function ->
                     getBasicBlocks(function)
@@ -39,10 +40,10 @@ internal class ReplaceWithAtomicOrderingPass(
                             && isByteSized(inst, llvmTargetData)
                 }
                 .forEach { inst ->
-                    if (LLVMGetOrdering(inst) == LLVMAtomicOrdering.LLVMAtomicOrderingNotAtomic) {
-                        LLVMSetOrdering(inst, LLVMAtomicOrdering.LLVMAtomicOrderingUnordered)
+//                    if (LLVMGetOrdering(inst) == LLVMAtomicOrdering.LLVMAtomicOrderingNotAtomic) {
+                        LLVMSetOrdering(inst, LLVMAtomicOrdering.LLVMAtomicOrderingSequentiallyConsistent)
                         replacedAccessesCount++
-                    }
+//                    }
                 }
         println("Replaced accesses: $replacedAccessesCount")
     }
