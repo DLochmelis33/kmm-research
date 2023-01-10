@@ -440,9 +440,10 @@ private val backendCodegen = SameTypeNamedCompilerPhase(
                                             // With that we guarantee that inline functions are unlowered while being inlined.
                 bitcodePhase then
                 verifyBitcodePhase then
-                printBitcodePhase then
+//                printBitcodePhase then
                 linkBitcodeDependenciesPhase then
-                bitcodePostprocessingPhase
+                bitcodePostprocessingPhase then
+                printBitcodePhase
 )
 
 internal val createGenerationStatePhase = namedUnitPhase(

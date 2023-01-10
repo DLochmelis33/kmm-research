@@ -40,10 +40,10 @@ internal class ReplaceWithAtomicOrderingPass(
                             && isByteSized(inst, llvmTargetData)
                 }
                 .forEach { inst ->
-//                    if (LLVMGetOrdering(inst) == LLVMAtomicOrdering.LLVMAtomicOrderingNotAtomic) {
-                        LLVMSetOrdering(inst, LLVMAtomicOrdering.LLVMAtomicOrderingSequentiallyConsistent)
+                    if (LLVMGetOrdering(inst) == LLVMAtomicOrdering.LLVMAtomicOrderingNotAtomic) {
+                        LLVMSetOrdering(inst, LLVMAtomicOrdering.LLVMAtomicOrderingUnordered)
                         replacedAccessesCount++
-//                    }
+                    }
                 }
         println("Replaced accesses: $replacedAccessesCount")
     }
