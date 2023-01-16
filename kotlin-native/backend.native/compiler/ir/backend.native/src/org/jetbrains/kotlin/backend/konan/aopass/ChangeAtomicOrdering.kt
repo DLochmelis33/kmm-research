@@ -12,7 +12,7 @@ import org.jetbrains.kotlin.backend.konan.llvm.getBasicBlocks
 import org.jetbrains.kotlin.backend.konan.llvm.getFunctions
 import org.jetbrains.kotlin.backend.konan.llvm.getInstructions
 
-internal class ReplaceWithAtomicOrderingPass(
+internal class ChangeAtomicOrdering(
         private val loggingContext: LoggingContext
 ) {
     private var replacedAccessesCount = 0
@@ -28,7 +28,6 @@ internal class ReplaceWithAtomicOrderingPass(
             LLVMSizeOfTypeInBits(llvmTargetData, inst.type) % 8L == 0L
 
     fun runOnModule(module: LLVMModuleRef, llvmTargetData: LLVMTargetDataRef) {
-//        llvmTargetData.also { println("used") }
         getFunctions(module)
                 .flatMap { function ->
                     getBasicBlocks(function)
