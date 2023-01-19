@@ -123,13 +123,16 @@ Some already performed analysis results can be found in [benchmarkReports](bench
 * `seq` and `not-atomic` stand for replacing any accesses to `SequentiallyConsistent` and `NotAtomic` correspondingly;
 * `not-atomic-to-unordered` stands for replacing any accesses `NotAtomic` to `Unordered`, this is target research case.
 
-Naturally, `vs` means comparison of two compiler modifications.
+Naturally, `vs` means comparison of two compiler modifications. Additionally, 
+* `full` means all benchmark tests were executed (not only `ring`); 
+* `debug` means benchmarks were run with `-g` instead of `-opt` flag (i.e. with optimizations disabled).
 
 ### Interpretation
 
 * `e` and `e2` are baselines. Their comparison demonstrates how significant the error between same compiler benchmarks can be. Up to `45 %` difference was achieved on some tasks, however the _**geometric mean**_ of tasks' scores didn't change at all.
-* `not-atomic` and `seq` are the extreme cases: the fastest and the slowest ones, correspondingly (note that `not-atomic` run replaced sets NotAtomic ordering for _all_ accesses, even atomic ones, therefore likely producing an incorrect program). Indeed, their geometric mean scores differ by `7.2 %`. The differences between them and the baseline are also reasonable: `6.6 %` for `seq` and `0 %` for `not-atomic`.
-* `e-vs-not-atomic-to-unordered` showed that the second modification of the compiler _**doesn't worsen the performance**_ on average, the difference is about `0 %`.
+* `not-atomic` and `seq` are the extreme cases: the fastest and the slowest ones, correspondingly (note that `not-atomic` run replaced sets `NotAtomic` ordering for _all_ accesses, even atomic ones, therefore likely producing an incorrect program). Indeed, their geometric mean scores differ by `7.2 %`. The differences between them and the baseline are also reasonable: `6.6 %` for `seq` and `0 %` for `not-atomic`.
+* comparison of `debug` versions for `empty` and `seq` showed less than `1 %` difference, while the difference between `empty` and `empty-debug` was the largest observed &mdash; about `84 %`.
+* `e-vs-not-atomic-to-unordered` (so as comparison of respective `full` and `debug` versions) showed that the second modification of the compiler _**doesn't worsen the performance**_ on average, the difference is about `0 %`.
 
 ## How to add a new benchmark test
 
