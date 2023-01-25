@@ -72,3 +72,51 @@ class JCS07 : BasicLitmusTest("consensus") {
         (outcome as DoubleOutcome).o2 = r2
     }
 }
+
+class JCS08 : BasicLitmusTest("finals") {
+
+    class MyObject(v: Int) {
+        var a = 0
+        var b = 0
+        var c = 0
+
+        init {
+            a = v
+            b = a + v
+            c = b + v
+        }
+    }
+
+    var v = 1
+    var o: MyObject? = null
+
+    override fun actor1() {
+        o = MyObject(v)
+    }
+
+    override fun actor2() {
+        val o = this.o
+        if (o != null) {
+            outcome = Triple(o.a, o.b, o.c)
+        } else {
+            outcome = Triple(-1, -1, -1)
+        }
+    }
+}
+
+class JCS10 : BasicLitmusTest("oota") {
+    var x = 0
+    var y = 0
+
+    override fun actor1() {
+        if (x == 1) y = 1
+    }
+
+    override fun actor2() {
+        if (y == 1) x = 1
+    }
+
+    override fun arbiter() {
+        outcome = x to y
+    }
+}

@@ -6,6 +6,7 @@ import kotlin.native.concurrent.Worker
 abstract class BasicLitmusTest(val name: String) {
     abstract fun actor1()
     abstract fun actor2()
+    open fun arbiter() {}
 
     private val outcomeRef = AtomicReference<Any?>(null)
     var outcome: Any?
@@ -73,6 +74,7 @@ fun performLitmus(
     }
     future1.result
     future2.result
+    workerContext.tests.forEach { it.arbiter() }
 
     workerContext.tests
             .map { it.outcome }
