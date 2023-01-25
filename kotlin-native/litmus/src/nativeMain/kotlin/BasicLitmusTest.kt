@@ -1,4 +1,3 @@
-import platform.posix.sched_yield
 import kotlin.native.concurrent.AtomicInt
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.TransferMode

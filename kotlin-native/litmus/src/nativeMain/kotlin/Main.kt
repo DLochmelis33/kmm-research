@@ -1,5 +1,13 @@
-
 fun main() {
-    // note: empirically best syncEvery for JCS05 is 3
-    performLitmus(::JCS05, 30_000_000, 3)
+    // note: empirically best syncEvery
+    // JCS05 -> 3
+    // JCS06 -> 3 / 10
+    // JCS07 -> 10
+
+    performLitmus(::JCS07, 10_000_000, 10)
+
+//    listOf(3, 5, 10, 15, 20, 50, 100).forEach { syncEvery ->
+//        println("\n$syncEvery")
+//        performLitmus(::JCS07, 10_000_000, syncEvery)
+//    }
 }
