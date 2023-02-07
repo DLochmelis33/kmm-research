@@ -73,6 +73,31 @@ class JCS07 : BasicLitmusTest("consensus") {
     }
 }
 
+class LB : BasicLitmusTest("load buffering") {
+
+    var x = 0
+    var y = 0
+
+    data class DoubleOutcome(var o1: Int, var o2: Int)
+
+    init {
+        outcome = DoubleOutcome(0, 0)
+    }
+
+    override fun actor1() {
+        val r1 = y
+        x = 1
+        (outcome as DoubleOutcome).o1 = r1
+    }
+
+    override fun actor2() {
+        val r2 = x
+        y = 1
+        (outcome as DoubleOutcome).o2 = r2
+    }
+
+}
+
 class JCS08 : BasicLitmusTest("finals") {
 
     class MyObject(v: Int) {
