@@ -20,6 +20,14 @@ kotlin {
     }
 
     nativeTarget.apply {
+        compilations.getByName("main") {
+            cinterops {
+                val affinity by creating {
+                    defFile(project.file("src/nativeInterop/affinity.def"))
+                    headers(project.file("src/nativeInterop/affinity.h"))
+                }
+            }
+        }
         binaries {
             executable {
                 entryPoint = "main"
