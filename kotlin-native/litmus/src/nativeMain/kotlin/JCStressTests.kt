@@ -50,9 +50,9 @@ class JCS06 : BasicLitmusTest("causality") {
     }
 }
 
-class JCS07 : BasicLitmusTest("consensus") {
-    var x = 0
-    var y = 0
+class JCS07 : BasicLitmusTest("consensus == SB") {
+    var xxxxxxxxx = 987654321 // by IntMemShuffle.variable()
+    var yyyyyyyyy = 0 // by IntMemShuffle.variable()
 
     data class DoubleOutcome(var o1: Int, var o2: Int)
 
@@ -61,14 +61,14 @@ class JCS07 : BasicLitmusTest("consensus") {
     }
 
     override fun actor1() {
-        x = 1
-        val r1 = y
+        xxxxxxxxx = 1
+        val r1 = yyyyyyyyy
         (outcome as DoubleOutcome).o1 = r1
     }
 
     override fun actor2() {
-        y = 1
-        val r2 = x
+        yyyyyyyyy = 1
+        val r2 = xxxxxxxxx
         (outcome as DoubleOutcome).o2 = r2
     }
 }

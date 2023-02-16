@@ -1,10 +1,13 @@
-import affinity.get_affinity
-import affinity.set_affinity
+//import affinity.get_affinity
+//import affinity.set_affinity
 import platform.posix.sleep
 import kotlin.native.concurrent.AtomicInt
 import kotlin.native.concurrent.AtomicReference
 import kotlin.native.concurrent.TransferMode
 import kotlin.native.concurrent.Worker
+import kotlin.properties.ReadWriteProperty
+import kotlin.random.Random
+import kotlin.reflect.KProperty
 
 abstract class BasicLitmusTest(val name: String) {
     abstract fun actor1()
@@ -18,6 +21,36 @@ abstract class BasicLitmusTest(val name: String) {
                 throw IllegalStateException("cannot set outcome more than once")
         }
         get() = outcomeRef.value
+}
+
+// TODO: allow multiple tests
+object IntMemShuffle {
+    private val idxMap = mutableListOf(0) // TODO: no need for this 0, but OOB (-1) otherwise
+    private val mem = mutableListOf(0)
+    private val random = Random
+
+    fun <T : BasicLitmusTest> variable(): VariableDelegate<T> {
+        mem.add(0)
+        idxMap.add(idxMap.size - 1)
+        val idxToSwap = random.nextInt(idxMap.size)
+        val idxLast = idxMap.size - 1
+        val tmp = idxMap[idxToSwap]
+        idxMap[idxToSwap] = idxMap[idxLast]
+        idxMap[idxLast] = tmp
+
+        return VariableDelegate(mem, idxMap, idxLast)
+    }
+
+    class VariableDelegate<T>(
+            val mem: MutableList<Int>,
+            val idxMap: MutableList<Int>,
+            val idx: Int
+    ) {
+        inline operator fun getValue(thisRef: T, property: KProperty<*>): Int = mem[idxMap[idx]]
+        inline operator fun setValue(thisRef: T, property: KProperty<*>, value: Int) {
+            mem[idxMap[idx]] = value
+        }
+    }
 }
 
 class Barrier(private val threadCount: Int) {
@@ -67,12 +100,12 @@ fun performLitmus(
 
     val future1 = worker1.execute(TransferMode.SAFE /* ignored */, { workerContext }) {
 
-        val mask1before = get_affinity(it.worker1.platformThreadId)
-        println("mask1before=${mask1before.toString(2)} ($mask1before)")
-        set_affinity(it.worker1.platformThreadId, 5).checkZero()
-        sleep(5)
-        val mask1 = get_affinity(it.worker1.platformThreadId)
-        println("mask1=${mask1.toString(2)} ($mask1)")
+//        val mask1before = get_affinity(it.worker1.platformThreadId)
+//        println("mask1before=${mask1before.toString(2)} ($mask1before)")
+//        set_affinity(it.worker1.platformThreadId, 5).checkZero()
+//        sleep(5)
+//        val mask1 = get_affinity(it.worker1.platformThreadId)
+//        println("mask1=${mask1.toString(2)} ($mask1)")
 
         it.run {
             repeat(this.repeats) { i ->

@@ -4,7 +4,7 @@ fun main() {
     // JCS06 -> 3 / 10
     // JCS07 -> 10
 
-    performLitmus(::LB, 1_000_000, 50)
+    performLitmus(::JCS07, 5_000_000, 10)
 
 //    listOf(3, 5, 10, 15, 20, 50, 100).forEach { syncEvery ->
 //        println("\n$syncEvery")

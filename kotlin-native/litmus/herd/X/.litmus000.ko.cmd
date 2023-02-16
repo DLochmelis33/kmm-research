@@ -1,0 +1,1 @@
+cmd_/home/denis/prog/kmm/kotlin-native/litmus/herd/X/litmus000.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/denis/prog/kmm/kotlin-native/litmus/herd/X/litmus000.ko /home/denis/prog/kmm/kotlin-native/litmus/herd/X/litmus000.o /home/denis/prog/kmm/kotlin-native/litmus/herd/X/litmus000.mod.o;  true

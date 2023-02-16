@@ -1,0 +1,1 @@
+cmd_/home/denis/prog/kmm/kotlin-native/litmus/herd/X/modules.order := {   echo /home/denis/prog/kmm/kotlin-native/litmus/herd/X/litmus000.ko; :; } | awk '!x[$$0]++' - > /home/denis/prog/kmm/kotlin-native/litmus/herd/X/modules.order
