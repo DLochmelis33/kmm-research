@@ -1,2 +1,0 @@
-headers = /home/denis/prog/kmm/kotlin-native/litmus/src/nativeInterop/affinity.h
-linkerOpts = /home/denis/prog/kmm/kotlin-native/litmus/src/nativeInterop/gnu_affinity.o
