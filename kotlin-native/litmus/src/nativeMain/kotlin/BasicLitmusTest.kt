@@ -1,6 +1,6 @@
 import kotlin.native.concurrent.AtomicReference
-import kotlin.native.concurrent.TransferMode
-import kotlin.native.concurrent.Worker
+import kotlin.reflect.KClass
+import kotlin.time.Duration
 
 abstract class BasicLitmusTest(val name: String) {
     abstract fun actor1()
@@ -16,8 +16,29 @@ abstract class BasicLitmusTest(val name: String) {
         get() = outcomeRef.value
 }
 
+data class OutcomeSetupScope(
+        var accepted: Set<Any?> = emptySet(),
+        var interesting: Set<Any?> = emptySet(),
+        var forbidden: Set<Any?> = emptySet(),
+        var forbidOther: Boolean = false,
+) {
+    fun getType(outcome: Any?) = when {
+        outcome in accepted -> OutcomeType.ACCEPTED
+        outcome in interesting -> OutcomeType.INTERESTING
+        outcome in forbidden || forbidOther -> OutcomeType.FORBIDDEN
+        else -> null
+    }
+}
+
+private val testOutcomesSetup = mutableMapOf<KClass<*>, OutcomeSetupScope>()
+
+fun BasicLitmusTest.setupOutcomes(block: OutcomeSetupScope.() -> Unit) {
+    testOutcomesSetup[this::class] = OutcomeSetupScope().apply(block)
+}
+
+fun BasicLitmusTest.getOutcomeSetup(): OutcomeSetupScope? = testOutcomesSetup[this::class]
+
 data class LitmusTestParameters(
-        val batchSize: Int,
         val affinityMap: List<Set<Int>>,
         val syncPeriod: Int,
 //        val memShuffler: ???,
@@ -31,50 +52,12 @@ data class OutcomeInfo(
         val type: OutcomeType?,
 )
 
+typealias LitmusResult = List<OutcomeInfo>
+
 interface LitmusTestRunner {
-    fun runTest(parameters: LitmusTestParameters, testProducer: () -> BasicLitmusTest): List<OutcomeInfo>
-}
-
-class WorkerTestRunner : LitmusTestRunner {
-    private data class WorkerContext(
-            val tests: List<BasicLitmusTest>,
-            val syncPeriod: Int,
-            val barrier: SpinBarrier,
-    )
-
-    override fun runTest(parameters: LitmusTestParameters, testProducer: () -> BasicLitmusTest): List<OutcomeInfo> {
-        val testBatch = List(parameters.batchSize) { testProducer() }
-        val actorFunctions: List<(BasicLitmusTest) -> Unit> = listOf(
-                BasicLitmusTest::actor1,
-                BasicLitmusTest::actor2,
-        )
-        val workerContext = WorkerContext(testBatch, parameters.syncPeriod, SpinBarrier(actorFunctions.size))
-        actorFunctions.map { actorFun ->
-            Worker.start().execute(
-                    TransferMode.SAFE /* ignored */,
-                    { actorFun to workerContext }
-            ) { (actorFun, workerContext) ->
-                workerContext.apply {
-                    var cnt = 0
-                    for (test in tests) {
-                        if (cnt == syncPeriod) {
-                            cnt = 0
-                            barrier.wait()
-                        }
-                        actorFun(test)
-                        cnt++
-                    }
-                }
-            }
-        }.forEach { it.result }
-        for (test in testBatch) test.arbiter()
-        val result = testBatch
-                .map { it.outcome }
-                .groupingBy { it }
-                .eachCount()
-                .map { (outcome, count) ->
-                    OutcomeInfo(outcome, count, null)
-                }
-        return result
-    }
+    fun runTest(
+            batchSize: Int,
+            parameters: LitmusTestParameters,
+            testProducer: () -> BasicLitmusTest
+    ): LitmusResult
 }

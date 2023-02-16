@@ -53,23 +53,27 @@ class JCS06 : BasicLitmusTest("causality") {
 class JCS07 : BasicLitmusTest("consensus == SB") {
     var x = 0
     var y = 0
-
-    data class DoubleOutcome(var o1: Int, var o2: Int)
+    var o1 = 0
+    var o2 = 0
 
     init {
-        outcome = DoubleOutcome(0, 0)
+        setupOutcomes {
+            interesting = setOf(0 to 0)
+        }
     }
 
     override fun actor1() {
         x = 1
-        val r1 = y
-        (outcome as DoubleOutcome).o1 = r1
+        o1 = y
     }
 
     override fun actor2() {
         y = 1
-        val r2 = x
-        (outcome as DoubleOutcome).o2 = r2
+        o2 = x
+    }
+
+    override fun arbiter() {
+        outcome = o1 to o2
     }
 }
 
