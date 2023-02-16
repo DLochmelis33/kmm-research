@@ -28,16 +28,13 @@ fun Worker.getAffinity(): Set<Int> = memScoped {
 
 fun main() {
     val w = Worker.start()
-
-    val future = w.execute(TransferMode.SAFE, {}) {
-        println("he")
-        sleep(1)
-        println("ha")
+    val f = w.execute(TransferMode.SAFE, {}) {
+        var sum = 0L
+        for(i in 1..3_000_000_000L) sum += i
+        sum
     }
-
+    sleep(1)
     w.setAffinity(setOf(5))
     println(w.getAffinity())
-    future.result
-
-    println("end")
+    println(f.result)
 }

@@ -1,1 +1,1 @@
-linkerOpts.linux = ~/.kaffinity/kaffinity_gnu.o
+linkerOpts.linux = /usr/include/kaffinity/kaffinity_gnu.o

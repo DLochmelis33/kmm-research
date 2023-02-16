@@ -22,15 +22,6 @@ kotlin {
     nativeTarget.apply {
         compilations.getByName("main") {
             cinterops {
-                exec {
-                    commandLine(
-                            "gcc",
-                            "src/nativeInterop/kaffinity_gnu.c",
-                            "-c",
-                            "-o",
-                            "~/.kaffinity/kaffinity_gnu.o"
-                    )
-                }
                 val affinity by creating {
                     defFile(project.file("src/nativeInterop/kaffinity.def"))
                     headers(project.file("src/nativeInterop/kaffinity.h"))
