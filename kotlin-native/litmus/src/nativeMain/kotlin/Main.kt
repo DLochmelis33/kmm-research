@@ -1,20 +1,30 @@
+import kotlin.time.Duration.Companion.seconds
+
 fun main() {
-    // note: empirically best syncEvery
-    // JCS05 -> 3
-    // JCS06 -> 3 / 10
-    // JCS07 -> 10
-
-    val affinities = affinitySequence(12, 2)
     val runner = WorkerTestRunner()
-    val result = runner.runTest(
-            1_000_000,
-            LitmusTestParameters(affinities.first(), 3),
-            ::JCS07
-    )
-    result.prettyPrint()
 
-//    listOf(3, 5, 10, 15, 20, 50, 100).forEach { syncEvery ->
-//        println("\n$syncEvery")
-//        performLitmus(::JCS07, 10_000_000, syncEvery)
-//    }
+    val parameters = variateParameters(
+            AffinitySchedules.allPossibleSingleCoreSchedules(2).toList(),
+            listOf(3)
+    ).toList()
+    val singleTestDuration = 1.seconds
+    println("parameters count: ${parameters.size}")
+    println("ETA: T+ ${(singleTestDuration * parameters.size).toComponents { m, s, _ -> "$m m $s s" }}")
+    var cnt = 0
+    val results = parameters.associateWith { param ->
+        val result = runner.runTest(singleTestDuration, param, ::JCS07)
+        println("done ${cnt++} / ${parameters.size}")
+        result
+    }
+    results.entries
+            .sortedByDescending { it.value.interestingFrequency }
+            .take(5)
+            .forEach {
+                println("+ + + + + + + + + + + + + + + + + + + + +")
+                println("params: ${it.key}")
+                it.value.prettyPrint()
+            }
+    println("in total:")
+    val total = results.values.flatten().merge()
+    total.prettyPrint()
 }

@@ -20,25 +20,8 @@ fun LitmusResult.prettyPrint() {
     println((listOf(tableHeader) + table).tableFormat(true))
 }
 
-fun List<List<String>>.tableFormat(hasHeader: Boolean = false): String {
-    val columnCount = maxOf { it.size }
-    val columnSizes = (0 until columnCount).map { i ->
-        this.mapNotNull { it.getOrNull(i) }.maxOf { it.length } + 2
-    }
-    return buildString {
-        this@tableFormat.forEach { row ->
-            row.forEachIndexed { i, word ->
-                val startPadding = (columnSizes[i] - word.length) / 2
-                val endPadding = columnSizes[i] - word.length - startPadding
-                append(" ".repeat(startPadding))
-                append(word)
-                append(" ".repeat(endPadding))
-                if (i != row.size - 1) append("|")
-            }
-            appendLine()
-            if (hasHeader && row === this@tableFormat.first()) {
-                appendLine("-".repeat(columnSizes.sum() + columnCount - 1))
-            }
-        }
+fun List<OutcomeInfo>.merge(): LitmusResult {
+    return groupBy { it.outcome }.map { (outcome, infos) ->
+        OutcomeInfo(outcome, infos.sumOf { it.count }, infos.first().type)
     }
 }

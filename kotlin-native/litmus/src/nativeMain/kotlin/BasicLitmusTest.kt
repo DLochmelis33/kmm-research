@@ -1,5 +1,6 @@
 import kotlin.native.concurrent.AtomicReference
 import kotlin.reflect.KClass
+import kotlin.system.getTimeMillis
 import kotlin.time.Duration
 
 abstract class BasicLitmusTest(val name: String) {
@@ -60,4 +61,17 @@ interface LitmusTestRunner {
             parameters: LitmusTestParameters,
             testProducer: () -> BasicLitmusTest
     ): LitmusResult
+
+    fun runTest(
+            timeLimit: Duration,
+            parameters: LitmusTestParameters,
+            testProducer: () -> BasicLitmusTest
+    ): LitmusResult {
+        val results = mutableListOf<OutcomeInfo>()
+        val start = getTimeMillis()
+        while (getTimeMillis() - start < timeLimit.inWholeMilliseconds) {
+            results.addAll(runTest(10_000, parameters, testProducer))
+        }
+        return results.merge()
+    }
 }

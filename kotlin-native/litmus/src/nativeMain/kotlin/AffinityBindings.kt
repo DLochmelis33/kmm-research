@@ -10,6 +10,7 @@ fun Int.callCheck() {
 }
 
 fun setAffinity(thread: pthread_t, cpus: Set<Int>) = memScoped {
+    require(cpus.isNotEmpty())
     val set = alloc<cpu_set_t>()
     for (cpu in cpus) kaffinity.cpu_set(cpu, set.ptr)
     kaffinity.set_affinity(thread, set.ptr).callCheck()

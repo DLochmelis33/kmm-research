@@ -23,7 +23,9 @@ class WorkerTestRunner : LitmusTestRunner {
         val workerContext = WorkerContext(testBatch, parameters.syncPeriod, SpinBarrier(actorFunctions.size))
         actorFunctions.mapIndexed { i, actorFun ->
             val worker = Worker.start()
-            worker.setAffinity(parameters.affinityMap[i])
+            val cpuSet = parameters.affinityMap[i]
+            worker.setAffinity(cpuSet)
+            require(worker.getAffinity() == cpuSet)
             worker.execute(
                     TransferMode.SAFE /* ignored */,
                     { actorFun to workerContext }
