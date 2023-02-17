@@ -1,6 +1,5 @@
 import kotlin.native.concurrent.TransferMode
 import kotlin.native.concurrent.Worker
-import kotlin.time.Duration
 
 class WorkerTestRunner : LitmusTestRunner {
     private data class WorkerContext(
@@ -19,6 +18,7 @@ class WorkerTestRunner : LitmusTestRunner {
                 BasicLitmusTest::actor2,
         )
         require(actorFunctions.size == parameters.affinityMap.size)
+        BasicLitmusTest.memShuffler = parameters.memShufflerProducer?.invoke()
         val testBatch = List(batchSize) { testProducer() }
         val workerContext = WorkerContext(testBatch, parameters.syncPeriod, SpinBarrier(actorFunctions.size))
         actorFunctions.mapIndexed { i, actorFun ->

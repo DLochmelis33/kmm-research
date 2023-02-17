@@ -34,9 +34,15 @@ class JCS05 : BasicLitmusTest("coherence") {
     }
 }
 
-class JCS06 : BasicLitmusTest("causality") {
+class JCS06 : BasicLitmusTest("causality == MP") {
     var x = 0
     var y = 0
+
+    init {
+        setupOutcomes {
+            interesting = setOf(1 to 0)
+        }
+    }
 
     override fun actor1() {
         x = 1
@@ -51,8 +57,8 @@ class JCS06 : BasicLitmusTest("causality") {
 }
 
 class JCS07 : BasicLitmusTest("consensus == SB") {
-    var x = 0
-    var y = 0
+    var x by memShuffler!!
+    var y by memShuffler!!
     var o1 = 0
     var o2 = 0
 

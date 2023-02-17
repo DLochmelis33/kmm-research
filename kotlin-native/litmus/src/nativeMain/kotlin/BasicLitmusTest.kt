@@ -15,6 +15,10 @@ abstract class BasicLitmusTest(val name: String) {
                 throw IllegalStateException("cannot set outcome more than once")
         }
         get() = outcomeRef.value
+
+    companion object {
+        var memShuffler: MemShuffler? = null
+    }
 }
 
 data class OutcomeSetupScope(
@@ -39,10 +43,12 @@ fun BasicLitmusTest.setupOutcomes(block: OutcomeSetupScope.() -> Unit) {
 
 fun BasicLitmusTest.getOutcomeSetup(): OutcomeSetupScope? = testOutcomesSetup[this::class]
 
+typealias AffinityMap = List<Set<Int>>
+
 data class LitmusTestParameters(
-        val affinityMap: List<Set<Int>>,
+        val affinityMap: AffinityMap,
         val syncPeriod: Int,
-//        val memShuffler: ???,
+        val memShufflerProducer: (() -> MemShuffler)?,
 )
 
 enum class OutcomeType { ACCEPTED, INTERESTING, FORBIDDEN }

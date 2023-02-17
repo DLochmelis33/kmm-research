@@ -4,7 +4,7 @@ object AffinitySchedules {
     fun allOnSingleCore(actorCount: Int) = List(actorCount) { setOf(0) }
 
     // note: grows very quickly, never use for values above 4 or 5
-    fun allPossibleSingleCoreSchedules(actorCount: Int): Sequence<List<Set<Int>>> = sequence {
+    fun allPossibleSingleCoreSchedules(actorCount: Int): Sequence<AffinityMap> = sequence {
         for (x in 0 until (2 * actorCount).pow(actorCount)) {
             (0 until actorCount).map { a ->
                 val core = (x / (2 * actorCount).pow(a)) % (2 * actorCount)
@@ -13,7 +13,7 @@ object AffinitySchedules {
         }
     }
 
-    fun allPossibleMultiCoreSchedules(actorCount: Int): Sequence<List<Set<Int>>> = sequence {
+    fun allPossibleMultiCoreSchedules(actorCount: Int): Sequence<AffinityMap> = sequence {
         require(actorCount == 2) { "plot 4^(n^2) to see why this requirement is necessary" }
         val setsUpToThree = listOf(
                 setOf(0), setOf(1), setOf(2),
@@ -26,6 +26,29 @@ object AffinitySchedules {
             }
         }
     }
+
+    // hand-picked ones based on intuition
+    val reasonableTwoActorSchedules: List<AffinityMap> = buildList {
+        for (i in 0 until 8) {
+            add(listOf(setOf(0), setOf(i)))
+            if (i >= 1) add(listOf(setOf(i - 1), setOf(i)))
+        }
+        add(listOf(setOf(0, 1), setOf(0, 1)))
+        add(listOf(setOf(0, 1), setOf(1, 2)))
+        add(listOf(setOf(0, 1), setOf(2, 3)))
+        add(listOf(setOf(0), setOf(0, 1)))
+        add(listOf(setOf(0), setOf(1, 2)))
+        add(listOf(setOf(0), setOf(2, 4)))
+        add(listOf(setOf(0, 6), setOf(1, 7)))
+    }
+
+    // fewer hand-picked ones based on a couple (not a lot) of observations
+    val maybeBestTwoActorSchedules: List<AffinityMap> = listOf(
+            listOf(setOf(0), setOf(1)),
+            listOf(setOf(0), setOf(2)),
+            listOf(setOf(0, 1), setOf(0, 1)),
+            listOf(setOf(0, 1), setOf(1, 2)),
+    )
 }
 
 object SyncPeriodSchedules {
@@ -33,12 +56,15 @@ object SyncPeriodSchedules {
 }
 
 fun variateParameters(
-        affinitySchedule: List<List<Set<Int>>>,
+        affinitySchedule: List<AffinityMap>,
         syncPeriodSchedule: List<Int>,
+        memShufflerSchedule: List<(() -> MemShuffler)?>
 ) = sequence<LitmusTestParameters> {
     for (affinity in affinitySchedule) {
         for (syncPeriod in syncPeriodSchedule) {
-            yield(LitmusTestParameters(affinity, syncPeriod))
+            for(memShuffler in memShufflerSchedule) {
+                yield(LitmusTestParameters(affinity, syncPeriod, memShuffler))
+            }
         }
     }
 }
