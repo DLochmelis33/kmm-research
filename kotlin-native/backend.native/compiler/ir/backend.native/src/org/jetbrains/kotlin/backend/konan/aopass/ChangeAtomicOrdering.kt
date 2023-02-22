@@ -27,6 +27,11 @@ internal class ChangeAtomicOrdering(
     private fun isByteSized(inst: LLVMValueRef, llvmTargetData: LLVMTargetDataRef): Boolean =
             LLVMSizeOfTypeInBits(llvmTargetData, inst.type) % 8L == 0L
 
+    private fun isPowerOfTwoSized(inst: LLVMValueRef, llvmTargetData: LLVMTargetDataRef): Boolean {
+        val sizeInBits = LLVMSizeOfTypeInBits(llvmTargetData, inst.type)
+        return sizeInBits != 0L && (sizeInBits and (sizeInBits - 1)) == 0L
+    }
+
     fun runOnModule(module: LLVMModuleRef, llvmTargetData: LLVMTargetDataRef) {
         getFunctions(module)
                 .flatMap { function ->
@@ -37,6 +42,7 @@ internal class ChangeAtomicOrdering(
                     isLoadOrStoreInst(inst)
                             && isSuitableType(inst)
                             && isByteSized(inst, llvmTargetData)
+                            && isPowerOfTwoSized(inst, llvmTargetData)
                 }
                 .forEach { inst ->
                     if (LLVMGetOrdering(inst) == LLVMAtomicOrdering.LLVMAtomicOrderingNotAtomic) {
