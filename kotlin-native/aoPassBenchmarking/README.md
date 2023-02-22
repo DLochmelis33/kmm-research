@@ -115,7 +115,9 @@ More detailed information about using these benchmarks can be found [here](../HA
 
 P. S. Of course, the commands above are valid for LinuxX64 platform, others will require corresponding names changed.
 
-## Current benchmark results
+## Current benchmark results (legacy) 
+
+[//]: # (TODO: introduce new naming convention, add macosArm64 results analysis and notes: a table of the values and the most important tests)
 
 Some already performed analysis results can be found in [benchmarkReports](benchmarkReports) directory.
 
