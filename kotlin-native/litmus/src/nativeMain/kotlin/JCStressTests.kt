@@ -34,7 +34,7 @@ class JCS05 : BasicLitmusTest("coherence") {
     }
 }
 
-class JCS06 : BasicLitmusTest("causality == MP") {
+class JCS06_MP : BasicLitmusTest("causality == MP") {
     var x = 0
     var y = 0
 
@@ -56,9 +56,9 @@ class JCS06 : BasicLitmusTest("causality == MP") {
     }
 }
 
-class JCS07 : BasicLitmusTest("consensus == SB") {
-    var x by memShuffler!!
-    var y by memShuffler!!
+class JCS07_SB : BasicLitmusTest("consensus == SB") {
+    var x = 0 // by memShuffler!!
+    var y = 0 // by memShuffler!!
     var o1 = 0
     var o2 = 0
 

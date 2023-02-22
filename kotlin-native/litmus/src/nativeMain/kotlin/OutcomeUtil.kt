@@ -25,3 +25,5 @@ fun List<OutcomeInfo>.merge(): LitmusResult {
         OutcomeInfo(outcome, infos.sumOf { it.count }, infos.first().type)
     }
 }
+
+val LitmusResult.isAccepted get() = all { it.type != OutcomeType.FORBIDDEN }

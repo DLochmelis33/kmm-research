@@ -13,7 +13,7 @@ fun main() {
     println("ETA: T+ ${(singleTestDuration * parameters.size).toComponents { m, s, _ -> "$m m $s s" }}")
     var cnt = 1
     val results = parameters.associateWith { param ->
-        val result = runner.runTest(singleTestDuration, param, ::JCS07)
+        val result = runner.runTest(singleTestDuration, param, ::JCS07_SB)
         println("done ${cnt++} / ${parameters.size}")
         result
     }
