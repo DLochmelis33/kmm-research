@@ -2,6 +2,17 @@
 
 Main goal is to _**change atomic ordering of memory accesses**_ (from `NotAtomic` to `Unordered`, for example) using an implemented bitcode pass in the Kotlin Native compiler and _**test the resulting bitcode and performance**_.
 
+## Intro: project setup
+
+[Here](../README.md), in the _Building from source_ section, you can find necessary prerequisites for building the compiler and get acquainted with building the project in general.
+
+_Helping note:_ at the root of the project, you will most likely need to create a `local.properties` file once with the following content.
+```
+kotlin.build.isObsoleteJdkOverrideEnabled=true
+kotlin.native.enabled=true
+```
+The first line will avoid using (and, therefore, installing) `JDK_1_6` and `JDK_1_7`, while the second line is just required.
+
 ## Pass implementation
 
 * See implementation of pass in [ChangeAtomicOrdering.kt](../backend.native/compiler/ir/backend.native/src/org/jetbrains/kotlin/backend/konan/aopass/ChangeAtomicOrdering.kt). By default, all `NotAtomic` accesses are replaced with `Unordered` ones;
@@ -86,12 +97,15 @@ This method of benchmarking _**is kind of legacy**_. Its main goal is to check t
 
 Proper benchmarking could be done using Kotlin project test framework.
 
-* Firstly, bundle version of compiler should be built: run `./gradlew :kotlin-native:bundle` from the project root.
+* Firstly, the project should be built. 
+  * Run `./gradlew clean` from the project root. Since the change-atomic-ordering pass impacts not only the target code but libraries too, they must also be rebuilt.
+  * Then, bundle version of compiler should be built: run `./gradlew :kotlin-native:bundle` from the project root too.
+  * Finally, run `./gradlew -stop`. In practice, this reduces the likelihood of an unexpected crash of benchmarks (which is out of our control).
 * Secondly, set desired atomic orderings in [ChangeAtomicOrdering.kt](../backend.native/compiler/ir/backend.native/src/org/jetbrains/kotlin/backend/konan/aopass/ChangeAtomicOrdering.kt) file.
-* Then, go to [`kotlin-native/performance`](../performance) and start `ring` benchmarks:
+* Then, go to [`kotlin-native/performance`](../performance) and start benchmarks:
 
     ```bash
-    ../../gradlew :ring:konanRun -PnativeJson=output.json
+    ../../gradlew :konanRun -PnativeJson=output.json
     ```
 
   where benchmark results will be contained in `build/output.json`.
@@ -111,7 +125,7 @@ Proper benchmarking could be done using Kotlin project test framework.
   ```
   where `compare.html` is the analysis result file. Unfortunately, only two files can be compared at the same time.
 
-More detailed information about using these benchmarks can be found [here](../HACKING.md).
+Original guide for performance measurement can be found [here](../HACKING.md), in the _Performance measurement_ section.
 
 P. S. Of course, the commands above are valid for LinuxX64 platform, others will require corresponding names changed.
 
@@ -121,4 +135,6 @@ Check [BENCHMARK_RESULTS.md](benchmarkReports/BENCHMARK_RESULTS.md) file for det
 
 ## How to add a new benchmark test
 
-It's pretty straightforward: place your test in a separate class in [this directory](`../performance/ring/src/main/kotlin/org/jetbrains/ring`) and plug into `baseBenchmarksSet` [here](../../kotlin-native/performance/ring/src/main/kotlin/main.kt).
+It's pretty straightforward: place your test in a separate class in [this directory](../performance/ring/src/main/kotlin/org/jetbrains/ring) and plug into `baseBenchmarksSet` [here](../../kotlin-native/performance/ring/src/main/kotlin/main.kt). 
+
+This is a way to add a test to the `ring` suite. This is a way to add a test to the ring suite. You can create your suite by analogy with the ones in the [`performance`](../performance) directory. 
