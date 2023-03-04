@@ -60,7 +60,7 @@ Then, `cd` to [`testOnSmallProject`](testOnSmallProject) and run:
 
 To enable compiler optimizations one should use slightly different tasks: `./gradlew linkReleaseExecutableLinuxX64` and `./gradlew runReleaseExecutableLinuxX64` respectively.
 
-Of course, these tasks work only for Linux-x64 platform. To build the project for a different architecture use a similar task with the corresponding name.
+Of course, these tasks work only for LinuxX64 platform. To build the project for a different architecture use a similar task with the corresponding name.
 
 ### Obtain result bitcode
 
@@ -97,11 +97,11 @@ This method of benchmarking _**is kind of legacy**_. Its main goal is to check t
 
 Proper benchmarking could be done using Kotlin project test framework.
 
-* Firstly, the project should be built. 
+* Firstly, set desired atomic orderings in [ChangeAtomicOrdering.kt](../backend.native/compiler/ir/backend.native/src/org/jetbrains/kotlin/backend/konan/aopass/ChangeAtomicOrdering.kt) file.
+* Second, the project should be built. 
   * Run `./gradlew clean` from the project root. Since the change-atomic-ordering pass impacts not only the target code but libraries too, they must also be rebuilt.
   * Then, bundle version of compiler should be built: run `./gradlew :kotlin-native:bundle` from the project root too.
   * Finally, run `./gradlew -stop`. In practice, this reduces the likelihood of an unexpected crash of benchmarks (which is out of our control).
-* Secondly, set desired atomic orderings in [ChangeAtomicOrdering.kt](../backend.native/compiler/ir/backend.native/src/org/jetbrains/kotlin/backend/konan/aopass/ChangeAtomicOrdering.kt) file.
 * Then, go to [`kotlin-native/performance`](../performance) and start benchmarks:
 
     ```bash
@@ -128,6 +128,18 @@ Proper benchmarking could be done using Kotlin project test framework.
 Original guide for performance measurement can be found [here](../HACKING.md), in the _Performance measurement_ section.
 
 P. S. Of course, the commands above are valid for LinuxX64 platform, others will require corresponding names changed.
+
+### Benchmarking scripts
+
+To automate the benchmarking of different passes, the scripts in [`utils`](utils) directory can be used. They are not very smart, but extremely useful. 
+* The [`passTemplates`](utils/passTemplates) directory contains templates of different passes (that is, versions of the [ChangeAtomicOrdering.kt](../backend.native/compiler/ir/backend.native/src/org/jetbrains/kotlin/backend/konan/aopass/ChangeAtomicOrdering.kt) file). 
+* The [`benchmarkingScripts`](utils/benchmarkingScripts) directory contains the scripts themselves. So far, they are only for LinuxX64, but can be easily adapted to any platform. 
+
+The entry point script is [`benchmarkAllPasses.sh`](utils/benchmarkingScripts/benchmarkAllPasses.sh). That is, to reproduce the results presented below, it is enough to run the script from the [`benchmarkingScripts`](utils/benchmarkingScripts) directory:
+```bash
+./benchmarkAllPasses.sh
+ ```
+You can find more details on the order of execution of certain commands and a few useful tricks in the scripts code.
 
 ## Current benchmark results 
 
