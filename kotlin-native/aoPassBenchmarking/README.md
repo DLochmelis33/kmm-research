@@ -60,7 +60,7 @@ Then, `cd` to [`testOnSmallProject`](testOnSmallProject) and run:
 
 To enable compiler optimizations one should use slightly different tasks: `./gradlew linkReleaseExecutableLinuxX64` and `./gradlew runReleaseExecutableLinuxX64` respectively.
 
-Of course, these tasks work only for LinuxX64 platform. To build the project for a different architecture use a similar task with the corresponding name.
+Of course, these tasks work only for linuxX64 platform. To build the project for a different architecture use a similar task with the corresponding name.
 
 ### Obtain result bitcode
 
@@ -127,13 +127,13 @@ Proper benchmarking could be done using Kotlin project test framework.
 
 Original guide for performance measurement can be found [here](../HACKING.md), in the _Performance measurement_ section.
 
-P. S. Of course, the commands above are valid for LinuxX64 platform, others will require corresponding names changed.
+P. S. Of course, the commands above are valid for linuxX64 platform, others will require corresponding names changed.
 
 ### Benchmarking scripts
 
 To automate the benchmarking of different passes, the scripts in [`utils`](utils) directory can be used. They are not very smart, but extremely useful. 
 * The [`passTemplates`](utils/passTemplates) directory contains templates of different passes (that is, versions of the [ChangeAtomicOrdering.kt](../backend.native/compiler/ir/backend.native/src/org/jetbrains/kotlin/backend/konan/aopass/ChangeAtomicOrdering.kt) file). 
-* The [`benchmarkingScripts`](utils/benchmarkingScripts) directory contains the scripts themselves. So far, they are only for LinuxX64, but can be easily adapted to any platform. 
+* The [`benchmarkingScripts`](utils/benchmarkingScripts) directory contains the scripts themselves. So far, they are only for linuxX64, but can be easily adapted to any platform. 
 
 The entry point script is [`benchmarkAllPasses.sh`](utils/benchmarkingScripts/benchmarkAllPasses.sh). That is, to reproduce the results presented below, it is enough to run the script from the [`benchmarkingScripts`](utils/benchmarkingScripts) directory:
 ```bash
