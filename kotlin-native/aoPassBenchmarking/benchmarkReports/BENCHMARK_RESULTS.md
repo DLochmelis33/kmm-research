@@ -18,13 +18,34 @@ About _**the score**_. All score change percentages are relative to the largest 
 
 A note _**about linuxX64**_. As the results below show, linuxX64 has higher degradation percentages in the individual tests. However, it is also higher when comparing several versions of the baseline, which means that there was surely more noise on this machine (and/or architecture?). Moreover, there was more improvement in test performance on this machine than on macosArm64, so the average linuxX64 results sometimes turned out to be much lower. In the future, it is necessary to get rid of this noise or evaluate it properly.
 
-### baseline3-vs-baseline
+### Baselines comparison
 
 Comparison of two baseline runs demonstrate how significant the error between same compiler benchmarks can be, i.e. the noise level. One of the current tasks is to get rid of such noise.
 
 In this section, all test names are clickable and lead to source files with their code.
 
 #### macosArm64
+
+<ins>baseline2-vs-baseline</ins>
+
+_Geometric mean:_ 0.00 ± 0.00 %
+
+_Tests with an observable score difference:_
+* [`Ring::ForLoops.uShortArrayIndicesLoop`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ForLoopsBenchmark.kt) (17%)
+* [`Cinterop::boxedInt`](../../performance/cinterop/src/main/kotlin-native/org/jetbrains/cinteropBenchmarks/typesBenchmark.kt) [[C source code](../../performance/cinterop/src/nativeInterop/cinterop/types.def)] (13%)
+* [`Cinterop::int`](../../performance/cinterop/src/main/kotlin-native/org/jetbrains/cinteropBenchmarks/typesBenchmark.kt) [[C source code](../../performance/cinterop/src/nativeInterop/cinterop/types.def)] (5%)
+* [`Ring::ClassArray.filter`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassArrayBenchmark.kt) (4%)
+* `swiftInterop::WeakRefBenchmark.aliveReference` [[Swift source code](../../performance/swiftinterop/swiftSrc/weakRefBenchmarks.swift)] (4%)
+* [`Ring::LocalObjects.localArray`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/LocalObjectsBenchmark.kt) (3%)
+* [`Ring::ClassStream.countFilteredManual`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassStreamBenchmark.kt) (3%)
+* [`Ring::DefaultArgument.testOneOfEight`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/DefaultArgumentBenchmark.kt) (2%)
+* [`Ring::CompanionObject.invokeRegularFunction`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/CompanionObjectBenchmark.kt) (2%)
+* [`Ring::ClassList.countWithLambda`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassListBenchmark.kt) (2%)
+* [`Ring::ClassArray.filterAndMap`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassArrayBenchmark.kt) (1%)
+* [`Ring::ClassArray.filterAndCount`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassArrayBenchmark.kt) (1%)
+* [`Ring::ClassArray.countFiltered`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassArrayBenchmark.kt) (1%)
+
+<ins>baseline3-vs-baseline</ins>
 
 _Geometric mean:_ 0.00 ± 0.00 %
 
@@ -34,12 +55,29 @@ _Tests with an observable score difference:_
 * [`Ring::ClassList.reduce`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassListBenchmark.kt) (5%)
 * `swiftInterop::WeakRefBenchmark.aliveReference` [[Swift source code](../../performance/swiftinterop/swiftSrc/weakRefBenchmarks.swift)] (4%)
 * [`Ring::LocalObjects.localArray`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/LocalObjectsBenchmark.kt) (3%)
-* [`Ring::DefaultArgument.testTwoOfTwo`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/DefaultArgumentBenchmark.kt) (2.17%)
+* [`Ring::DefaultArgument.testTwoOfTwo`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/DefaultArgumentBenchmark.kt) (2%)
 * [`Ring::Switch.testDenseEnumsSwitch`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/SwitchBenchmark.kt) (2%)
 * [`Ring::AbstractMethod.sortStringsWithComparator`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/AbstractMethodBenchmark.kt) (2%)
 * [`Ring::IntArray.countFiltered`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/IntArrayBenchmark.kt) (1%)
 
 #### linuxX64
+
+<ins>baseline2-vs-baseline</ins>
+
+_Geometric mean:_ 0.00 ± 0.00 %
+
+_Tests with an observable score difference:_
+* [`Ring::ClassStream.copy`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassStreamBenchmark.kt) (51%)
+* [`Cinterop::boxedInt`](../../performance/cinterop/src/main/kotlin-native/org/jetbrains/cinteropBenchmarks/typesBenchmark.kt) [[C source code](../../performance/cinterop/src/nativeInterop/cinterop/types.def)] (28%)
+* [`Cinterop::int`](../../performance/cinterop/src/main/kotlin-native/org/jetbrains/cinteropBenchmarks/typesBenchmark.kt) [[C source code](../../performance/cinterop/src/nativeInterop/cinterop/types.def)] (24%)
+* [`Ring::ClassList.filterAndMap`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassListBenchmark.kt) (22%)
+* [`Ring::Euler.problem8`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/EulerBenchmark.kt) (20%)
+* [`Ring::DefaultArgument.testEightOfEight`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/DefaultArgumentBenchmark.kt) (18%)
+* [`Ring::IntStream.copy`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/IntStreamBenchmark.kt) (8%)
+* [`Ring::IntList.copy`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/IntListBenchmark.kt) (6%)
+* other 17 tests with score difference showed <= 5% of gap
+
+<ins>baseline3-vs-baseline</ins>
 
 _Geometric mean:_ 0.00 ± 0.00 %
 
