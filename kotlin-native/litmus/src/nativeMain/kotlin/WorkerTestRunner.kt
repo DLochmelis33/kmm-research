@@ -42,6 +42,7 @@ class WorkerTestRunner : LitmusTestRunner {
                     }
                 }
             }
+            worker.requestTermination()
         }.forEach { it.result }
         for (test in testBatch) test.arbiter()
         val outcomeSetup = testBatch.first().getOutcomeSetup()
