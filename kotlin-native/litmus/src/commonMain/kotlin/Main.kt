@@ -4,11 +4,14 @@ fun main() {
     val runner = WorkerTestRunner()
 
     val parameters = variateParameters(
-            AffinitySchedules.maybeBestTwoActorSchedules,
-            listOf(5, 7, 10, 15, 20, 30, 50),
+            listOf(
+                    listOf(setOf(4), setOf(7)),
+                    listOf(setOf(0), setOf(2)),
+            ),
+            listOf(50),
             listOf(null /* { MemShuffler(50_000) } */),
     ).toList()
-    val singleTestDuration = 1.seconds
+    val singleTestDuration = 10.seconds
     println("parameters count: ${parameters.size}")
     println("ETA: T+ ${(singleTestDuration * parameters.size).toComponents { m, s, _ -> "$m m $s s" }}")
     var cnt = 1

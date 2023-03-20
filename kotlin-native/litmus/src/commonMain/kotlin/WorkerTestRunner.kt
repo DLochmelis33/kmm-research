@@ -17,15 +17,19 @@ class WorkerTestRunner : LitmusTestRunner {
                 BasicLitmusTest::actor1,
                 BasicLitmusTest::actor2,
         )
-        require(actorFunctions.size == parameters.affinityMap.size)
+        require(actorFunctions.size == parameters.affinityMap.size) { "parameters don't match actors" }
         BasicLitmusTest.memShuffler = parameters.memShufflerProducer?.invoke()
         val testBatch = List(batchSize) { testProducer() }
         val workerContext = WorkerContext(testBatch, parameters.syncPeriod, SpinBarrier(actorFunctions.size))
         actorFunctions.mapIndexed { i, actorFun ->
             val worker = Worker.start()
-            val cpuSet = parameters.affinityMap[i]
-            worker.setAffinity(cpuSet)
-            require(worker.getAffinity() == cpuSet)
+
+            getAffinityManager()?.run {
+                val cpuSet = parameters.affinityMap[i]
+                setAffinity(worker, cpuSet)
+                require(getAffinity(worker) == cpuSet) { "affinity setting failed" }
+            }
+
             worker.execute(
                     TransferMode.SAFE /* ignored */,
                     { actorFun to workerContext }

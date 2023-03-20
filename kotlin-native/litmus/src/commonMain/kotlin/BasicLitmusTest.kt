@@ -76,6 +76,7 @@ interface LitmusTestRunner {
         val results = mutableListOf<OutcomeInfo>()
         val start = getTimeMillis()
         while (getTimeMillis() - start < timeLimit.inWholeMilliseconds) {
+            // TODO: fix magic number
             results.addAll(runTest(10_000, parameters, testProducer))
         }
         return results.merge()
