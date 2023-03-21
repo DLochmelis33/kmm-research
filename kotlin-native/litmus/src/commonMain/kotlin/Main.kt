@@ -1,9 +1,11 @@
 import kotlin.time.Duration.Companion.seconds
 
 fun main() {
-//    val sample1 = listOf(10000, 20000, 30000)
-//    val sample2 = listOf(5000, 10000, 15000)
-//    println(chiSquaredTest(sample1, sample2))
+//    val sample1 = listOf(10200, 20000, 30000)
+//    val sample2 = listOf(5000, 10001, 15000)
+//    val sample3 = listOf(1000, 2000, 3050)
+//    val sample4 = listOf(3000, 6000, 8900)
+//    println(chiSquaredTest(listOf(sample1, sample2, sample3, sample4)))
     distributionTest()
 }
 
@@ -24,23 +26,28 @@ fun distributionTest() {
             }.flatten().merge()
         }
 
-        outer@for (r1 in results) {
-            for (r2 in results) {
-                if (r1 == r2) continue
+        val outcomes = results.map { it.map { it.outcome }.toSet() }.reduce(Set<Any?>::union).toList()
+        val samples = results.map { r -> outcomes.map { o -> r.firstOrNull { it.outcome == o }?.count ?: 0 } }
+        val accepted = chiSquaredTest(samples)
+        println(if (accepted) "accepted" else "rejected")
 
-                // ensure same order
-                val sample1 = r1.map { it.count }
-                val sample2 = r1.map { o -> r2.firstOrNull { it.outcome == o.outcome }?.count ?: 0 }
-
-                val accept = chiSquaredTest(sample1, sample2)
-                if(!accept) {
-                    println("rejected!")
-                    r1.prettyPrint()
-                    r2.prettyPrint()
-                    break@outer
-                }
-            }
-        }
+//        outer@for (r1 in results) {
+//            for (r2 in results) {
+//                if (r1 == r2) continue
+//
+//                // ensure same order
+//                val sample1 = r1.map { it.count }
+//                val sample2 = r1.map { o -> r2.firstOrNull { it.outcome == o.outcome }?.count ?: 0 }
+//
+//                val accept = chiSquaredTest(sample1, sample2)
+//                if(!accept) {
+//                    println("rejected!")
+//                    r1.prettyPrint()
+//                    r2.prettyPrint()
+//                    break@outer
+//                }
+//            }
+//        }
     }
 }
 
