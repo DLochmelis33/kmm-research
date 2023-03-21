@@ -6,11 +6,12 @@ interface AffinityManager {
 
     fun scheduleShort2(): List<AffinityMap>
     fun scheduleLong2(): List<AffinityMap>
-    fun scheduleUnrestricted2(): List<AffinityMap>
 }
 
 expect fun getAffinityManager(): AffinityManager?
 
-fun List<AffinityMap>?.orStub2(): List<AffinityMap> {
-    return this ?: listOf(listOf((0..7).toSet(), (0..7).toSet()))
+fun List<AffinityMap>?.orUnrestricted(actorCount: Int): List<AffinityMap> {
+    return this ?: affinityScheduleUnrestricted(actorCount)
 }
+
+fun affinityScheduleUnrestricted(actorCount: Int) = listOf(List(actorCount) { (0..7).toSet() })

@@ -1,3 +1,4 @@
+import kotlinx.coroutines.runBlocking
 import kotlin.native.concurrent.TransferMode
 import kotlin.native.concurrent.Worker
 
@@ -13,11 +14,8 @@ object WorkerTestRunner : LitmusTestRunner {
             parameters: LitmusTestParameters,
             testProducer: () -> BasicLitmusTest
     ): LitmusResult {
-        val actorFunctions: List<(BasicLitmusTest) -> Unit> = listOf(
-                BasicLitmusTest::actor1,
-                BasicLitmusTest::actor2,
-        )
-        require(actorFunctions.size == parameters.affinityMap.size) { "parameters don't match actors" }
+        val actorFunctions: List<suspend (BasicLitmusTest) -> Any?> = runBlocking { testProducer().overriddenActors() }
+        require(actorFunctions.size == parameters.affinityMap.size) { "affinity parameters don't match actors" }
         BasicLitmusTest.memShuffler = parameters.memShufflerProducer?.invoke()
         val testBatch = List(batchSize) { testProducer() }
         val workerContext = WorkerContext(testBatch, parameters.syncPeriod, SpinBarrier(actorFunctions.size))
@@ -34,15 +32,17 @@ object WorkerTestRunner : LitmusTestRunner {
                     TransferMode.SAFE /* ignored */,
                     { actorFun to workerContext }
             ) { (actorFun, workerContext) ->
-                workerContext.apply {
-                    var cnt = 0
-                    for (test in tests) {
-                        if (cnt == syncPeriod) {
-                            cnt = 0
-                            barrier.wait()
+                runBlocking {
+                    workerContext.apply {
+                        var cnt = 0
+                        for (test in tests) {
+                            if (cnt == syncPeriod) {
+                                cnt = 0
+                                barrier.wait()
+                            }
+                            actorFun(test)
+                            cnt++
                         }
-                        actorFun(test)
-                        cnt++
                     }
                 }
             }

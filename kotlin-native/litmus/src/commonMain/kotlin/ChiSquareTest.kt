@@ -40,14 +40,6 @@ fun chiSquaredTest(samples: List<List<Int>>): Boolean {
     val n = samples[0].size // number of categories
     require(samples.all { it.size == n }) { "incomparable samples" }
     val dof = (k - 1) * (n - 1) // degrees of freedom
-    val obs = Array(k) { IntArray(n) } // observed frequencies
-
-    // fill in observed frequencies
-    for (i in 0 until k) {
-        for (j in 0 until n) {
-            obs[i][j] = samples[i][j]
-        }
-    }
 
     // calculate expected frequencies
     val totalTotal = samples.flatten().sum()
@@ -64,7 +56,7 @@ fun chiSquaredTest(samples: List<List<Int>>): Boolean {
     var chiSq = 0.0
     for (i in 0 until k) {
         for (j in 0 until n) {
-            val o = obs[i][j].toDouble()
+            val o = samples[i][j].toDouble()
             val e = exp[i][j]
             chiSq += (o - e) * (o - e) / e
         }

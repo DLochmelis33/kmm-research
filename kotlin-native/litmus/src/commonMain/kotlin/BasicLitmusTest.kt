@@ -4,8 +4,14 @@ import kotlin.system.getTimeMillis
 import kotlin.time.Duration
 
 abstract class BasicLitmusTest(val name: String) {
-    abstract fun actor1()
-    abstract fun actor2()
+    abstract suspend fun actor1(): Any?
+    abstract suspend fun actor2(): Any?
+    open suspend fun actor3(): Any? = Placeholder
+    open suspend fun actor4(): Any? = Placeholder
+    open suspend fun actor5(): Any? = Placeholder
+    open suspend fun actor6(): Any? = Placeholder
+    open suspend fun actor7(): Any? = Placeholder
+    open suspend fun actor8(): Any? = Placeholder
     open fun arbiter() {}
 
     private val outcomeRef = AtomicReference<Any?>(null)
@@ -16,8 +22,22 @@ abstract class BasicLitmusTest(val name: String) {
         }
         get() = outcomeRef.value
 
+    // note: modifies receiver object
+    suspend fun overriddenActors(): List<suspend (BasicLitmusTest) -> Any?> {
+        val actors = mutableListOf(BasicLitmusTest::actor1, BasicLitmusTest::actor2)
+        if(actor3() != Placeholder) actors.add(BasicLitmusTest::actor3)
+        if(actor4() != Placeholder) actors.add(BasicLitmusTest::actor4)
+        if(actor5() != Placeholder) actors.add(BasicLitmusTest::actor5)
+        if(actor6() != Placeholder) actors.add(BasicLitmusTest::actor6)
+        if(actor7() != Placeholder) actors.add(BasicLitmusTest::actor7)
+        if(actor8() != Placeholder) actors.add(BasicLitmusTest::actor8)
+        return actors
+    }
+
     companion object {
         var memShuffler: MemShuffler? = null
+
+        private object Placeholder
     }
 }
 
