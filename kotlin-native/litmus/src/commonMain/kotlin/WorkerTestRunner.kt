@@ -1,7 +1,7 @@
 import kotlin.native.concurrent.TransferMode
 import kotlin.native.concurrent.Worker
 
-class WorkerTestRunner : LitmusTestRunner {
+object WorkerTestRunner : LitmusTestRunner {
     private data class WorkerContext(
             val tests: List<BasicLitmusTest>,
             val syncPeriod: Int,

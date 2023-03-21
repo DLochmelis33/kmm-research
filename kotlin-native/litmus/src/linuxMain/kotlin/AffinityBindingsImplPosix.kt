@@ -40,4 +40,30 @@ actual fun getAffinityManager(): AffinityManager? = object : AffinityManager {
     override fun getAffinity(w: Worker): Set<Int> {
         return getAffinity(w.platformThreadId)
     }
+
+    override fun scheduleUnrestricted2(): List<AffinityMap> {
+        return listOf(
+                listOf((0..7).toSet(), (0..7).toSet())
+        )
+    }
+
+    override fun scheduleShort2(): List<AffinityMap> {
+        return listOf(
+                listOf(setOf(0), setOf(1)),
+                listOf(setOf(0), setOf(2)),
+                listOf(setOf(1), setOf(2)),
+        )
+    }
+
+    override fun scheduleLong2(): List<AffinityMap> {
+        return scheduleShort2()  + listOf(
+                listOf(setOf(0), setOf(0)),
+                listOf(setOf(0), setOf(3)),
+                listOf(setOf(0), setOf(7)),
+                listOf(setOf(3), setOf(4)),
+                listOf(setOf(0, 1), setOf(2, 3)),
+                listOf(setOf(0, 1), setOf(0, 1)),
+                listOf(setOf(0, 4), setOf(1, 5)),
+        )
+    }
 }
