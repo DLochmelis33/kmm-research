@@ -426,7 +426,8 @@ internal val bitcodePhase = SameTypeNamedCompilerPhase(
 private val bitcodePostprocessingPhase = SameTypeNamedCompilerPhase(
         name = "BitcodePostprocessing",
         description = "Optimize and rewrite bitcode",
-        lower = checkExternalCallsPhase then
+        lower = changeAtomicOrderingPhase then
+                checkExternalCallsPhase then
                 bitcodeOptimizationPhase then
                 coveragePhase then
                 removeRedundantSafepointsPhase then
@@ -443,9 +444,10 @@ private val backendCodegen = SameTypeNamedCompilerPhase(
                                             // With that we guarantee that inline functions are unlowered while being inlined.
                 bitcodePhase then
                 verifyBitcodePhase then
-                printBitcodePhase then
+//                printBitcodePhase then
                 linkBitcodeDependenciesPhase then
-                bitcodePostprocessingPhase
+                bitcodePostprocessingPhase then
+                printBitcodePhase // moved this phase here to print bitcode after(!) changeAtomicOrderingPhase
 )
 
 internal val createGenerationStatePhase = namedUnitPhase(

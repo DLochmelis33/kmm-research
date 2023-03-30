@@ -15,6 +15,7 @@ val toolSuffix = if (System.getProperty("os.name").startsWith("Windows")) ".bat"
 val binarySuffix = getNativeProgramExtension()
 val defaultCompilerOpts =  listOf("-g")
 val buildOpts = getCompileOnlyBenchmarksOpts(project, defaultCompilerOpts)
+val linkerOpts = listOf("-linker-options", "-latomic") // support change of atomic ordering mode of accesses  
 
 compileBenchmark {
     applicationName = "HelloWorld"
@@ -22,8 +23,11 @@ compileBenchmark {
     compilerOpts = buildOpts
     buildSteps {
         step("runKonanc") {
-            command("$dist/bin/konanc$toolSuffix", "$projectDir/src/main/kotlin/main.kt", "-o",
-                    "$buildDir/program$binarySuffix", *(buildOpts.toTypedArray()))
+            command = listOf(
+                "$dist/bin/konanc$toolSuffix",
+                "$projectDir/src/main/kotlin/main.kt",
+                "-o", "$buildDir/program$binarySuffix"
+            ) + buildOpts + linkerOpts
         }
     }
 }

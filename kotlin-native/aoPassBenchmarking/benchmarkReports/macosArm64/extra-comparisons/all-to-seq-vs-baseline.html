@@ -1,0 +1,4917 @@
+<html >
+  <head >
+    <title >
+      Benchmarks report
+    </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    </link>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js">
+    </script>
+  </head>
+  <body >
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color:#161616;">
+      <img style="width:60px;height:60px;" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/04/256px-kotlin-logo-svg.png">
+      </img>
+      <span class="navbar-brand mb-0 h1">
+        Benchmarks report
+      </span>
+    </header>
+    <div class="container-fluid">
+      <p >
+      </p>
+      <h4 >
+        Environment
+      </h4>
+      <table class="table table-sm table-bordered table-hover" style="width:initial;">
+        <thead >
+          <tr >
+            <th rowspan="2" colspan="1">
+              Run
+            </th>
+            <th rowspan="1" colspan="2">
+              Machine
+            </th>
+            <th rowspan="1" colspan="2">
+              JDK
+            </th>
+          </tr>
+          <tr >
+            <th rowspan="1" colspan="1">
+              OS
+            </th>
+            <th rowspan="1" colspan="1">
+              CPU
+            </th>
+            <th rowspan="1" colspan="1">
+              Version
+            </th>
+            <th rowspan="1" colspan="1">
+              Vendor
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr >
+            <th scope="row" rowspan="1" colspan="1">
+              First
+            </th>
+            <td rowspan="1" colspan="1">
+              Mac OS X
+            </td>
+            <td rowspan="1" colspan="1">
+              aarch64
+            </td>
+            <td rowspan="1" colspan="1">
+              17.0.5
+            </td>
+            <td rowspan="1" colspan="1">
+              Eclipse Adoptium
+            </td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr >
+            <th scope="row" rowspan="1" colspan="1">
+              Second
+            </th>
+            <td rowspan="1" colspan="1">
+              Mac OS X
+            </td>
+            <td rowspan="1" colspan="1">
+              aarch64
+            </td>
+            <td rowspan="1" colspan="1">
+              17.0.5
+            </td>
+            <td rowspan="1" colspan="1">
+              Eclipse Adoptium
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 >
+        Compiler
+      </h4>
+      <table class="table table-sm table-bordered table-hover" style="width:initial;">
+        <thead >
+          <tr >
+            <th rowspan="2" colspan="1">
+              Run
+            </th>
+            <th rowspan="1" colspan="3">
+              Backend
+            </th>
+            <th rowspan="2" colspan="1">
+              Kotlin
+            </th>
+          </tr>
+          <tr >
+            <th rowspan="1" colspan="1">
+              Type
+            </th>
+            <th rowspan="1" colspan="1">
+              Version
+            </th>
+            <th rowspan="1" colspan="1">
+              Flags
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr >
+            <th scope="row" rowspan="1" colspan="1">
+              First
+            </th>
+            <td rowspan="1" colspan="1">
+              native
+            </td>
+            <td rowspan="1" colspan="1">
+              1.6.0-dev
+            </td>
+            <td rowspan="1" colspan="1">
+              "-opt" for [Cinterop, Numerical, ObjCInterop, Ring, Startup, swiftInterop], "-g" for [FrameworkBenchmarksAnalyzer], "-Xcache-directory=/Users/research/gleb-benchmarking/kmm-research/kotlin-native/dist/klib/cache/macos_arm64-gSTATIC", "-g" for [HelloWorld]
+            </td>
+            <td rowspan="1" colspan="1">
+              1.8.255-SNAPSHOT
+            </td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr >
+            <th scope="row" rowspan="1" colspan="1">
+              Second
+            </th>
+            <td rowspan="1" colspan="1">
+              native
+            </td>
+            <td rowspan="1" colspan="1">
+              1.6.0-dev
+            </td>
+            <td rowspan="1" colspan="1">
+              "-opt" for [Cinterop, Numerical, ObjCInterop, Ring, Startup, swiftInterop], "-g" for [FrameworkBenchmarksAnalyzer], "-Xcache-directory=/Users/research/gleb-benchmarking/kmm-research/kotlin-native/dist/klib/cache/macos_arm64-gSTATIC", "-g" for [HelloWorld]
+            </td>
+            <td rowspan="1" colspan="1">
+              1.8.255-SNAPSHOT
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr >
+      </hr>
+      <h4 >
+        Status Summary
+      </h4>
+      <div class="alert alert-success" role="alert">
+        All benchmarks passed!
+      </div>
+      <table class="table table-sm table-striped table-hover" style="width:initial; font-size: 11pt;">
+        <thead >
+          <tr >
+            <th rowspan="1" colspan="1">
+              Status Group
+            </th>
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+        </tbody>
+        <tfoot >
+          <tr >
+            <th rowspan="1" colspan="1">
+              Total becnhmarks number
+            </th>
+            <th rowspan="1" colspan="1">
+              256
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+      <hr >
+      </hr>
+      <h4 >
+        Performance Summary
+      </h4>
+      <table class="table table-sm table-striped table-hover" style="width:initial;">
+        <thead >
+          <tr >
+            <th rowspan="2" colspan="1">
+              Change
+            </th>
+            <th rowspan="1" colspan="3">
+              EXECUTION_TIME
+            </th>
+            <th rowspan="1" colspan="3">
+              CODE_SIZE
+            </th>
+            <th rowspan="1" colspan="3">
+              COMPILE_TIME
+            </th>
+            <th rowspan="1" colspan="3">
+              BUNDLE_SIZE
+            </th>
+          </tr>
+          <tr >
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+            <th rowspan="1" colspan="1">
+              Maximum
+            </th>
+            <th rowspan="1" colspan="1">
+              Geometric mean
+            </th>
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+            <th rowspan="1" colspan="1">
+              Maximum
+            </th>
+            <th rowspan="1" colspan="1">
+              Geometric mean
+            </th>
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+            <th rowspan="1" colspan="1">
+              Maximum
+            </th>
+            <th rowspan="1" colspan="1">
+              Geometric mean
+            </th>
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+            <th rowspan="1" colspan="1">
+              Maximum
+            </th>
+            <th rowspan="1" colspan="1">
+              Geometric mean
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr >
+            <th rowspan="1" colspan="1">
+              Regressions
+            </th>
+            <td rowspan="1" colspan="1">
+              237
+            </td>
+            <td bgcolor="#ff0000" rowspan="1" colspan="1">
+              91.46%
+            </td>
+            <td bgcolor="#ff0000" rowspan="1" colspan="1">
+              49.13%
+            </td>
+            <td rowspan="1" colspan="1">
+              7
+            </td>
+            <td bgcolor="#ff0000" rowspan="1" colspan="1">
+              7.64%
+            </td>
+            <td bgcolor="#ff0000" rowspan="1" colspan="1">
+              3.76%
+            </td>
+            <td rowspan="1" colspan="1">
+              1
+            </td>
+            <td bgcolor="#ff4848" rowspan="1" colspan="1">
+              3.58%
+            </td>
+            <td bgcolor="#ff4d4d" rowspan="1" colspan="1">
+              1.17%
+            </td>
+            <td rowspan="1" colspan="1">
+              -
+            </td>
+            <td rowspan="1" colspan="1">
+              -
+            </td>
+            <td rowspan="1" colspan="1">
+              -
+            </td>
+            <tr >
+              <th rowspan="1" colspan="1">
+                Improvements
+              </th>
+              <td rowspan="1" colspan="1">
+                1
+              </td>
+              <td bgcolor="#a8ffa8" rowspan="1" colspan="1">
+                -3.81%
+              </td>
+              <td bgcolor="#c0ffc0" rowspan="1" colspan="1">
+                -1.01%
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                6
+              </td>
+              <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                -14.92%
+              </td>
+              <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                -5.22%
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+            </tr>
+          </tr>
+        </tbody>
+      </table>
+      <div class="accordion">
+        <div class="card" style="border-bottom: 1px solid rgba(0,0,0,.125);">
+          <div class="card-header" id="heading" style="padding: 0;">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#EXECUTION_TIME">
+              EXECUTION_TIME
+            </button>
+          </div>
+          <div class="collapse show" id="EXECUTION_TIME">
+            <div class="accordion-inner">
+              <table id="result" class="table table-striped table-bordered">
+                <thead >
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Benchmark
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      First score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Second score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Percent
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Ratio
+                    </th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr style="border-bottom: 2.3pt solid black; border-top: 2.3pt solid black">
+                    <th rowspan="1" colspan="1">
+                      Geometric mean
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      562.3948 ± 0.4479
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      223.0923 ± 0.2227
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      60.26 ± 0.08 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      2.52 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Inheritance.baseCalls
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      5977.0898 ± 2.4263
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      510.1325 ± 0.0459
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      91.46 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      11.72 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ArrayCopyBenchmark.copyInSameArray
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      807671.5868 ± 156.0939
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      82898.0716 ± 72.3345
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      89.73 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      9.74 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::DefaultArgument.testEightOfEight
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0209 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0026 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      87.66 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff0707" rowspan="1" colspan="1">
+                      8.14 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::AllocationBenchmark.allocateObjects
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      59.4562 ± 0.0052
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      8.2293 ± 0.0013
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      86.16 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      7.22 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop::boxedInt
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      67.8032 ± 0.0270
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      9.6517 ± 0.0012
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      85.76 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff0e0e" rowspan="1" colspan="1">
+                      7.02 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::CompanionObject.invokeRegularFunction
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0168 ± 0.0001
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0024 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      85.61 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff0e0e" rowspan="1" colspan="1">
+                      6.99 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ChainableBenchmark.testChainable
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      37484.0660 ± 4.3231
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6060.6407 ± 1.3069
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      83.83 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      6.18 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ParameterNotNull.invokeEightArgsWithoutNullCheck
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0210 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0035 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      83.16 ± 0.06 %
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      5.96 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ParameterNotNull.invokeEightArgsWithNullCheck
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0209 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0035 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      83.13 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      5.95 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.countWithLambda
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      207.6642 ± 0.0588
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      35.0699 ± 0.0137
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      83.10 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      5.92 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Casts.classCast
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      479764.6206 ± 137.5560
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      81382.7166 ± 6.7819
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      83.03 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff1818" rowspan="1" colspan="1">
+                      5.90 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::BunnymarkBenchmark.testBunnymark
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      4712240.3611 ± 6272.0743
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      804596.9610 ± 755.4387
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      82.89 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff1818" rowspan="1" colspan="1">
+                      5.86 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Casts.interfaceCast
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      804320.0000 ± 43.1898
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      144604.4475 ± 24.9987
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      82.02 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff1b1b" rowspan="1" colspan="1">
+                      5.56 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::DefaultArgument.testFourOfFour
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0139 ± 0.0001
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0025 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      81.63 ± 0.16 %
+                    </td>
+                    <td bgcolor="#ff1c1c" rowspan="1" colspan="1">
+                      5.48 ± 0.03
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Loop.arrayListForeachLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      440.2307 ± 0.0623
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      87.8950 ± 0.0633
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      80.02 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff2222" rowspan="1" colspan="1">
+                      5.01 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Loop.arrayListLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      436.7145 ± 0.5852
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      88.2228 ± 0.0262
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      79.77 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff2222" rowspan="1" colspan="1">
+                      4.95 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop::int
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      72.5446 ± 0.0109
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      15.0615 ± 0.0026
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      79.23 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff2424" rowspan="1" colspan="1">
+                      4.82 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.stringIndicesLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      92.0198 ± 0.1251
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      19.2043 ± 0.0089
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      79.09 ± 0.06 %
+                    </td>
+                    <td bgcolor="#ff2424" rowspan="1" colspan="1">
+                      4.79 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.uShortArrayIndicesLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      30.9740 ± 0.0134
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6.4694 ± 0.0058
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      79.09 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff2525" rowspan="1" colspan="1">
+                      4.79 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.uIntArrayIndicesLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      30.9817 ± 0.0063
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6.4927 ± 0.0050
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      79.02 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff2525" rowspan="1" colspan="1">
+                      4.77 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.uLongArrayIndicesLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      30.9467 ± 0.0071
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6.5500 ± 0.0042
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      78.82 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff2525" rowspan="1" colspan="1">
+                      4.72 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Loop.arrayForeachLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      176.0190 ± 0.0549
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      38.1298 ± 0.0205
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      78.32 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff2727" rowspan="1" colspan="1">
+                      4.62 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Loop.arrayLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      176.1049 ± 0.0602
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      38.2538 ± 0.0206
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      78.26 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff2727" rowspan="1" colspan="1">
+                      4.60 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Lambda.capturingLambdaNoInline
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      176.8418 ± 0.0375
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      38.4386 ± 0.0751
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      78.22 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff2727" rowspan="1" colspan="1">
+                      4.60 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Lambda.methodReferenceNoInline
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      158.8444 ± 0.0149
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      34.7923 ± 0.0696
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      78.05 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff2828" rowspan="1" colspan="1">
+                      4.57 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Lambda.noncapturingLambdaNoInline
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      158.8246 ± 0.0140
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      35.3469 ± 0.0925
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      77.68 ± 0.12 %
+                    </td>
+                    <td bgcolor="#ff2929" rowspan="1" colspan="1">
+                      4.49 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.copyManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      674.6577 ± 0.0988
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      151.2232 ± 0.0426
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      77.58 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff2929" rowspan="1" colspan="1">
+                      4.46 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Singleton.access
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      236.0472 ± 0.0178
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      54.2802 ± 0.1766
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      76.93 ± 0.15 %
+                    </td>
+                    <td bgcolor="#ff2b2b" rowspan="1" colspan="1">
+                      4.35 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.arrayIndicesLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      37.5094 ± 0.0175
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      8.8744 ± 0.0061
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      76.31 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff2d2d" rowspan="1" colspan="1">
+                      4.23 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassBaseline.allocateListAndWrite
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      465.5284 ± 0.1438
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      110.8685 ± 0.0708
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      76.16 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff2d2d" rowspan="1" colspan="1">
+                      4.20 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::DefaultArgument.testTwoOfTwo
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0111 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0026 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      76.03 ± 0.16 %
+                    </td>
+                    <td bgcolor="#ff2d2d" rowspan="1" colspan="1">
+                      4.19 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::DefaultArgument.testOneOfEight
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0105 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0025 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.87 ± 0.18 %
+                    </td>
+                    <td bgcolor="#ff2e2e" rowspan="1" colspan="1">
+                      4.17 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::DefaultArgument.testOneOfFour
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0105 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0025 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.78 ± 0.22 %
+                    </td>
+                    <td bgcolor="#ff2e2e" rowspan="1" colspan="1">
+                      4.15 ± 0.03
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::DefaultArgument.testOneOfTwo
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0106 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0025 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.73 ± 0.66 %
+                    </td>
+                    <td bgcolor="#ff2d2d" rowspan="1" colspan="1">
+                      4.19 ± 0.07
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.copy
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      246.3811 ± 0.1489
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      60.3312 ± 0.0330
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.48 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff2f2f" rowspan="1" colspan="1">
+                      4.08 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::WeakRefBenchmark.aliveReference
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      156.5050 ± 0.0128
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      38.5600 ± 0.0345
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.34 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff2f2f" rowspan="1" colspan="1">
+                      4.06 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Switch.testSealedWhenSwitch
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      368.8219 ± 0.0544
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      90.7414 ± 0.2650
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.32 ± 0.14 %
+                    </td>
+                    <td bgcolor="#ff2f2f" rowspan="1" colspan="1">
+                      4.06 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.copyManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      502.0013 ± 0.0922
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      124.6327 ± 0.0660
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.16 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff3030" rowspan="1" colspan="1">
+                      4.03 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.filterAndCountWithLambda
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      504.0156 ± 0.3877
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      125.2898 ± 0.2017
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.08 ± 0.08 %
+                    </td>
+                    <td bgcolor="#ff3030" rowspan="1" colspan="1">
+                      4.02 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::WeakRefBenchmark.deadReference
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      156.4409 ± 0.3176
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      38.9287 ± 0.0233
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.05 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff3030" rowspan="1" colspan="1">
+                      4.02 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.copy
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      250.0315 ± 0.0515
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      62.4040 ± 0.0279
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.03 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff3030" rowspan="1" colspan="1">
+                      4.01 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.intArrayIndicesLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      24.8490 ± 0.0084
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6.2045 ± 0.0037
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      75.01 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff3030" rowspan="1" colspan="1">
+                      4.00 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.filterWithLambda
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      502.4768 ± 0.3869
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      125.3906 ± 0.1864
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      74.99 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff3030" rowspan="1" colspan="1">
+                      4.01 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.charArrayIndicesLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      24.6158 ± 0.0125
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6.1566 ± 0.0046
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      74.96 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff3030" rowspan="1" colspan="1">
+                      4.00 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.copy
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      940.7285 ± 0.8318
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      236.3233 ± 0.1087
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      74.84 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff3131" rowspan="1" colspan="1">
+                      3.98 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ParameterNotNull.invokeTwoArgsWithNullCheck
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0139 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0035 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      74.73 ± 0.08 %
+                    </td>
+                    <td bgcolor="#ff3131" rowspan="1" colspan="1">
+                      3.97 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ParameterNotNull.invokeTwoArgsWithoutNullCheck
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0139 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0035 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      74.68 ± 0.17 %
+                    </td>
+                    <td bgcolor="#ff3131" rowspan="1" colspan="1">
+                      3.97 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.copyManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      933.8173 ± 0.3225
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      237.9508 ± 0.1018
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      74.50 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff3232" rowspan="1" colspan="1">
+                      3.92 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Switch.testDenseEnumsSwitch
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      220.1662 ± 0.0488
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      56.6100 ± 0.0203
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      74.27 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff3232" rowspan="1" colspan="1">
+                      3.89 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Loop.arrayWhileLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      228.7228 ± 0.0632
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      60.1789 ± 0.0481
+                    </td>
+                    <td bgcolor="#ff0303" rowspan="1" colspan="1">
+                      73.66 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff3434" rowspan="1" colspan="1">
+                      3.80 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::PrimeList.calcEratosthenes
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      40856.1023 ± 7.4520
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      10764.1057 ± 4.2120
+                    </td>
+                    <td bgcolor="#ff0303" rowspan="1" colspan="1">
+                      73.64 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff3434" rowspan="1" colspan="1">
+                      3.80 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.copy
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      241.4119 ± 0.1466
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      63.7341 ± 0.0505
+                    </td>
+                    <td bgcolor="#ff0303" rowspan="1" colspan="1">
+                      73.56 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff3434" rowspan="1" colspan="1">
+                      3.79 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Switch.testObjConstSwitch
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      308.1414 ± 0.1129
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      81.9570 ± 0.0831
+                    </td>
+                    <td bgcolor="#ff0303" rowspan="1" colspan="1">
+                      73.37 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff3535" rowspan="1" colspan="1">
+                      3.76 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Loop.arrayIndexLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      225.9926 ± 0.1517
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      61.1049 ± 0.0216
+                    </td>
+                    <td bgcolor="#ff0303" rowspan="1" colspan="1">
+                      72.93 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff3636" rowspan="1" colspan="1">
+                      3.70 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::OctoTest
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      5819.6228 ± 0.8230
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1627.5533 ± 0.3756
+                    </td>
+                    <td bgcolor="#ff0303" rowspan="1" colspan="1">
+                      72.02 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff3838" rowspan="1" colspan="1">
+                      3.58 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Richards
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      354.9865 ± 0.0681
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      99.8784 ± 0.0280
+                    </td>
+                    <td bgcolor="#ff0303" rowspan="1" colspan="1">
+                      71.85 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff3838" rowspan="1" colspan="1">
+                      3.55 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::DeltaBlue
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1379.4587 ± 2.4514
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      390.3878 ± 0.3230
+                    </td>
+                    <td bgcolor="#ff0303" rowspan="1" colspan="1">
+                      71.63 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff3939" rowspan="1" colspan="1">
+                      3.53 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.stringLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      65.8605 ± 0.0125
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      18.8363 ± 0.0099
+                    </td>
+                    <td bgcolor="#ff0303" rowspan="1" colspan="1">
+                      71.38 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff3a3a" rowspan="1" colspan="1">
+                      3.50 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::String.stringBuilderConcatNullable
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      560.0348 ± 0.2826
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      162.1267 ± 0.2351
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      70.99 ± 0.08 %
+                    </td>
+                    <td bgcolor="#ff3a3a" rowspan="1" colspan="1">
+                      3.45 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::PrimeList.calcDirect
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1212.4097 ± 2.8895
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      350.3293 ± 0.5186
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      70.99 ± 0.14 %
+                    </td>
+                    <td bgcolor="#ff3a3a" rowspan="1" colspan="1">
+                      3.46 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Lambda.noncapturingLambda
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.7262 ± 0.0030
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.2008 ± 0.0014
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      70.65 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff3b3b" rowspan="1" colspan="1">
+                      3.41 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Lambda.mutatingLambda
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.7229 ± 0.0027
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.2009 ± 0.0012
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      70.64 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff3b3b" rowspan="1" colspan="1">
+                      3.41 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Lambda.methodReference
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.7228 ± 0.0043
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.2088 ± 0.0022
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      70.59 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff3b3b" rowspan="1" colspan="1">
+                      3.40 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::AbstractMethod.sortStrings
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      57.9043 ± 0.2400
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      16.8639 ± 0.1464
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      70.50 ± 0.51 %
+                    </td>
+                    <td bgcolor="#ff3b3b" rowspan="1" colspan="1">
+                      3.43 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.uShortArrayLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.7140 ± 0.0023
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.2361 ± 0.0019
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      70.43 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff3c3c" rowspan="1" colspan="1">
+                      3.38 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::String.stringBuilderConcat
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      542.9394 ± 0.4587
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      161.2846 ± 0.1047
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      70.25 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff3c3c" rowspan="1" colspan="1">
+                      3.37 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.arrayLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      25.3693 ± 0.0360
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      7.5581 ± 0.0046
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      70.15 ± 0.08 %
+                    </td>
+                    <td bgcolor="#ff3c3c" rowspan="1" colspan="1">
+                      3.36 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Inline.calculateGeneric
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.3839 ± 0.0525
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.2089 ± 0.0021
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.93 ± 0.18 %
+                    </td>
+                    <td bgcolor="#ff3d3d" rowspan="1" colspan="1">
+                      3.34 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Switch.testDenseIntSwitch
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      263.7203 ± 0.6975
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      78.9193 ± 0.2003
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.92 ± 0.16 %
+                    </td>
+                    <td bgcolor="#ff3d3d" rowspan="1" colspan="1">
+                      3.34 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.charArrayLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.3371 ± 0.0100
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.2086 ± 0.0045
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.91 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff3d3d" rowspan="1" colspan="1">
+                      3.33 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::AbstractMethod.sortStringsWithComparator
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      80.0762 ± 0.0515
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      24.0312 ± 0.0544
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.90 ± 0.14 %
+                    </td>
+                    <td bgcolor="#ff3d3d" rowspan="1" colspan="1">
+                      3.33 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.openMethodBimorphic
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2383.2704 ± 0.2304
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      719.5374 ± 0.0561
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.80 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff3d3d" rowspan="1" colspan="1">
+                      3.31 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.interfaceMethodBimorphic
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2383.4794 ± 0.2358
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      719.5834 ± 0.1991
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.80 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff3d3d" rowspan="1" colspan="1">
+                      3.31 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Elvis.testElvis
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      222.7901 ± 0.0274
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      67.3125 ± 0.0407
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.76 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff3d3d" rowspan="1" colspan="1">
+                      3.31 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.intArrayLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.3251 ± 0.0024
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.2400 ± 0.0042
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.73 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff3d3d" rowspan="1" colspan="1">
+                      3.31 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop::stringToC
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10144.8064 ± 10.0268
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      3113.7045 ± 4.5812
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.23 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff3e3e" rowspan="1" colspan="1">
+                      3.26 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.uIntArrayLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.7144 ± 0.0019
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.4516 ± 0.0189
+                    </td>
+                    <td bgcolor="#ff0404" rowspan="1" colspan="1">
+                      69.12 ± 0.21 %
+                    </td>
+                    <td bgcolor="#ff3f3f" rowspan="1" colspan="1">
+                      3.25 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.uLongArrayLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.7127 ± 0.0029
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.4517 ± 0.0616
+                    </td>
+                    <td bgcolor="#ff0505" rowspan="1" colspan="1">
+                      68.87 ± 0.70 %
+                    </td>
+                    <td bgcolor="#ff3f3f" rowspan="1" colspan="1">
+                      3.25 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Switch.testSparseIntSwitch
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      220.2145 ± 0.0455
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      69.7010 ± 0.0277
+                    </td>
+                    <td bgcolor="#ff0505" rowspan="1" colspan="1">
+                      68.33 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff4141" rowspan="1" colspan="1">
+                      3.16 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::LocalObjects.localArray
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.2510 ± 0.0001
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0804 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0505" rowspan="1" colspan="1">
+                      67.93 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff4141" rowspan="1" colspan="1">
+                      3.12 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Euler.problem8
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      279.9891 ± 0.1050
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      90.9795 ± 0.2094
+                    </td>
+                    <td bgcolor="#ff0505" rowspan="1" colspan="1">
+                      67.42 ± 0.15 %
+                    </td>
+                    <td bgcolor="#ff4242" rowspan="1" colspan="1">
+                      3.08 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntBaseline.allocateArrayAndFill
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      29.5097 ± 0.0325
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      9.7491 ± 0.0084
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      66.90 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff4343" rowspan="1" colspan="1">
+                      3.03 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ParameterNotNull.invokeOneArgWithNullCheck
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0107 ± 0.0001
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0035 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      66.78 ± 0.37 %
+                    </td>
+                    <td bgcolor="#ff4343" rowspan="1" colspan="1">
+                      3.03 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassBaseline.consumeField
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      123.2600 ± 0.0233
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      41.0189 ± 0.0080
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      66.71 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff4444" rowspan="1" colspan="1">
+                      3.00 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Switch.testConstSwitch
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      246.3391 ± 0.3177
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      82.2837 ± 0.0543
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      66.53 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff4444" rowspan="1" colspan="1">
+                      2.99 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop::intMatrix
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      3320123.2918 ± 44419.1425
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1094125.4342 ± 2378.6363
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      66.53 ± 0.88 %
+                    </td>
+                    <td bgcolor="#ff4343" rowspan="1" colspan="1">
+                      3.03 ± 0.05
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ParameterNotNull.invokeOneArgWithoutNullCheck
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0107 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0036 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      66.34 ± 0.17 %
+                    </td>
+                    <td bgcolor="#ff4444" rowspan="1" colspan="1">
+                      2.98 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MatrixMap.add
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      11446.0164 ± 3.7642
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      3872.3037 ± 2.4491
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      66.14 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff4545" rowspan="1" colspan="1">
+                      2.96 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop::stringToKotlin
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10022747.1285 ± 2514.0846
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      3400388.5209 ± 3452.4075
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      66.03 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff4545" rowspan="1" colspan="1">
+                      2.95 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::searchRoutesInSwiftMultigraph
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      8575649.6147 ± 3940.0539
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2946575.5069 ± 2218.4775
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      65.60 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff4646" rowspan="1" colspan="1">
+                      2.91 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Switch.testVarSwitch
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      244.0827 ± 0.1988
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      83.9333 ± 0.0381
+                    </td>
+                    <td bgcolor="#ff0606" rowspan="1" colspan="1">
+                      65.57 ± 0.06 %
+                    </td>
+                    <td bgcolor="#ff4646" rowspan="1" colspan="1">
+                      2.91 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Switch.testStringsSwitch
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1161.6233 ± 0.1065
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      405.4526 ± 0.0879
+                    </td>
+                    <td bgcolor="#ff0707" rowspan="1" colspan="1">
+                      65.09 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff4747" rowspan="1" colspan="1">
+                      2.87 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Euler.problem2
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2.7909 ± 0.0070
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.9692 ± 0.0053
+                    </td>
+                    <td bgcolor="#ff0707" rowspan="1" colspan="1">
+                      65.00 ± 0.38 %
+                    </td>
+                    <td bgcolor="#ff4747" rowspan="1" colspan="1">
+                      2.88 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.countFilteredSome
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      18.1150 ± 0.0737
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6.3363 ± 0.0015
+                    </td>
+                    <td bgcolor="#ff0707" rowspan="1" colspan="1">
+                      64.87 ± 0.28 %
+                    </td>
+                    <td bgcolor="#ff4747" rowspan="1" colspan="1">
+                      2.86 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.countFilteredSomeManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      18.1211 ± 0.0827
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6.3349 ± 0.0019
+                    </td>
+                    <td bgcolor="#ff0707" rowspan="1" colspan="1">
+                      64.87 ± 0.32 %
+                    </td>
+                    <td bgcolor="#ff4747" rowspan="1" colspan="1">
+                      2.86 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.countFilteredSomeLocal
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      18.1126 ± 0.0811
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6.3919 ± 0.0026
+                    </td>
+                    <td bgcolor="#ff0707" rowspan="1" colspan="1">
+                      64.54 ± 0.32 %
+                    </td>
+                    <td bgcolor="#ff4848" rowspan="1" colspan="1">
+                      2.83 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::GraphSolver.solve
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      284756.1936 ± 131.6812
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      102127.2376 ± 51.2036
+                    </td>
+                    <td bgcolor="#ff0707" rowspan="1" colspan="1">
+                      64.10 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff4949" rowspan="1" colspan="1">
+                      2.79 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.copyManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1220.4624 ± 3.9509
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      439.1698 ± 1.1002
+                    </td>
+                    <td bgcolor="#ff0707" rowspan="1" colspan="1">
+                      63.81 ± 0.23 %
+                    </td>
+                    <td bgcolor="#ff4949" rowspan="1" colspan="1">
+                      2.78 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.floatArrayIndicesLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      25.9192 ± 0.0595
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      9.4121 ± 0.0058
+                    </td>
+                    <td bgcolor="#ff0707" rowspan="1" colspan="1">
+                      63.58 ± 0.17 %
+                    </td>
+                    <td bgcolor="#ff4a4a" rowspan="1" colspan="1">
+                      2.75 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.copy
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1304.1029 ± 0.9205
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      478.5330 ± 0.8114
+                    </td>
+                    <td bgcolor="#ff0808" rowspan="1" colspan="1">
+                      63.22 ± 0.12 %
+                    </td>
+                    <td bgcolor="#ff4b4b" rowspan="1" colspan="1">
+                      2.73 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::SplayWithWorkers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      992835.0418 ± 38861.4388
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      344784.3853 ± 10457.1632
+                    </td>
+                    <td bgcolor="#ff0808" rowspan="1" colspan="1">
+                      62.76 ± 2.81 %
+                    </td>
+                    <td bgcolor="#ff4747" rowspan="1" colspan="1">
+                      2.88 ± 0.19
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.interfaceMethodHexamorphic
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      8884.2928 ± 0.4983
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      3388.2293 ± 0.2443
+                    </td>
+                    <td bgcolor="#ff0909" rowspan="1" colspan="1">
+                      61.86 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff4d4d" rowspan="1" colspan="1">
+                      2.62 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::WeakRefBenchmark.dyingReference
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      180.7260 ± 0.4667
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      68.7248 ± 0.2181
+                    </td>
+                    <td bgcolor="#ff0909" rowspan="1" colspan="1">
+                      61.75 ± 0.24 %
+                    </td>
+                    <td bgcolor="#ff4d4d" rowspan="1" colspan="1">
+                      2.63 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Switch.testEnumsSwitch
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      248.6372 ± 0.0521
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      95.3823 ± 0.0286
+                    </td>
+                    <td bgcolor="#ff0909" rowspan="1" colspan="1">
+                      61.62 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff4e4e" rowspan="1" colspan="1">
+                      2.61 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Euler.problem1bySequence
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      635.8752 ± 0.9763
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      243.2853 ± 1.0969
+                    </td>
+                    <td bgcolor="#ff0909" rowspan="1" colspan="1">
+                      61.51 ± 0.35 %
+                    </td>
+                    <td bgcolor="#ff4d4d" rowspan="1" colspan="1">
+                      2.61 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop::union
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      16054.4018 ± 23.1231
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6197.1896 ± 10.7426
+                    </td>
+                    <td bgcolor="#ff0909" rowspan="1" colspan="1">
+                      61.28 ± 0.13 %
+                    </td>
+                    <td bgcolor="#ff4e4e" rowspan="1" colspan="1">
+                      2.59 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::CoordinatesSolver.solve
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1960374.2082 ± 4289.1244
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      768840.5287 ± 1952.0348
+                    </td>
+                    <td bgcolor="#ff0909" rowspan="1" colspan="1">
+                      60.60 ± 0.20 %
+                    </td>
+                    <td bgcolor="#ff4f4f" rowspan="1" colspan="1">
+                      2.55 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Elvis.testCompositeElvis
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      279.3568 ± 0.0769
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      111.7150 ± 0.0332
+                    </td>
+                    <td bgcolor="#ff0a0a" rowspan="1" colspan="1">
+                      59.99 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff5050" rowspan="1" colspan="1">
+                      2.50 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Euler.problem14full
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      9402.2184 ± 3.6513
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      3864.4881 ± 1.6040
+                    </td>
+                    <td bgcolor="#ff0b0b" rowspan="1" colspan="1">
+                      58.87 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff5252" rowspan="1" colspan="1">
+                      2.43 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop::struct
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      24869.1123 ± 82.2537
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      10312.8912 ± 44.1589
+                    </td>
+                    <td bgcolor="#ff0b0b" rowspan="1" colspan="1">
+                      58.22 ± 0.36 %
+                    </td>
+                    <td bgcolor="#ff5353" rowspan="1" colspan="1">
+                      2.41 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.copyManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1927.1565 ± 3.1244
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      807.2854 ± 0.4937
+                    </td>
+                    <td bgcolor="#ff0b0b" rowspan="1" colspan="1">
+                      58.02 ± 0.14 %
+                    </td>
+                    <td bgcolor="#ff5353" rowspan="1" colspan="1">
+                      2.39 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Euler.problem14
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      3797.3618 ± 2.2699
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1624.3759 ± 2.3998
+                    </td>
+                    <td bgcolor="#ff0c0c" rowspan="1" colspan="1">
+                      57.13 ± 0.13 %
+                    </td>
+                    <td bgcolor="#ff5555" rowspan="1" colspan="1">
+                      2.34 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.copy
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      910.6528 ± 1.0082
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      391.9245 ± 0.4290
+                    </td>
+                    <td bgcolor="#ff0c0c" rowspan="1" colspan="1">
+                      56.87 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff5555" rowspan="1" colspan="1">
+                      2.32 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ComplexArrays.outerProduct
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      246667.3480 ± 246.9996
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      106322.8507 ± 122.0734
+                    </td>
+                    <td bgcolor="#ff0c0c" rowspan="1" colspan="1">
+                      56.80 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff5555" rowspan="1" colspan="1">
+                      2.32 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.copyManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      909.7054 ± 0.8561
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      392.9193 ± 0.4421
+                    </td>
+                    <td bgcolor="#ff0c0c" rowspan="1" colspan="1">
+                      56.72 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff5555" rowspan="1" colspan="1">
+                      2.32 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.filterSome
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      219.3442 ± 0.2122
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      95.1548 ± 0.1886
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      56.49 ± 0.17 %
+                    </td>
+                    <td bgcolor="#ff5656" rowspan="1" colspan="1">
+                      2.31 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop::enum
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      5758.3677 ± 7.3598
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2501.2308 ± 3.4851
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      56.45 ± 0.12 %
+                    </td>
+                    <td bgcolor="#ff5656" rowspan="1" colspan="1">
+                      2.30 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntBaseline.allocateListAndFill
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      912.0231 ± 1.8494
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      396.9629 ± 0.3370
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      56.35 ± 0.18 %
+                    </td>
+                    <td bgcolor="#ff5656" rowspan="1" colspan="1">
+                      2.30 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.filterAndMapWithLambdaAsSequence
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      6030.1167 ± 16.5059
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2651.3865 ± 4.3745
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      55.84 ± 0.24 %
+                    </td>
+                    <td bgcolor="#ff5757" rowspan="1" colspan="1">
+                      2.27 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.filterSomeManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      218.8886 ± 0.3067
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      96.5661 ± 0.2341
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      55.71 ± 0.21 %
+                    </td>
+                    <td bgcolor="#ff5757" rowspan="1" colspan="1">
+                      2.27 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.openMethodMonomorphic
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1147.1269 ± 0.0805
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      510.1049 ± 0.0316
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      55.53 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff5757" rowspan="1" colspan="1">
+                      2.25 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.returnBoxUnboxFolding
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1146.9254 ± 0.0771
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      510.1054 ± 0.0438
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      55.52 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff5757" rowspan="1" colspan="1">
+                      2.25 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.finalMethod
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1146.8615 ± 0.0824
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      510.1257 ± 0.0289
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      55.51 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff5757" rowspan="1" colspan="1">
+                      2.25 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.interfaceMethodMonomorphic
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1146.9767 ± 0.0987
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      510.1645 ± 0.0452
+                    </td>
+                    <td bgcolor="#ff0d0d" rowspan="1" colspan="1">
+                      55.51 ± 0.01 %
+                    </td>
+                    <td bgcolor="#ff5757" rowspan="1" colspan="1">
+                      2.25 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.parameterBoxUnboxFolding
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1147.1762 ± 2.1909
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      510.1120 ± 0.0436
+                    </td>
+                    <td bgcolor="#ff0e0e" rowspan="1" colspan="1">
+                      55.44 ± 0.17 %
+                    </td>
+                    <td bgcolor="#ff5757" rowspan="1" colspan="1">
+                      2.25 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Lambda.capturingLambda
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      11.5703 ± 0.0025
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.1628 ± 0.0019
+                    </td>
+                    <td bgcolor="#ff0e0e" rowspan="1" colspan="1">
+                      55.35 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff5858" rowspan="1" colspan="1">
+                      2.24 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.filterAndMapWithLambda
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      5854.3150 ± 15.1595
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2605.9580 ± 6.1728
+                    </td>
+                    <td bgcolor="#ff0e0e" rowspan="1" colspan="1">
+                      55.27 ± 0.23 %
+                    </td>
+                    <td bgcolor="#ff5757" rowspan="1" colspan="1">
+                      2.25 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::String.summarizeSplittedCsv
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10232.2070 ± 16.8111
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      4576.1358 ± 4.0221
+                    </td>
+                    <td bgcolor="#ff0e0e" rowspan="1" colspan="1">
+                      55.16 ± 0.15 %
+                    </td>
+                    <td bgcolor="#ff5858" rowspan="1" colspan="1">
+                      2.24 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.filterSomeAndCount
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      211.1174 ± 0.2206
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      95.6517 ± 0.1788
+                    </td>
+                    <td bgcolor="#ff0e0e" rowspan="1" colspan="1">
+                      54.56 ± 0.17 %
+                    </td>
+                    <td bgcolor="#ff5959" rowspan="1" colspan="1">
+                      2.21 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Lambda.mutatingLambdaNoInline
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      509.6019 ± 2.8168
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      230.2435 ± 0.9228
+                    </td>
+                    <td bgcolor="#ff0f0f" rowspan="1" colspan="1">
+                      54.39 ± 0.50 %
+                    </td>
+                    <td bgcolor="#ff5858" rowspan="1" colspan="1">
+                      2.21 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.filterAndMap
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2234.0058 ± 1.2181
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1025.8823 ± 0.5453
+                    </td>
+                    <td bgcolor="#ff0f0f" rowspan="1" colspan="1">
+                      54.03 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff5959" rowspan="1" colspan="1">
+                      2.18 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.filterAndCount
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2176.6810 ± 1.5548
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1000.1193 ± 0.5614
+                    </td>
+                    <td bgcolor="#ff0f0f" rowspan="1" colspan="1">
+                      53.99 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff5959" rowspan="1" colspan="1">
+                      2.18 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.filter
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2175.5524 ± 1.1045
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1000.6807 ± 0.3081
+                    </td>
+                    <td bgcolor="#ff0f0f" rowspan="1" colspan="1">
+                      53.97 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff5a5a" rowspan="1" colspan="1">
+                      2.17 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::availableTransportOnMap
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      3200.0322 ± 2.7414
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1483.4804 ± 2.5389
+                    </td>
+                    <td bgcolor="#ff0f0f" rowspan="1" colspan="1">
+                      53.52 ± 0.16 %
+                    </td>
+                    <td bgcolor="#ff5a5a" rowspan="1" colspan="1">
+                      2.16 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Euler.problem4
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      643347.8629 ± 955.0111
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      299781.8654 ± 289.9452
+                    </td>
+                    <td bgcolor="#ff1010" rowspan="1" colspan="1">
+                      53.29 ± 0.14 %
+                    </td>
+                    <td bgcolor="#ff5a5a" rowspan="1" colspan="1">
+                      2.15 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.mapWithLambda
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10148.0819 ± 32.3413
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      4734.9698 ± 8.8435
+                    </td>
+                    <td bgcolor="#ff1010" rowspan="1" colspan="1">
+                      53.10 ± 0.30 %
+                    </td>
+                    <td bgcolor="#ff5b5b" rowspan="1" colspan="1">
+                      2.14 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::LinkedListWithAtomicsBenchmark
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      262929.1736 ± 143.4517
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      123153.7283 ± 121.2265
+                    </td>
+                    <td bgcolor="#ff1010" rowspan="1" colspan="1">
+                      53.09 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff5b5b" rowspan="1" colspan="1">
+                      2.13 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassBaseline.allocateListAndFill
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      5315.1292 ± 1.6541
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2491.6017 ± 1.0307
+                    </td>
+                    <td bgcolor="#ff1010" rowspan="1" colspan="1">
+                      53.09 ± 0.04 %
+                    </td>
+                    <td bgcolor="#ff5b5b" rowspan="1" colspan="1">
+                      2.13 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Inline.calculateGenericInline
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10.9449 ± 0.0064
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.1585 ± 0.0019
+                    </td>
+                    <td bgcolor="#ff1010" rowspan="1" colspan="1">
+                      52.82 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff5b5b" rowspan="1" colspan="1">
+                      2.12 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Inline.calculateInline
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10.9417 ± 0.0076
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.1610 ± 0.0023
+                    </td>
+                    <td bgcolor="#ff1010" rowspan="1" colspan="1">
+                      52.78 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff5b5b" rowspan="1" colspan="1">
+                      2.12 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Inline.calculate
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10.9271 ± 0.0058
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.1644 ± 0.0012
+                    </td>
+                    <td bgcolor="#ff1010" rowspan="1" colspan="1">
+                      52.70 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff5b5b" rowspan="1" colspan="1">
+                      2.12 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Loop.rangeLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      649.4066 ± 1.5388
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      305.3230 ± 1.1693
+                    </td>
+                    <td bgcolor="#ff1010" rowspan="1" colspan="1">
+                      52.69 ± 0.36 %
+                    </td>
+                    <td bgcolor="#ff5b5b" rowspan="1" colspan="1">
+                      2.13 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::searchTravelRoutes
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      5429229.4236 ± 42907.7962
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2525295.4132 ± 24472.0877
+                    </td>
+                    <td bgcolor="#ff1010" rowspan="1" colspan="1">
+                      52.66 ± 0.91 %
+                    </td>
+                    <td bgcolor="#ff5a5a" rowspan="1" colspan="1">
+                      2.15 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.countFiltered
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1973.7356 ± 1.5571
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      941.6699 ± 0.5215
+                    </td>
+                    <td bgcolor="#ff1111" rowspan="1" colspan="1">
+                      52.23 ± 0.08 %
+                    </td>
+                    <td bgcolor="#ff5c5c" rowspan="1" colspan="1">
+                      2.10 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.reduce
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1972.3665 ± 1.5646
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      942.9770 ± 0.3347
+                    </td>
+                    <td bgcolor="#ff1111" rowspan="1" colspan="1">
+                      52.14 ± 0.08 %
+                    </td>
+                    <td bgcolor="#ff5c5c" rowspan="1" colspan="1">
+                      2.09 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::goToAllAvailablePlaces
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      8850.6586 ± 14.6596
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      4217.2413 ± 15.3348
+                    </td>
+                    <td bgcolor="#ff1111" rowspan="1" colspan="1">
+                      52.10 ± 0.35 %
+                    </td>
+                    <td bgcolor="#ff5c5c" rowspan="1" colspan="1">
+                      2.10 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.filterManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1976.1222 ± 1.3810
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      946.2476 ± 0.4000
+                    </td>
+                    <td bgcolor="#ff1111" rowspan="1" colspan="1">
+                      52.06 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff5c5c" rowspan="1" colspan="1">
+                      2.09 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::getAllPlacesWithStraightRoutesTo
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      8834.3406 ± 11.2770
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      4241.8895 ± 14.4247
+                    </td>
+                    <td bgcolor="#ff1111" rowspan="1" colspan="1">
+                      51.76 ± 0.33 %
+                    </td>
+                    <td bgcolor="#ff5c5c" rowspan="1" colspan="1">
+                      2.08 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.countFilteredManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1972.3519 ± 1.3444
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      952.3072 ± 0.4454
+                    </td>
+                    <td bgcolor="#ff1111" rowspan="1" colspan="1">
+                      51.66 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff5d5d" rowspan="1" colspan="1">
+                      2.07 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassStream.filterAndMapManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2028.1837 ± 1.8898
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      980.7410 ± 0.5114
+                    </td>
+                    <td bgcolor="#ff1111" rowspan="1" colspan="1">
+                      51.57 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff5d5d" rowspan="1" colspan="1">
+                      2.07 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassBaseline.allocateArrayAndFill
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      4894.7193 ± 3.2411
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2382.3775 ± 1.7594
+                    </td>
+                    <td bgcolor="#ff1212" rowspan="1" colspan="1">
+                      51.26 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff5d5d" rowspan="1" colspan="1">
+                      2.05 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.filterAndCount
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1871.0883 ± 0.9629
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      923.8552 ± 0.8398
+                    </td>
+                    <td bgcolor="#ff1212" rowspan="1" colspan="1">
+                      50.55 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff5e5e" rowspan="1" colspan="1">
+                      2.03 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.filterManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1872.2393 ± 4.5900
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      941.2893 ± 0.8043
+                    </td>
+                    <td bgcolor="#ff1313" rowspan="1" colspan="1">
+                      49.56 ± 0.25 %
+                    </td>
+                    <td bgcolor="#ff5f5f" rowspan="1" colspan="1">
+                      1.99 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.filterAndMap
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2417.5660 ± 2.7757
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1218.1333 ± 0.8566
+                    </td>
+                    <td bgcolor="#ff1313" rowspan="1" colspan="1">
+                      49.52 ± 0.12 %
+                    </td>
+                    <td bgcolor="#ff5f5f" rowspan="1" colspan="1">
+                      1.98 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.filterAndMap
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1941.8163 ± 1.3978
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      981.9440 ± 0.6162
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      49.36 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff6060" rowspan="1" colspan="1">
+                      1.98 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.filter
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1872.0290 ± 0.8949
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      948.3516 ± 0.8274
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      49.27 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff6060" rowspan="1" colspan="1">
+                      1.97 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.filterAndCount
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2412.2529 ± 2.9120
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1210.3701 ± 12.4320
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      49.25 ± 1.03 %
+                    </td>
+                    <td bgcolor="#ff5f5f" rowspan="1" colspan="1">
+                      1.99 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.filterAndMapManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1916.9139 ± 0.8498
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      972.6132 ± 0.4152
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      49.22 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff6060" rowspan="1" colspan="1">
+                      1.97 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::WithIndicies.withIndiciesManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1875.9317 ± 0.5833
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      950.9377 ± 2.2522
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      49.17 ± 0.24 %
+                    </td>
+                    <td bgcolor="#ff6060" rowspan="1" colspan="1">
+                      1.97 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntBaseline.consume
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      502.6213 ± 3.5008
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      252.7341 ± 0.9558
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      49.17 ± 0.70 %
+                    </td>
+                    <td bgcolor="#ff5f5f" rowspan="1" colspan="1">
+                      1.99 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.countFilteredManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1852.8832 ± 1.0752
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      941.2510 ± 0.4507
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      49.15 ± 0.06 %
+                    </td>
+                    <td bgcolor="#ff6060" rowspan="1" colspan="1">
+                      1.97 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.reduce
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1854.3073 ± 0.8291
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      942.6662 ± 0.2440
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      49.13 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff6060" rowspan="1" colspan="1">
+                      1.97 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassList.countFiltered
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1856.1682 ± 1.1000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      948.1425 ± 0.2298
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      48.88 ± 0.06 %
+                    </td>
+                    <td bgcolor="#ff6060" rowspan="1" colspan="1">
+                      1.96 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::WithIndicies.withIndicies
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1874.0529 ± 1.0711
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      957.5820 ± 2.0792
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      48.76 ± 0.22 %
+                    </td>
+                    <td bgcolor="#ff6060" rowspan="1" colspan="1">
+                      1.96 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.filter
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2405.6515 ± 2.2441
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1231.9065 ± 1.0893
+                    </td>
+                    <td bgcolor="#ff1414" rowspan="1" colspan="1">
+                      48.70 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff6060" rowspan="1" colspan="1">
+                      1.95 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Fibonacci.calcSquare
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      98417.1273 ± 28.6884
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      50530.0281 ± 22.2994
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      48.62 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff6161" rowspan="1" colspan="1">
+                      1.95 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Fibonacci.calcClassic
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      9.9497 ± 0.0028
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.1124 ± 0.0014
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      48.59 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff6161" rowspan="1" colspan="1">
+                      1.95 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Fibonacci.calc
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      9.9498 ± 0.0027
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.1136 ± 0.0015
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      48.58 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff6161" rowspan="1" colspan="1">
+                      1.95 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.filterAndCount
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1978.2469 ± 1.4101
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1016.4228 ± 0.6384
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      48.55 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff6161" rowspan="1" colspan="1">
+                      1.95 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Fibonacci.calcWithProgression
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      9.9358 ± 0.0009
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      5.1118 ± 0.0022
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      48.52 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff6161" rowspan="1" colspan="1">
+                      1.94 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.filterManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1979.9351 ± 1.1465
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1028.3144 ± 0.9744
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      47.98 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff6161" rowspan="1" colspan="1">
+                      1.93 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.filterAndCount
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1701.1201 ± 1.0035
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      883.7931 ± 0.6110
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      47.98 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff6161" rowspan="1" colspan="1">
+                      1.92 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.filter
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1977.6433 ± 1.2539
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1028.2368 ± 1.0225
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      47.92 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff6161" rowspan="1" colspan="1">
+                      1.92 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.countFiltered
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1983.0129 ± 1.0696
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1032.9915 ± 0.9861
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      47.83 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff6262" rowspan="1" colspan="1">
+                      1.92 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.countFilteredLocal
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1986.9509 ± 1.6076
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1035.6953 ± 0.8973
+                    </td>
+                    <td bgcolor="#ff1515" rowspan="1" colspan="1">
+                      47.79 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff6262" rowspan="1" colspan="1">
+                      1.92 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.reduce
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1984.7236 ± 1.2420
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1036.2534 ± 1.0169
+                    </td>
+                    <td bgcolor="#ff1616" rowspan="1" colspan="1">
+                      47.70 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff6262" rowspan="1" colspan="1">
+                      1.92 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.filterAndMap
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1980.4393 ± 1.5789
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1035.8745 ± 0.7156
+                    </td>
+                    <td bgcolor="#ff1616" rowspan="1" colspan="1">
+                      47.62 ± 0.08 %
+                    </td>
+                    <td bgcolor="#ff6262" rowspan="1" colspan="1">
+                      1.91 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.filterAndMapManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1969.5109 ± 0.9567
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1035.2909 ± 0.6663
+                    </td>
+                    <td bgcolor="#ff1616" rowspan="1" colspan="1">
+                      47.37 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff6262" rowspan="1" colspan="1">
+                      1.90 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.filterManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1703.3530 ± 1.1717
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      902.6500 ± 0.7289
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      46.93 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff6363" rowspan="1" colspan="1">
+                      1.89 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ForLoops.floatArrayLoop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      17.6844 ± 0.0023
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      9.4080 ± 0.0048
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      46.77 ± 0.05 %
+                    </td>
+                    <td bgcolor="#ff6363" rowspan="1" colspan="1">
+                      1.88 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntList.countFilteredManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1986.2579 ± 37.4995
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1038.7974 ± 1.0039
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      46.64 ± 1.98 %
+                    </td>
+                    <td bgcolor="#ff6262" rowspan="1" colspan="1">
+                      1.91 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.filterAndMapManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1751.6602 ± 0.7047
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      934.3748 ± 0.6344
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      46.60 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff6363" rowspan="1" colspan="1">
+                      1.87 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.filterAndMap
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1770.1720 ± 1.0319
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      946.8643 ± 0.8216
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      46.43 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff6363" rowspan="1" colspan="1">
+                      1.87 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.filter
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1702.9209 ± 0.9861
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      911.3638 ± 0.3303
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      46.43 ± 0.06 %
+                    </td>
+                    <td bgcolor="#ff6363" rowspan="1" colspan="1">
+                      1.87 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.filterAndMapManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2190.2729 ± 1.8494
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1173.7739 ± 1.2069
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      46.31 ± 0.11 %
+                    </td>
+                    <td bgcolor="#ff6363" rowspan="1" colspan="1">
+                      1.87 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassBaseline.consume
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      3861.5536 ± 11.7215
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2041.3457 ± 25.9948
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      46.30 ± 1.35 %
+                    </td>
+                    <td bgcolor="#ff6363" rowspan="1" colspan="1">
+                      1.89 ± 0.03
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.countFilteredLocal
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2182.1334 ± 2.4612
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1169.1426 ± 1.5382
+                    </td>
+                    <td bgcolor="#ff1717" rowspan="1" colspan="1">
+                      46.29 ± 0.14 %
+                    </td>
+                    <td bgcolor="#ff6363" rowspan="1" colspan="1">
+                      1.87 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.countFilteredManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2194.7868 ± 2.3765
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1178.7061 ± 2.2739
+                    </td>
+                    <td bgcolor="#ff1818" rowspan="1" colspan="1">
+                      46.13 ± 0.21 %
+                    </td>
+                    <td bgcolor="#ff6464" rowspan="1" colspan="1">
+                      1.86 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.filterManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2187.8002 ± 3.1182
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1177.2217 ± 1.3991
+                    </td>
+                    <td bgcolor="#ff1818" rowspan="1" colspan="1">
+                      46.05 ± 0.15 %
+                    </td>
+                    <td bgcolor="#ff6464" rowspan="1" colspan="1">
+                      1.86 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.reduce
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2185.7256 ± 1.9935
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1179.8458 ± 1.3635
+                    </td>
+                    <td bgcolor="#ff1818" rowspan="1" colspan="1">
+                      45.91 ± 0.12 %
+                    </td>
+                    <td bgcolor="#ff6464" rowspan="1" colspan="1">
+                      1.85 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntStream.countFiltered
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2181.3503 ± 5.7914
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1175.0859 ± 5.6627
+                    </td>
+                    <td bgcolor="#ff1818" rowspan="1" colspan="1">
+                      45.73 ± 0.52 %
+                    </td>
+                    <td bgcolor="#ff6464" rowspan="1" colspan="1">
+                      1.86 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.countFilteredLocal
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1683.3960 ± 1.3032
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      913.0315 ± 0.3219
+                    </td>
+                    <td bgcolor="#ff1818" rowspan="1" colspan="1">
+                      45.70 ± 0.08 %
+                    </td>
+                    <td bgcolor="#ff6464" rowspan="1" colspan="1">
+                      1.84 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.countFiltered
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1683.4841 ± 1.0576
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      914.0613 ± 0.5367
+                    </td>
+                    <td bgcolor="#ff1818" rowspan="1" colspan="1">
+                      45.64 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff6464" rowspan="1" colspan="1">
+                      1.84 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassArray.countFilteredManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1683.3208 ± 1.1735
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      913.6605 ± 3.0939
+                    </td>
+                    <td bgcolor="#ff1818" rowspan="1" colspan="1">
+                      45.50 ± 0.37 %
+                    </td>
+                    <td bgcolor="#ff6464" rowspan="1" colspan="1">
+                      1.84 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Euler.problem1
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      11.1121 ± 0.0064
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6.3129 ± 0.0022
+                    </td>
+                    <td bgcolor="#ff1c1c" rowspan="1" colspan="1">
+                      43.14 ± 0.07 %
+                    </td>
+                    <td bgcolor="#ff6767" rowspan="1" colspan="1">
+                      1.76 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.filterPrime
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      240.1225 ± 0.1888
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      137.8116 ± 0.1308
+                    </td>
+                    <td bgcolor="#ff1c1c" rowspan="1" colspan="1">
+                      42.51 ± 0.11 %
+                    </td>
+                    <td bgcolor="#ff6868" rowspan="1" colspan="1">
+                      1.74 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop::generateNumbersSequence
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      3385.8184 ± 1.5979
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1962.1674 ± 1.5637
+                    </td>
+                    <td bgcolor="#ff1d1d" rowspan="1" colspan="1">
+                      41.97 ± 0.09 %
+                    </td>
+                    <td bgcolor="#ff6868" rowspan="1" colspan="1">
+                      1.73 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.filterAndCount
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1578.9713 ± 9.1339
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      910.9387 ± 1.1476
+                    </td>
+                    <td bgcolor="#ff1d1d" rowspan="1" colspan="1">
+                      41.90 ± 0.67 %
+                    </td>
+                    <td bgcolor="#ff6868" rowspan="1" colspan="1">
+                      1.73 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::removeVertexAndEdgesSwiftMultigraph
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      6316.9241 ± 13.4616
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      3722.6231 ± 9.8334
+                    </td>
+                    <td bgcolor="#ff1f1f" rowspan="1" colspan="1">
+                      40.79 ± 0.31 %
+                    </td>
+                    <td bgcolor="#ff6969" rowspan="1" colspan="1">
+                      1.70 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Splay
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      317245.0243 ± 6723.1683
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      181662.6714 ± 3096.3055
+                    </td>
+                    <td bgcolor="#ff1f1f" rowspan="1" colspan="1">
+                      40.50 ± 2.47 %
+                    </td>
+                    <td bgcolor="#ff6868" rowspan="1" colspan="1">
+                      1.75 ± 0.07
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.reduce
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1570.5773 ± 2.5798
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      936.3645 ± 1.4971
+                    </td>
+                    <td bgcolor="#ff2020" rowspan="1" colspan="1">
+                      40.19 ± 0.20 %
+                    </td>
+                    <td bgcolor="#ff6a6a" rowspan="1" colspan="1">
+                      1.68 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.filterAndMap
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1575.8573 ± 7.4136
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      937.4592 ± 1.1628
+                    </td>
+                    <td bgcolor="#ff2020" rowspan="1" colspan="1">
+                      40.16 ± 0.56 %
+                    </td>
+                    <td bgcolor="#ff6a6a" rowspan="1" colspan="1">
+                      1.68 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.filter
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1571.6535 ± 1.8025
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      940.2870 ± 1.0772
+                    </td>
+                    <td bgcolor="#ff2020" rowspan="1" colspan="1">
+                      40.03 ± 0.14 %
+                    </td>
+                    <td bgcolor="#ff6a6a" rowspan="1" colspan="1">
+                      1.67 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.countFilteredManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1566.5242 ± 1.9056
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      941.3334 ± 1.0719
+                    </td>
+                    <td bgcolor="#ff2121" rowspan="1" colspan="1">
+                      39.77 ± 0.15 %
+                    </td>
+                    <td bgcolor="#ff6b6b" rowspan="1" colspan="1">
+                      1.66 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.countFilteredLocal
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1563.3005 ± 2.1263
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      942.0417 ± 1.1609
+                    </td>
+                    <td bgcolor="#ff2121" rowspan="1" colspan="1">
+                      39.58 ± 0.16 %
+                    </td>
+                    <td bgcolor="#ff6b6b" rowspan="1" colspan="1">
+                      1.66 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.filterManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1567.6853 ± 2.4368
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      945.1718 ± 1.2377
+                    </td>
+                    <td bgcolor="#ff2121" rowspan="1" colspan="1">
+                      39.54 ± 0.19 %
+                    </td>
+                    <td bgcolor="#ff6b6b" rowspan="1" colspan="1">
+                      1.66 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.countFiltered
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1571.1876 ± 1.8638
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      947.9072 ± 1.0964
+                    </td>
+                    <td bgcolor="#ff2121" rowspan="1" colspan="1">
+                      39.53 ± 0.14 %
+                    </td>
+                    <td bgcolor="#ff6b6b" rowspan="1" colspan="1">
+                      1.66 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.filterAndMapManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1561.0450 ± 1.6183
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      942.9508 ± 1.2238
+                    </td>
+                    <td bgcolor="#ff2121" rowspan="1" colspan="1">
+                      39.45 ± 0.16 %
+                    </td>
+                    <td bgcolor="#ff6b6b" rowspan="1" colspan="1">
+                      1.66 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::createMultigraphOfInt
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      19513.7807 ± 36.0668
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      11598.6950 ± 290.4435
+                    </td>
+                    <td bgcolor="#ff2222" rowspan="1" colspan="1">
+                      38.96 ± 2.98 %
+                    </td>
+                    <td bgcolor="#ff6a6a" rowspan="1" colspan="1">
+                      1.68 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop::categoryMethods
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      8032.1331 ± 15.3859
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      4896.8216 ± 39.5156
+                    </td>
+                    <td bgcolor="#ff2323" rowspan="1" colspan="1">
+                      38.42 ± 0.99 %
+                    </td>
+                    <td bgcolor="#ff6b6b" rowspan="1" colspan="1">
+                      1.64 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::String.stringConcatNullable
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      55754.5856 ± 133.6008
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      37429.5270 ± 68.4343
+                    </td>
+                    <td bgcolor="#ff2e2e" rowspan="1" colspan="1">
+                      32.58 ± 0.32 %
+                    </td>
+                    <td bgcolor="#ff7171" rowspan="1" colspan="1">
+                      1.49 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::String.stringConcat
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      54461.7174 ± 171.9558
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      36633.8774 ± 85.6998
+                    </td>
+                    <td bgcolor="#ff2e2e" rowspan="1" colspan="1">
+                      32.36 ± 0.43 %
+                    </td>
+                    <td bgcolor="#ff7171" rowspan="1" colspan="1">
+                      1.49 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.openMethodTrimorphic
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2290.5813 ± 0.2687
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1563.9845 ± 0.0978
+                    </td>
+                    <td bgcolor="#ff2f2f" rowspan="1" colspan="1">
+                      31.71 ± 0.02 %
+                    </td>
+                    <td bgcolor="#ff7272" rowspan="1" colspan="1">
+                      1.46 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Calls.interfaceMethodTrimorphic
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2290.7014 ± 5.0328
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1563.9691 ± 2.3917
+                    </td>
+                    <td bgcolor="#ff3030" rowspan="1" colspan="1">
+                      31.47 ± 0.30 %
+                    </td>
+                    <td bgcolor="#ff7272" rowspan="1" colspan="1">
+                      1.46 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop::classInheritance
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      12613.1593 ± 5.4650
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      8939.2183 ± 6.1064
+                    </td>
+                    <td bgcolor="#ff3535" rowspan="1" colspan="1">
+                      29.05 ± 0.10 %
+                    </td>
+                    <td bgcolor="#ff7474" rowspan="1" colspan="1">
+                      1.41 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop::stringToObjC
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1467.4031 ± 13.6734
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1022.4376 ± 15.6691
+                    </td>
+                    <td bgcolor="#ff3636" rowspan="1" colspan="1">
+                      28.59 ± 2.16 %
+                    </td>
+                    <td bgcolor="#ff7373" rowspan="1" colspan="1">
+                      1.44 ± 0.03
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::Euler.problem9
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      697.7182 ± 0.0621
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      498.6866 ± 0.1139
+                    </td>
+                    <td bgcolor="#ff3737" rowspan="1" colspan="1">
+                      28.50 ± 0.03 %
+                    </td>
+                    <td bgcolor="#ff7575" rowspan="1" colspan="1">
+                      1.40 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.countFilteredPrimeManual
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      134.4085 ± 0.0267
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      96.6451 ± 0.2117
+                    </td>
+                    <td bgcolor="#ff3838" rowspan="1" colspan="1">
+                      27.92 ± 0.32 %
+                    </td>
+                    <td bgcolor="#ff7575" rowspan="1" colspan="1">
+                      1.39 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntArray.countFilteredPrime
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      134.4741 ± 0.0356
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      97.1413 ± 0.1292
+                    </td>
+                    <td bgcolor="#ff3939" rowspan="1" colspan="1">
+                      27.65 ± 0.19 %
+                    </td>
+                    <td bgcolor="#ff7676" rowspan="1" colspan="1">
+                      1.38 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop::subComplex
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      5759.8198 ± 35.4025
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      4093.1492 ± 56.0505
+                    </td>
+                    <td bgcolor="#ff3939" rowspan="1" colspan="1">
+                      27.52 ± 1.96 %
+                    </td>
+                    <td bgcolor="#ff7575" rowspan="1" colspan="1">
+                      1.41 ± 0.03
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop::sumComplex
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      5810.0871 ± 39.1332
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      4176.1812 ± 38.1349
+                    </td>
+                    <td bgcolor="#ff3a3a" rowspan="1" colspan="1">
+                      26.97 ± 1.32 %
+                    </td>
+                    <td bgcolor="#ff7575" rowspan="1" colspan="1">
+                      1.39 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop::stringFromObjC
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      16813.8112 ± 10.9826
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      12647.0514 ± 16.4351
+                    </td>
+                    <td bgcolor="#ff4141" rowspan="1" colspan="1">
+                      24.63 ± 0.20 %
+                    </td>
+                    <td bgcolor="#ff7878" rowspan="1" colspan="1">
+                      1.33 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::stringInterop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      161913.4167 ± 779.2495
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      122996.4607 ± 503.8387
+                    </td>
+                    <td bgcolor="#ff4444" rowspan="1" colspan="1">
+                      23.36 ± 0.73 %
+                    </td>
+                    <td bgcolor="#ff7878" rowspan="1" colspan="1">
+                      1.32 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop::invertFft
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      46114.5336 ± 408.4846
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      35600.5599 ± 539.0711
+                    </td>
+                    <td bgcolor="#ff4c4c" rowspan="1" colspan="1">
+                      20.93 ± 2.36 %
+                    </td>
+                    <td bgcolor="#ff7979" rowspan="1" colspan="1">
+                      1.30 ± 0.03
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::simpleFunction
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      132468.5516 ± 315.7423
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      106027.0721 ± 348.5747
+                    </td>
+                    <td bgcolor="#ff5050" rowspan="1" colspan="1">
+                      19.51 ± 0.53 %
+                    </td>
+                    <td bgcolor="#ff7b7b" rowspan="1" colspan="1">
+                      1.25 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop::fft
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      43776.8684 ± 578.1003
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      34222.7592 ± 617.2705
+                    </td>
+                    <td bgcolor="#ff5151" rowspan="1" colspan="1">
+                      19.35 ± 2.86 %
+                    </td>
+                    <td bgcolor="#ff7a7a" rowspan="1" colspan="1">
+                      1.28 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::WeakRefBenchmark.dyingReference
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      695.4681 ± 2.4362
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      558.4210 ± 5.8981
+                    </td>
+                    <td bgcolor="#ff5454" rowspan="1" colspan="1">
+                      18.57 ± 1.70 %
+                    </td>
+                    <td bgcolor="#ff7c7c" rowspan="1" colspan="1">
+                      1.25 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassBaseline.allocateArray
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1.8045 ± 0.0215
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1.5380 ± 0.0132
+                    </td>
+                    <td bgcolor="#ff6a6a" rowspan="1" colspan="1">
+                      12.99 ± 2.05 %
+                    </td>
+                    <td bgcolor="#ff7f7f" rowspan="1" colspan="1">
+                      1.17 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::fillCityMap
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      106761.7856 ± 110.0342
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      93402.6421 ± 134.2678
+                    </td>
+                    <td bgcolor="#ff6e6e" rowspan="1" colspan="1">
+                      12.30 ± 0.25 %
+                    </td>
+                    <td bgcolor="#ff8080" rowspan="1" colspan="1">
+                      1.14 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop::macros
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      42.1377 ± 0.0944
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      36.8040 ± 0.1306
+                    </td>
+                    <td bgcolor="#ff6f6f" rowspan="1" colspan="1">
+                      12.15 ± 0.62 %
+                    </td>
+                    <td bgcolor="#ff8080" rowspan="1" colspan="1">
+                      1.14 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Startup::Singleton.initializeNested
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      109.8091 ± 2.8997
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      93.4824 ± 1.1077
+                    </td>
+                    <td bgcolor="#ff7272" rowspan="1" colspan="1">
+                      11.52 ± 4.55 %
+                    </td>
+                    <td bgcolor="#ff7f7f" rowspan="1" colspan="1">
+                      1.17 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Startup::Singleton.initialize
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      82.5523 ± 0.9100
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      71.4340 ± 1.1602
+                    </td>
+                    <td bgcolor="#ff7474" rowspan="1" colspan="1">
+                      11.08 ± 2.84 %
+                    </td>
+                    <td bgcolor="#ff8080" rowspan="1" colspan="1">
+                      1.16 ± 0.03
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntBaseline.allocateList
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1.9626 ± 0.0184
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1.7584 ± 0.0174
+                    </td>
+                    <td bgcolor="#ff8282" rowspan="1" colspan="1">
+                      8.67 ± 1.79 %
+                    </td>
+                    <td bgcolor="#ff8282" rowspan="1" colspan="1">
+                      1.12 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::ClassBaseline.allocateList
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1.9128 ± 0.0154
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1.7756 ± 0.0132
+                    </td>
+                    <td bgcolor="#ff9797" rowspan="1" colspan="1">
+                      5.72 ± 1.51 %
+                    </td>
+                    <td bgcolor="#ff8484" rowspan="1" colspan="1">
+                      1.08 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Numerical::BellardPi
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1890181.7188 ± 663.6044
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1823881.8332 ± 2242.6046
+                    </td>
+                    <td bgcolor="#ffadad" rowspan="1" colspan="1">
+                      3.36 ± 0.24 %
+                    </td>
+                    <td bgcolor="#ff8686" rowspan="1" colspan="1">
+                      1.04 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::allPlacesMapedByInterests
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      909.4405 ± 3.0497
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      880.1096 ± 2.6998
+                    </td>
+                    <td bgcolor="#ffb6b6" rowspan="1" colspan="1">
+                      2.60 ± 0.65 %
+                    </td>
+                    <td bgcolor="#ff8686" rowspan="1" colspan="1">
+                      1.03 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::WeakRefBenchmark.aliveReference
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      515.7440 ± 0.5769
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      502.9248 ± 0.0542
+                    </td>
+                    <td bgcolor="#ffb9b9" rowspan="1" colspan="1">
+                      2.37 ± 0.22 %
+                    </td>
+                    <td bgcolor="#ff8686" rowspan="1" colspan="1">
+                      1.03 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::IntBaseline.allocateArray
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.9679 ± 0.0076
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1.0205 ± 0.0065
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      -3.81 ± 1.49 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.95 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop::WeakRefBenchmark.deadReference
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      25.4704 ± 0.0099
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      25.4159 ± 0.0069
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Numerical::BellardPiCinterop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1630950.4375 ± 979.0242
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1631956.1355 ± 137.4571
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr >
+      </hr>
+      <div class="accordion">
+        <div class="card" style="border-bottom: 1px solid rgba(0,0,0,.125);">
+          <div class="card-header" id="heading" style="padding: 0;">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#CODE_SIZE">
+              CODE_SIZE
+            </button>
+          </div>
+          <div class="collapse show" id="CODE_SIZE">
+            <div class="accordion-inner">
+              <table id="result" class="table table-striped table-bordered">
+                <thead >
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Benchmark
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      First score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Second score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Percent
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Ratio
+                    </th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr style="border-bottom: 2.3pt solid black; border-top: 2.3pt solid black">
+                    <th rowspan="1" colspan="1">
+                      Geometric mean
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2881832.1385 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2745247.9377 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      4.74 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.05 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Startup
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2752896.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2542688.0000 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      7.64 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.08 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Numerical
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1574400.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1464192.0000 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      7.00 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.08 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1670400.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1558208.0000 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      6.72 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.07 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1667296.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1556784.0000 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0101" rowspan="1" colspan="1">
+                      6.63 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.07 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2549032.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2387480.0000 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0202" rowspan="1" colspan="1">
+                      6.34 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.07 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10691584.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      10510832.0000 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff4e4e" rowspan="1" colspan="1">
+                      1.69 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.02 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      HelloWorld
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2111385.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2078281.0000 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff5353" rowspan="1" colspan="1">
+                      1.57 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.02 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      FrameworkBenchmarksAnalyzer
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      6848991.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      6848991.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr >
+      </hr>
+      <div class="accordion">
+        <div class="card" style="border-bottom: 1px solid rgba(0,0,0,.125);">
+          <div class="card-header" id="heading" style="padding: 0;">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#COMPILE_TIME">
+              COMPILE_TIME
+            </button>
+          </div>
+          <div class="collapse show" id="COMPILE_TIME">
+            <div class="accordion-inner">
+              <table id="result" class="table table-striped table-bordered">
+                <thead >
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Benchmark
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      First score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Second score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Percent
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Ratio
+                    </th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr style="border-bottom: 2.3pt solid black; border-top: 2.3pt solid black">
+                    <th rowspan="1" colspan="1">
+                      Geometric mean
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      4563954.9359 ± 4.0172
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      4898130.9413 ± 3.9294
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      -6.82 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.93 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      FrameworkBenchmarksAnalyzer
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      126219.5410 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      121702.7910 ± 0.0000
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      3.58 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.04 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Startup
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      11151187.5420 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      13106544.0830 ± 0.0000
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      -14.92 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.85 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      11218263.7920 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      12599973.2080 ± 0.0000
+                    </td>
+                    <td bgcolor="#05ff05" rowspan="1" colspan="1">
+                      -10.97 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.89 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Numerical
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      7837803.5420 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      8622264.5420 ± 0.0000
+                    </td>
+                    <td bgcolor="#0dff0d" rowspan="1" colspan="1">
+                      -9.10 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.91 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      swiftInterop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10633171.7920 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      11627286.0420 ± 0.0000
+                    </td>
+                    <td bgcolor="#10ff10" rowspan="1" colspan="1">
+                      -8.55 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.91 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      ObjCInterop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      7703419.9160 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      8384911.5840 ± 0.0000
+                    </td>
+                    <td bgcolor="#13ff13" rowspan="1" colspan="1">
+                      -8.13 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.92 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Cinterop
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      10664067.5830 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      11269092.1670 ± 0.0000
+                    </td>
+                    <td bgcolor="#2dff2d" rowspan="1" colspan="1">
+                      -5.37 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.95 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      HelloWorld
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1741380.7988 ± 67827.8468
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1740193.9585 ± 56829.6872
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr >
+      </hr>
+      <div class="accordion">
+        <div class="card" style="border-bottom: 1px solid rgba(0,0,0,.125);">
+          <div class="card-header" id="heading" style="padding: 0;">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#BUNDLE_SIZE">
+              BUNDLE_SIZE
+            </button>
+          </div>
+          <div class="collapse show" id="BUNDLE_SIZE">
+            <div class="accordion-inner">
+              <table id="result" class="table table-striped table-bordered">
+                <thead >
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Benchmark
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      First score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Second score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Percent
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Ratio
+                    </th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr style="border-bottom: 2.3pt solid black; border-top: 2.3pt solid black">
+                    <th rowspan="1" colspan="1">
+                      Geometric mean
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0000 ± 0.0000
+                    </td>
+                    <td bgcolor="" rowspan="1" colspan="1">
+                      0.00 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      1.00 ± 0.00
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr >
+      </hr>
+    </div>
+  </body>
+</html>
