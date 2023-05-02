@@ -1,0 +1,2486 @@
+<html >
+  <head >
+    <title >
+      Benchmarks report
+    </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    </link>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js">
+    </script>
+  </head>
+  <body >
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color:#161616;">
+      <img style="width:60px;height:60px;" src="https://dashboard.snapcraft.io/site_media/appmedia/2018/04/256px-kotlin-logo-svg.png">
+      </img>
+      <span class="navbar-brand mb-0 h1">
+        Benchmarks report
+      </span>
+    </header>
+    <div class="container-fluid">
+      <p >
+      </p>
+      <h4 >
+        Environment
+      </h4>
+      <table class="table table-sm table-bordered table-hover" style="width:initial;">
+        <thead >
+          <tr >
+            <th rowspan="2" colspan="1">
+              Run
+            </th>
+            <th rowspan="1" colspan="2">
+              Machine
+            </th>
+            <th rowspan="1" colspan="2">
+              JDK
+            </th>
+          </tr>
+          <tr >
+            <th rowspan="1" colspan="1">
+              OS
+            </th>
+            <th rowspan="1" colspan="1">
+              CPU
+            </th>
+            <th rowspan="1" colspan="1">
+              Version
+            </th>
+            <th rowspan="1" colspan="1">
+              Vendor
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr >
+            <th scope="row" rowspan="1" colspan="1">
+              First
+            </th>
+            <td rowspan="1" colspan="1">
+              Linux
+            </td>
+            <td rowspan="1" colspan="1">
+              amd64
+            </td>
+            <td rowspan="1" colspan="1">
+              17.0.5
+            </td>
+            <td rowspan="1" colspan="1">
+              Eclipse Adoptium
+            </td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr >
+            <th scope="row" rowspan="1" colspan="1">
+              Second
+            </th>
+            <td rowspan="1" colspan="1">
+              Linux
+            </td>
+            <td rowspan="1" colspan="1">
+              amd64
+            </td>
+            <td rowspan="1" colspan="1">
+              17.0.5
+            </td>
+            <td rowspan="1" colspan="1">
+              Eclipse Adoptium
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 >
+        Compiler
+      </h4>
+      <table class="table table-sm table-bordered table-hover" style="width:initial;">
+        <thead >
+          <tr >
+            <th rowspan="2" colspan="1">
+              Run
+            </th>
+            <th rowspan="1" colspan="3">
+              Backend
+            </th>
+            <th rowspan="2" colspan="1">
+              Kotlin
+            </th>
+          </tr>
+          <tr >
+            <th rowspan="1" colspan="1">
+              Type
+            </th>
+            <th rowspan="1" colspan="1">
+              Version
+            </th>
+            <th rowspan="1" colspan="1">
+              Flags
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr >
+            <th scope="row" rowspan="1" colspan="1">
+              First
+            </th>
+            <td rowspan="1" colspan="1">
+              native
+            </td>
+            <td rowspan="1" colspan="1">
+              1.6.0-dev
+            </td>
+            <td rowspan="1" colspan="1">
+              "-opt"
+            </td>
+            <td rowspan="1" colspan="1">
+              1.8.255-SNAPSHOT
+            </td>
+          </tr>
+        </tbody>
+        <tbody >
+          <tr >
+            <th scope="row" rowspan="1" colspan="1">
+              Second
+            </th>
+            <td rowspan="1" colspan="1">
+              native
+            </td>
+            <td rowspan="1" colspan="1">
+              1.6.0-dev
+            </td>
+            <td rowspan="1" colspan="1">
+              "-opt"
+            </td>
+            <td rowspan="1" colspan="1">
+              1.8.255-SNAPSHOT
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr >
+      </hr>
+      <h4 >
+        Status Summary
+      </h4>
+      <div class="alert alert-success" role="alert">
+        All benchmarks passed!
+      </div>
+      <table class="table table-sm table-striped table-hover" style="width:initial; font-size: 11pt;">
+        <thead >
+          <tr >
+            <th rowspan="1" colspan="1">
+              Status Group
+            </th>
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+        </tbody>
+        <tfoot >
+          <tr >
+            <th rowspan="1" colspan="1">
+              Total becnhmarks number
+            </th>
+            <th rowspan="1" colspan="1">
+              113
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+      <hr >
+      </hr>
+      <h4 >
+        Performance Summary
+      </h4>
+      <table class="table table-sm table-striped table-hover" style="width:initial;">
+        <thead >
+          <tr >
+            <th rowspan="2" colspan="1">
+              Change
+            </th>
+            <th rowspan="1" colspan="3">
+              EXECUTION_TIME
+            </th>
+            <th rowspan="1" colspan="3">
+              CODE_SIZE
+            </th>
+            <th rowspan="1" colspan="3">
+              COMPILE_TIME
+            </th>
+            <th rowspan="1" colspan="3">
+              BUNDLE_SIZE
+            </th>
+          </tr>
+          <tr >
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+            <th rowspan="1" colspan="1">
+              Maximum
+            </th>
+            <th rowspan="1" colspan="1">
+              Geometric mean
+            </th>
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+            <th rowspan="1" colspan="1">
+              Maximum
+            </th>
+            <th rowspan="1" colspan="1">
+              Geometric mean
+            </th>
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+            <th rowspan="1" colspan="1">
+              Maximum
+            </th>
+            <th rowspan="1" colspan="1">
+              Geometric mean
+            </th>
+            <th rowspan="1" colspan="1">
+              #
+            </th>
+            <th rowspan="1" colspan="1">
+              Maximum
+            </th>
+            <th rowspan="1" colspan="1">
+              Geometric mean
+            </th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr >
+            <th rowspan="1" colspan="1">
+              Regressions
+            </th>
+            <td rowspan="1" colspan="1">
+              13
+            </td>
+            <td bgcolor="#ff0000" rowspan="1" colspan="1">
+              11.49%
+            </td>
+            <td bgcolor="#ff0000" rowspan="1" colspan="1">
+              1.20%
+            </td>
+            <td rowspan="1" colspan="1">
+              -
+            </td>
+            <td rowspan="1" colspan="1">
+              -
+            </td>
+            <td rowspan="1" colspan="1">
+              -
+            </td>
+            <td rowspan="1" colspan="1">
+              1
+            </td>
+            <td bgcolor="#ff0000" rowspan="1" colspan="1">
+              10.37%
+            </td>
+            <td bgcolor="#ff0000" rowspan="1" colspan="1">
+              10.37%
+            </td>
+            <td rowspan="1" colspan="1">
+              -
+            </td>
+            <td rowspan="1" colspan="1">
+              -
+            </td>
+            <td rowspan="1" colspan="1">
+              -
+            </td>
+            <tr >
+              <th rowspan="1" colspan="1">
+                Improvements
+              </th>
+              <td rowspan="1" colspan="1">
+                6
+              </td>
+              <td bgcolor="#3dff3d" rowspan="1" colspan="1">
+                -3.27%
+              </td>
+              <td bgcolor="#01ff01" rowspan="1" colspan="1">
+                -1.04%
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+              <td rowspan="1" colspan="1">
+                -
+              </td>
+            </tr>
+          </tr>
+        </tbody>
+      </table>
+      <div class="accordion">
+        <div class="card" style="border-bottom: 1px solid rgba(0,0,0,.125);">
+          <div class="card-header" id="heading" style="padding: 0;">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#EXECUTION_TIME">
+              EXECUTION_TIME
+            </button>
+          </div>
+          <div class="collapse show" id="EXECUTION_TIME">
+            <div class="accordion-inner">
+              <table id="result" class="table table-striped table-bordered">
+                <thead >
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Benchmark
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      First score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Second score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Percent
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Ratio
+                    </th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr style="border-bottom: 2.3pt solid black; border-top: 2.3pt solid black">
+                    <th rowspan="1" colspan="1">
+                      Geometric mean
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      407.8101 ± 1.7685
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      407.4544 ± 1.5809
+                    </td>
+                    <td bgcolor="" rowspan="1" colspan="1">
+                      0.00 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.00 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.updateSharedStructCounter5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      108.0508 ± 3.0307
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      92.2834 ± 0.6734
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      11.49 ± 4.83 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.17 ± 0.04
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.badOrderedReads5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      95.6947 ± 0.2247
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      89.0400 ± 0.2482
+                    </td>
+                    <td bgcolor="#ff1111" rowspan="1" colspan="1">
+                      6.48 ± 0.52 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.07 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumCharArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      85.5490 ± 0.7859
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      80.0208 ± 0.1917
+                    </td>
+                    <td bgcolor="#ff1c1c" rowspan="1" colspan="1">
+                      5.37 ± 1.72 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.07 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedUShortArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      93.5104 ± 0.1910
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      88.1278 ± 0.1870
+                    </td>
+                    <td bgcolor="#ff1c1c" rowspan="1" colspan="1">
+                      5.36 ± 0.40 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.06 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedCharArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      85.9666 ± 0.7018
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      80.3422 ± 0.3921
+                    </td>
+                    <td bgcolor="#ff1d1d" rowspan="1" colspan="1">
+                      5.31 ± 1.53 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.07 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedIntArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      88.3378 ± 0.7302
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      82.2117 ± 0.7417
+                    </td>
+                    <td bgcolor="#ff1d1d" rowspan="1" colspan="1">
+                      5.31 ± 1.69 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.07 ± 0.02
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.updateSharedAtomicCounter5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      532.8276 ± 5.1034
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      502.6656 ± 0.3731
+                    </td>
+                    <td bgcolor="#ff2525" rowspan="1" colspan="1">
+                      4.68 ± 1.81 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.06 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      92.8146 ± 0.2990
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      88.5700 ± 0.1398
+                    </td>
+                    <td bgcolor="#ff2d2d" rowspan="1" colspan="1">
+                      4.11 ± 0.62 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.05 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.updateCounter5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      82.8694 ± 0.3178
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      79.0430 ± 0.2837
+                    </td>
+                    <td bgcolor="#ff3131" rowspan="1" colspan="1">
+                      3.91 ± 0.73 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.05 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      92.7227 ± 0.7659
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      88.2468 ± 0.1378
+                    </td>
+                    <td bgcolor="#ff3131" rowspan="1" colspan="1">
+                      3.88 ± 1.57 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.05 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedFloatArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      89.7457 ± 0.6283
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      86.0198 ± 0.1944
+                    </td>
+                    <td bgcolor="#ff3d3d" rowspan="1" colspan="1">
+                      3.26 ± 1.35 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.04 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumFloat5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      89.4516 ± 0.7141
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      85.6830 ± 0.1894
+                    </td>
+                    <td bgcolor="#ff3e3e" rowspan="1" colspan="1">
+                      3.23 ± 1.53 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.04 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedUIntArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      85.7496 ± 0.3540
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      82.3488 ± 0.3630
+                    </td>
+                    <td bgcolor="#ff4040" rowspan="1" colspan="1">
+                      3.14 ± 0.85 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.04 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumArrayByIndices5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      85.0176 ± 0.1690
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      88.2685 ± 0.2046
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      -3.27 ± 0.45 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.96 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumCharArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2025.3571 ± 9.8360
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2100.3123 ± 11.5570
+                    </td>
+                    <td bgcolor="#03ff03" rowspan="1" colspan="1">
+                      -2.56 ± 1.07 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.96 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedArrayBySegments5Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      81.2973 ± 0.1499
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      83.5262 ± 0.1545
+                    </td>
+                    <td bgcolor="#07ff07" rowspan="1" colspan="1">
+                      -2.31 ± 0.36 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.97 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedULongArrayBySegments5Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      87.7607 ± 0.1644
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      89.7255 ± 0.1412
+                    </td>
+                    <td bgcolor="#11ff11" rowspan="1" colspan="1">
+                      -1.85 ± 0.37 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.98 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumIntArrayByIndices5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      87.4761 ± 0.2101
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      89.5182 ± 0.1947
+                    </td>
+                    <td bgcolor="#12ff12" rowspan="1" colspan="1">
+                      -1.83 ± 0.47 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.98 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumStringByIndices5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      81.4511 ± 0.2371
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      83.2087 ± 0.1949
+                    </td>
+                    <td bgcolor="#19ff19" rowspan="1" colspan="1">
+                      -1.60 ± 0.57 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      0.98 ± 0.01
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedString5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      82.2409 ± 0.6781
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      82.3109 ± 0.2801
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedULongArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      85.3645 ± 0.8246
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      85.2919 ± 0.7895
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumIntArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      87.7571 ± 0.6860
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      85.0450 ± 0.4111
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumString5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      83.0972 ± 0.6461
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      82.7329 ± 0.1651
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUInt5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      81.7949 ± 0.3440
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      82.6641 ± 0.4323
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUShort5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      88.8136 ± 0.2119
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      89.6439 ± 0.1980
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumULongArray5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      81.6056 ± 0.4021
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      83.9851 ± 0.6832
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumCharArrayByIndices5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      87.3363 ± 0.2708
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      88.1509 ± 0.1700
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumFloatArrayByIndices5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      85.8824 ± 0.1904
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      86.6893 ± 0.1363
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUIntArrayByIndices5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      88.0491 ± 0.1954
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      89.1722 ± 0.1358
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUShortArrayByIndices5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      86.6900 ± 0.1804
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      87.5479 ± 0.1764
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumULongArrayByIndices5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      88.5514 ± 0.1202
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      89.0208 ± 0.1323
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedIntArrayBySegments5Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      86.8799 ± 0.3228
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      87.3063 ± 0.4294
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedCharArrayBySegments5Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      84.8291 ± 0.4373
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      87.1254 ± 0.3427
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedStringBySegments5Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      80.3415 ± 0.2896
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      81.2873 ± 0.3054
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedFloatArrayBySegments5Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      87.4815 ± 0.2561
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      88.4939 ± 0.2888
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedUIntArrayBySegments5Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      85.4028 ± 0.3153
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      87.1661 ± 0.4622
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedUShortArrayBySegments5Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      85.7427 ± 0.3645
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      87.7401 ± 0.5065
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.badOrderedWrites5Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      92.0961 ± 0.1447
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      93.0814 ± 0.1909
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.updateSharedAtomicCounter20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2288.1414 ± 3.1011
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2293.0141 ± 1.9670
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.updateSharedStructCounter20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      487.5766 ± 3.5877
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      487.8263 ± 3.9232
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.updateCounter20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      309.6055 ± 1.5216
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      316.2153 ± 1.5417
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      346.2756 ± 1.1418
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      342.7697 ± 1.3699
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedIntArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      320.0510 ± 1.2917
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      323.4100 ± 1.6725
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedCharArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      317.5581 ± 1.3782
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      317.2645 ± 1.5468
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedString20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      335.8454 ± 0.7168
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      338.2328 ± 0.5759
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedFloatArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      342.9326 ± 1.4380
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      346.3878 ± 1.4970
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedUIntArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      317.6807 ± 1.2790
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      321.6265 ± 1.3318
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedUShortArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      328.9138 ± 1.5016
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      337.2800 ± 2.1003
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedULongArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      321.8354 ± 1.7303
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      323.3791 ± 1.6258
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      347.2900 ± 1.0996
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      345.4964 ± 1.1936
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumIntArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      321.3397 ± 1.6516
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      321.5902 ± 1.6872
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumCharArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      316.7818 ± 1.8567
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      320.1007 ± 1.6084
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumString20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      336.6331 ± 0.6350
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      338.7909 ± 0.5677
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumFloat20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      346.4905 ± 1.4474
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      347.3627 ± 1.2360
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUInt20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      319.6284 ± 1.4190
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      324.3559 ± 1.3242
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUShort20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      329.0389 ± 1.1900
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      330.9568 ± 1.7029
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumULongArray20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      323.5897 ± 1.3719
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      324.2057 ± 1.2531
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumArrayByIndices20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      351.8465 ± 1.1175
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      347.6721 ± 0.9736
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumIntArrayByIndices20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      331.8517 ± 1.2661
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      333.0845 ± 1.5577
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumCharArrayByIndices20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      329.1767 ± 1.3793
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      330.5724 ± 1.1803
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumStringByIndices20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      341.9701 ± 0.8597
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      343.7338 ± 0.7967
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumFloatArrayByIndices20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      349.4583 ± 1.1097
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      351.2780 ± 1.5149
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUIntArrayByIndices20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      336.4702 ± 1.4307
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      338.7844 ± 1.5997
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUShortArrayByIndices20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      349.0478 ± 1.0128
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      349.5041 ± 1.1463
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumULongArrayByIndices20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      338.8137 ± 1.2963
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      342.7043 ± 1.6220
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedArrayBySegments20Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      321.2120 ± 1.7694
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      322.1326 ± 1.8888
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedIntArrayBySegments20Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      315.4633 ± 1.4029
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      319.6031 ± 1.4126
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedCharArrayBySegments20Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      318.2524 ± 1.1403
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      321.1573 ± 1.4731
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedStringBySegments20Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      319.0675 ± 0.9059
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      320.9013 ± 1.0806
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedFloatArrayBySegments20Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      317.2342 ± 1.4144
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      317.1799 ± 1.0939
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedUIntArrayBySegments20Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      318.2539 ± 1.3611
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      320.7883 ± 1.3958
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedUShortArrayBySegments20Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      321.1838 ± 1.1416
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      321.5780 ± 1.2074
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedULongArrayBySegments20Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      317.9709 ± 1.3911
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      323.8583 ± 1.6045
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.badOrderedReads20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      320.0847 ± 1.5867
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      321.2908 ± 1.2849
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.badOrderedWrites20Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      352.6774 ± 1.4509
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      352.4473 ± 1.3424
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.updateSharedAtomicCounter100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      11845.2783 ± 14.6723
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      11861.7292 ± 12.0320
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.updateSharedStructCounter100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2986.7320 ± 56.0466
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      3093.8067 ± 63.8789
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.updateCounter100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2006.2181 ± 14.7072
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2043.4383 ± 11.2544
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1979.1932 ± 12.2750
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1971.8373 ± 10.3433
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedIntArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2063.0801 ± 11.7100
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2026.9891 ± 14.3602
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedCharArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2057.1901 ± 11.5121
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2070.0516 ± 10.5977
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedString100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1889.7853 ± 6.4534
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1904.8936 ± 7.8701
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedFloatArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1958.3486 ± 10.8602
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1928.7695 ± 14.7967
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedUIntArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2065.9380 ± 12.7056
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2070.7316 ± 8.9677
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedUShortArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2012.8566 ± 10.5922
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2023.2538 ± 11.8448
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumSharedULongArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2034.1839 ± 11.7193
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2073.0977 ± 10.9105
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2040.7936 ± 10.9051
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2067.1468 ± 11.2515
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumIntArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2082.9780 ± 13.0635
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2070.9481 ± 16.4463
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumString100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1916.7626 ± 6.5617
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1922.9719 ± 7.5535
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumFloat100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1949.0466 ± 10.3610
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1948.6544 ± 10.8157
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUInt100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2114.0384 ± 12.9605
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2077.9898 ± 10.0006
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUShort100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2028.9461 ± 10.5020
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2049.6810 ± 13.2310
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumULongArray100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2071.8469 ± 11.1389
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2066.7017 ± 14.5004
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumArrayByIndices100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2057.8077 ± 7.7980
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2098.2330 ± 8.8380
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumIntArrayByIndices100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2025.9758 ± 21.3981
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2013.6963 ± 11.4463
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumCharArrayByIndices100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2004.1771 ± 14.5554
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2035.6077 ± 10.1138
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumStringByIndices100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1950.8125 ± 6.4944
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1970.1313 ± 8.0604
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumFloatArrayByIndices100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1918.7360 ± 10.4951
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1947.6892 ± 11.8124
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUIntArrayByIndices100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2026.3503 ± 11.0708
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2033.1124 ± 9.2911
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumUShortArrayByIndices100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1939.0183 ± 9.7148
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1957.3471 ± 9.5932
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.sumULongArrayByIndices100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2043.1860 ± 9.4268
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2034.8998 ± 8.4267
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedArrayBySegments100Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1993.4805 ± 10.0376
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2001.9655 ± 11.6908
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedIntArrayBySegments100Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1920.4898 ± 8.9877
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1952.9740 ± 10.6862
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedCharArrayBySegments100Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1889.1987 ± 8.6625
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1931.8459 ± 10.5013
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedStringBySegments100Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1901.0215 ± 9.9386
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1937.3240 ± 8.6355
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedFloatArrayBySegments100Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1907.4517 ± 7.1791
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1925.4398 ± 9.1874
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedUIntArrayBySegments100Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1934.1866 ± 8.2687
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1915.8342 ± 8.0464
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedUShortArrayBySegments100Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1915.7971 ± 10.1650
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1941.1128 ± 9.0226
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.consumeSharedULongArrayBySegments100Workerks
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1954.1551 ± 8.7409
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1926.8772 ± 8.4926
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.badOrderedReads100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      1968.3129 ± 8.7176
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      1984.9320 ± 7.8371
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring::MultithreadedLoops.badOrderedWrites100Workers
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      2085.8050 ± 16.8535
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      2069.5319 ± 11.8544
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr >
+      </hr>
+      <div class="accordion">
+        <div class="card" style="border-bottom: 1px solid rgba(0,0,0,.125);">
+          <div class="card-header" id="heading" style="padding: 0;">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#CODE_SIZE">
+              CODE_SIZE
+            </button>
+          </div>
+          <div class="collapse show" id="CODE_SIZE">
+            <div class="accordion-inner">
+              <table id="result" class="table table-striped table-bordered">
+                <thead >
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Benchmark
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      First score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Second score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Percent
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Ratio
+                    </th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr style="border-bottom: 2.3pt solid black; border-top: 2.3pt solid black">
+                    <th rowspan="1" colspan="1">
+                      Geometric mean
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      11005240.0000 ± 0.0010
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      11005240.0000 ± 0.0010
+                    </td>
+                    <td bgcolor="" rowspan="1" colspan="1">
+                      0.00 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      1.00 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      11005240.0000 ± 0.0010
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      11005240.0000 ± 0.0010
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      -
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr >
+      </hr>
+      <div class="accordion">
+        <div class="card" style="border-bottom: 1px solid rgba(0,0,0,.125);">
+          <div class="card-header" id="heading" style="padding: 0;">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#COMPILE_TIME">
+              COMPILE_TIME
+            </button>
+          </div>
+          <div class="collapse show" id="COMPILE_TIME">
+            <div class="accordion-inner">
+              <table id="result" class="table table-striped table-bordered">
+                <thead >
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Benchmark
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      First score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Second score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Percent
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Ratio
+                    </th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr style="border-bottom: 2.3pt solid black; border-top: 2.3pt solid black">
+                    <th rowspan="1" colspan="1">
+                      Geometric mean
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      26928927.9310 ± 0.0010
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      24136906.5920 ± 0.0010
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      10.37 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.12 ± 0.00
+                    </td>
+                  </tr>
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Ring
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      26928927.9310 ± 0.0010
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      24136906.5920 ± 0.0010
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      10.37 ± 0.00 %
+                    </td>
+                    <td bgcolor="#ff0000" rowspan="1" colspan="1">
+                      1.12 ± 0.00
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr >
+      </hr>
+      <div class="accordion">
+        <div class="card" style="border-bottom: 1px solid rgba(0,0,0,.125);">
+          <div class="card-header" id="heading" style="padding: 0;">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#BUNDLE_SIZE">
+              BUNDLE_SIZE
+            </button>
+          </div>
+          <div class="collapse show" id="BUNDLE_SIZE">
+            <div class="accordion-inner">
+              <table id="result" class="table table-striped table-bordered">
+                <thead >
+                  <tr >
+                    <th rowspan="1" colspan="1">
+                      Benchmark
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      First score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Second score
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Percent
+                    </th>
+                    <th rowspan="1" colspan="1">
+                      Ratio
+                    </th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr style="border-bottom: 2.3pt solid black; border-top: 2.3pt solid black">
+                    <th rowspan="1" colspan="1">
+                      Geometric mean
+                    </th>
+                    <td rowspan="1" colspan="1">
+                      0.0000 ± 0.0000
+                    </td>
+                    <td rowspan="1" colspan="1">
+                      0.0000 ± 0.0000
+                    </td>
+                    <td bgcolor="" rowspan="1" colspan="1">
+                      0.00 ± 0.00 %
+                    </td>
+                    <td bgcolor="#00ff00" rowspan="1" colspan="1">
+                      1.00 ± 0.00
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr >
+      </hr>
+    </div>
+  </body>
+</html>
