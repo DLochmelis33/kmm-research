@@ -1,17 +1,14 @@
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
-
 class KindaMP : BasicLitmusTest("kinda mp") {
 
     var x = 0
     var y = 0
 
-    override suspend fun actor1() {
+    override  fun actor1() {
         y = 5
         x = 1
     }
 
-    override suspend fun actor2() {
+    override  fun actor2() {
         if (x == 1) {
             val xx = x
             val yy = y
@@ -27,35 +24,35 @@ class KindaMP : BasicLitmusTest("kinda mp") {
 }
 
 // FIXME: throws "Worker is already terminated"
-class LockTest : BasicLitmusTest("mutex / withLock{}") {
-    val l = Mutex()
-    var x = 0
-    var a = 0
-    var b = 0
-
-    override suspend fun actor1() {
-        l.withLock {
-            a = ++x
-        }
-    }
-
-    override suspend fun actor2() {
-        l.withLock {
-            b = ++x
-        }
-    }
-
-    override fun arbiter() {
-        outcome = a to b
-    }
-
-    init {
-        setupOutcomes {
-            accepted = setOf(1 to 2, 2 to 1)
-            forbidden = setOf(1 to 1)
-        }
-    }
-}
+//class LockTest : BasicLitmusTest("mutex / withLock{}") {
+//    val l = Mutex()
+//    var x = 0
+//    var a = 0
+//    var b = 0
+//
+//    override  fun actor1() {
+//        l.withLock {
+//            a = ++x
+//        }
+//    }
+//
+//    override  fun actor2() {
+//        l.withLock {
+//            b = ++x
+//        }
+//    }
+//
+//    override fun arbiter() {
+//        outcome = a to b
+//    }
+//
+//    init {
+//        setupOutcomes {
+//            accepted = setOf(1 to 2, 2 to 1)
+//            forbidden = setOf(1 to 1)
+//        }
+//    }
+//}
 
 class IRIW : BasicLitmusTest("multi-copy atomicity") {
     var x = 0
@@ -65,21 +62,21 @@ class IRIW : BasicLitmusTest("multi-copy atomicity") {
     }
     val o = Outcome4(0, 0, 0, 0)
 
-    override suspend fun actor1() {
+    override  fun actor1() {
         x = 1
     }
 
-    override suspend fun actor2() {
+    override  fun actor2() {
         o.a = x
         o.b = y
     }
 
-    override suspend fun actor3() {
+    override  fun actor3() {
         o.c = y
         o.d = x
     }
 
-    override suspend fun actor4() {
+    override  fun actor4() {
         y = 1
     }
 

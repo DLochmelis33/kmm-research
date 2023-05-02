@@ -3,14 +3,14 @@ import kotlin.time.Duration.Companion.seconds
 fun main() {
 //    distributionTest()
 
-    val testProducer = ::IRIW
+    val testProducer = ::JCS08Custom
     val runner = WorkerTestRunner
     val parameters = variateParameters(
-            affinityScheduleUnrestricted(4),
-            generateSequence(2) { it * 2 }.take(6).toList(),
+            getAffinityManager()?.scheduleShort2().orUnrestricted(2), // affinityScheduleUnrestricted(2),
+            generateSequence(3) { it * 3 }.take(5).toList(),
             listOf(null /* { MemShuffler(50_000) } */),
     ).toList()
-    val singleTestDuration = 3.seconds
+    val singleTestDuration = 4.seconds
 
     println("ETA: T+ ${(singleTestDuration * parameters.size).toComponents { m, s, _ -> "$m m $s s" }}")
     val results = parameters.map { runner.runTest(singleTestDuration, it, testProducer) }.flatten().merge()

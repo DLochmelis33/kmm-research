@@ -14,7 +14,7 @@ object WorkerTestRunner : LitmusTestRunner {
             parameters: LitmusTestParameters,
             testProducer: () -> BasicLitmusTest
     ): LitmusResult {
-        val actorFunctions: List<suspend (BasicLitmusTest) -> Any?> = runBlocking { testProducer().overriddenActors() }
+        val actorFunctions: List<(BasicLitmusTest) -> Any?> = runBlocking { testProducer().overriddenActors() }
         require(actorFunctions.size == parameters.affinityMap.size) { "affinity parameters don't match actors" }
         BasicLitmusTest.memShuffler = parameters.memShufflerProducer?.invoke()
         val testBatch = List(batchSize) { testProducer() }
