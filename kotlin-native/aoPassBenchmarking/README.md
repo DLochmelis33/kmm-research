@@ -2,16 +2,32 @@
 
 Main goal is to _**change atomic ordering of memory accesses**_ (from `NotAtomic` to `Unordered`, for example) using an implemented bitcode pass in the Kotlin Native compiler and _**test the resulting bitcode and performance**_.
 
+## Navigation
+
+This project directory contains several `.md` files, that explain the structure of the repository and the whole research process, as well as its final results.
+
+* This [README.md](./README.md) contains brief practical information on building a modified compiler and running, analyzing and adding benchmark tests.
+* The [ABOUT_KN_BENCHMARKS.md](./benchmarkReports/ABOUT_KN_BENCHMARKS.md) file introduces the structure of the Kotlin/Native benchmarking framework, as well as their shortcomings and how to overcome the issues.
+* The [NOISE_ANALYSIS_REPORT.md](./benchmarkReports/noise-analysis/NOISE_ANALYSIS_REPORT.md) describes the techniques (and their development process) that we used to deal with noise in the results of the Kotlin/Native benchmarks.
+* The [PRELIMINARY_RESULTS.md](./benchmarkReports/compilation-schemes-comparison/PRELIMINARY_RESULTS.md) report describes the preliminary results of different simple compilation schemes comparisons, that we obtained in the beggining of the research.
+* The [UNORDERED_VS_BASELINE_METHODOLOGIE.md](./benchmarkReports/compilation-schemes-comparison/UNORDERED_VS_BASELINE_METHODOLOGIE.md) report describes the way we conducted the final evaluation of performance degradation of *NotAtomic* to *Unordered* change.
+* Finally, the [UNORDERED_VS_BASELINE_RESULTS.md](./benchmarkReports/compilation-schemes-comparison/UNORDERED_VS_BASELINE_RESULTS.md) briefly reports the main research results, i.e. the preformance degradation of `NotAtomic` to `Unordered` change.
+  
 ## Intro: project setup
 
 [Here](../README.md), in the _Building from source_ section, you can find necessary prerequisites for building the compiler and get acquainted with building the project in general.
 
-_Helping note:_ at the root of the project, you will most likely need to create a `local.properties` file once with the following content.
-```
-kotlin.build.isObsoleteJdkOverrideEnabled=true
-kotlin.native.enabled=true
-```
-The first line will avoid using (and, therefore, installing) `JDK_1_6` and `JDK_1_7`, while the second line is just required.
+_Helping note:_ at the root of the project, you will most likely need to create a `local.properties` file once with the following content:
+* for *Linux*:
+  ```
+  kotlin.native.enabled=true
+  ```
+* for *MacOS*:
+  ```
+  kotlin.native.enabled=true
+  kotlin.build.isObsoleteJdkOverrideEnabled=true
+  ```
+The first `kotlin.native.enabled=true` line is just necessary, while the `...ObsoleteJdk..` one will avoid using (and, therefore, installing) `JDK_1_6` and `JDK_1_7` in *MacOS* (in *Linux*, unfortunately, it causes a build error).
 
 ## Pass implementation
 
@@ -149,4 +165,4 @@ Check [BENCHMARK_RESULTS.md](benchmarkReports/BENCHMARK_RESULTS.md) file for det
 
 It's pretty straightforward: place your test in a separate class in [this directory](../performance/ring/src/main/kotlin/org/jetbrains/ring) and plug into `baseBenchmarksSet` [here](../../kotlin-native/performance/ring/src/main/kotlin/main.kt). 
 
-This is a way to add a test to the `ring` suite. This is a way to add a test to the ring suite. You can create your suite by analogy with the ones in the [`performance`](../performance) directory. 
+This is a way to add a test to the `ring` suite. You can create your suite by analogy with the ones in the [`performance`](../performance) directory. 

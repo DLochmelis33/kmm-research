@@ -1,11 +1,15 @@
-# Benchmark results
+# Preliminary benchmark results
+
+At the beginning of the work, we did preliminary experiments with the default parameters: running the full test suite, `x1` tests size (i.e. `BENCHMARK_SIZE = 10_000`) and `attempts = 20`. Their brief summary and interpretation can be found below.
+
+In addition, to develop and test a system for the final evaluation of results, we conducted multiple preliminary experiments comparing the `Unordered` compilation scheme with baseline on full tests, `x0.1` tests size (i.e. `BENCHMARK_SIZE = 1000`) and `attempts = 35`. Their results can be found in directory [macosArm64/preliminary/unordered-vs-baseline-full-x0.1-35](macosArm64/preliminary/unordered-vs-baseline-full-x0.1-35). However, these data are auxiliary and will not be analyzed in this report.
 
 ## File naming convention
 
-Some already performed analysis results can be found in [macosArm64](macosArm64) and [linuxX64](linuxX64) directories.
+*Most* of preliminary reports can be found in [macosArm64/preliminary/all-comparisons-full-x1-20](macosArm64/preliminary/all-comparisons-full-x1-20) and [linuxX64/preliminary/all-comparisons-full-x1-20](linuxX64/preliminary/all-comparisons-full-x1-20) directories.
 
 * `baseline` and `baseline[2,3,...]` stand for compiler runs, empty of any modifications;
-* `unordered`, `monotonic` and `seq` stand for replacing any accesses `NotAtomic` to `Unordered`, `Monotonic` and `SequentiallyConsistent` correspondingly, the first one is a target research case;
+* `unordered`, `monotonic` and `seq` stand for replacing any accesses `NotAtomic` to `Unordered`, `Monotonic` and `SequentiallyConsistent` correspondingly;
 * `all-to-seq` and `all-to-not-atomic` stand for replacing _all_ accesses to `SequentiallyConsistent` and `NotAtomic` correspondingly, these are extreme cases that can be used only for validation.
 
 Naturally, `vs` means comparison of two compiler modifications. All benchmarks were run with `-opt` flag (i.e. with optimization enabled), this is a target case: changing modes of accesses mainly affects the number of available optimizations for the compiler.
@@ -16,15 +20,15 @@ While the geometric mean helps to estimate the improvement or deterioration on a
 
 About _**the score**_. All score change percentages are relative to the largest of the compared values. Presumably, the score itself is calculated depending on the execution time of the benchmarks.
 
-A note _**about linuxX64**_. As the results below show, linuxX64 has higher degradation percentages in the individual tests. However, it is also higher when comparing several versions of the baseline, which means that there was surely more noise on this machine (and/or architecture?). Moreover, there was more improvement in test performance on this machine than on macosArm64, so the average linuxX64 results sometimes turned out to be much lower. In the future, it is necessary to get rid of this noise or evaluate it properly.
+A note _**about *Linux x64***_. As the results below show, *Linux x64* has higher degradation percentages in the individual tests. However, it is also higher when comparing several versions of the baseline, which means that there was surely more noise on this machine (and/or architecture?). Moreover, there was more improvement in test performance on this machine than on *MacOS Arm64*, so the average *Linux x64* results sometimes turned out to be much lower. In the final experiments, we got rid of this noise and made evaluation properly.
 
-### Baselines comparison
+## Baselines comparison
 
 Comparison of two baseline runs demonstrate how significant the error between same compiler benchmarks can be, i.e. the noise level. One of the current tasks is to get rid of such noise.
 
 In this section, all test names are clickable and lead to source files with their code.
 
-#### macosArm64
+### *MacOS Arm64*
 
 <ins>baseline2-vs-baseline</ins>
 
@@ -60,7 +64,7 @@ _Tests with an observable score difference:_
 * [`Ring::AbstractMethod.sortStringsWithComparator`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/AbstractMethodBenchmark.kt) (2%)
 * [`Ring::IntArray.countFiltered`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/IntArrayBenchmark.kt) (1%)
 
-#### linuxX64
+### *Linux x64*
 
 <ins>baseline2-vs-baseline</ins>
 
@@ -92,13 +96,13 @@ _Tests with an observable score difference:_
 * [`Ring::ClassBaseline.allocateArray`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassBaselineBenchmark.kt) (5%)
 * other 16 tests with score difference showed < 5% of gap
 
-### unordered-vs-baseline
+## unordered-vs-baseline
 
 This is _**a target research case**_: to study how replacing `NotAtomic` accesses with `Unordered` will degrade the performance of Kotlin Native programs. 
 
 In this section, all test names are clickable and lead to source files with their code.
 
-#### macosArm64
+### *MacOS Arm64*
 
 _Geometric mean:_ 0.14 ± 0.20 % of degradation
 
@@ -117,7 +121,7 @@ _Tests with the most significant score degradation:_
 * [`Ring::BunnymarkBenchmark.testBunnymark`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/BunnymarkBenchmark.kt) (5%)
 * other 24 tests with score degradation achieved < 5% of change
 
-#### linuxX64
+### *Linux x64*
 
 _Geometric mean:_ 0.00 ± 0.00 % of degradation
 
@@ -139,11 +143,11 @@ _Tests with the most significant score degradation:_
 * [`Ring::ClassBaseline.consumeField`](../../performance/ring/src/main/kotlin/org/jetbrains/ring/ClassBaselineBenchmark.kt) (7%)
 * other 28 tests with score degradation achieved <= 5% of change
 
-### monotonic-vs-baseline
+## monotonic-vs-baseline
 
 This is a further research case: to check how replacing `NotAtomic` accesses with an even stronger `Monotonic` mode will degrade the performance.
 
-#### macosArm64
+### *MacOS Arm64*
 
 _Geometric mean:_ 5.06 ± 0.19 % of degradation
 
@@ -160,7 +164,7 @@ _Tests with the most significant score degradation:_
 * `Ring::Euler.problem1bySequence` (20%)
 * 34 tests with score degradation achieved 10-20% of change, other tests achieved < 10% degradation 
 
-#### linuxX64
+### *Linux x64*
 
 _Geometric mean:_ 5.34 ± 0.61 % of degradation
 
@@ -178,11 +182,11 @@ _Tests with the most significant score degradation:_
 * `Ring::ParameterNotNull.invokeEightArgsWithoutNullCheck` (28%)
 * 23 tests with score degradation achieved 10-25% of change, other tests achieved < 10% degradation
 
-### seq-vs-baseline
+## seq-vs-baseline
 
 This is a further research case too: to check how replacing `NotAtomic` accesses with the strongest `SequentiallyConsistent` mode will degrade the performance.
 
-#### macosArm64
+### *MacOS Arm64*
 
 _Geometric mean:_ 57.17 ± 0.09 % of degradation
 
@@ -200,7 +204,7 @@ _Tests with the most significant score degradation:_
 * `Ring::CompanionObject.invokeRegularFunction` (80%)
 * 127 tests with score degradation achieved 50-80% of change, other tests achieved < 50% degradation
 
-#### linuxX64
+### *Linux x64*
 
 _Geometric mean:_ 6.12 ± 0.61 % % of degradation
 
