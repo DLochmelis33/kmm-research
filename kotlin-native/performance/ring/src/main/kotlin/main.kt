@@ -241,6 +241,53 @@ class RingLauncher : Launcher() {
                     "WeakRefBenchmark.dyingReference" to BenchmarkEntryWithInit.create(::WeakRefBenchmark, { dyingReference() }),
             )
 
+    private fun buildMultithreadedBenchmarksSet(numberOfWorkers: Int) = 
+            mutableMapOf(
+                    // update counter benchmarks
+                    "MultithreadedLoops.updateSharedAtomicCounter${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runUpdateSharedAtomicCounterWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.updateSharedStructCounter${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runUpdateSharedStructCounterWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.updateCounter${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runUpdateCounterWorkers() }, { tearDownWorkers() }),
+                    // sum shared array benchmarks
+                    "MultithreadedLoops.sumSharedArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumSharedArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumSharedIntArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumSharedIntArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumSharedCharArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumSharedCharArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumSharedString${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumSharedStringWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumSharedFloatArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumSharedFloatArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumSharedUIntArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumSharedUIntArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumSharedUShortArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumSharedUShortArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumSharedULongArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumSharedULongArrayWorkers() }, { tearDownWorkers() }),
+                    // sum array benchmarks
+                    "MultithreadedLoops.sumArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumIntArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumIntArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumCharArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumCharArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumString${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumStringWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumFloat${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumFloatArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumUInt${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumUIntArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumUShort${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumUShortArrayWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumULongArray${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumULongArrayWorkers() }, { tearDownWorkers() }),
+                    // sum array by indices benchmarks
+                    "MultithreadedLoops.sumArrayByIndices${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumArrayByIndicesWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumIntArrayByIndices${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumIntArrayByIndicesWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumCharArrayByIndices${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumCharArrayByIndicesWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumStringByIndices${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumStringByIndicesWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumFloatArrayByIndices${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumFloatArrayByIndicesWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumUIntArrayByIndices${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumUIntArrayByIndicesWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumUShortArrayByIndices${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumUShortArrayByIndicesWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.sumULongArrayByIndices${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runSumULongArrayByIndicesWorkers() }, { tearDownWorkers() }),
+                    // consume shared array by segments benchmarks
+                    "MultithreadedLoops.consumeSharedArrayBySegments${numberOfWorkers}Workerks" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runConsumeSharedArrayBySegmentsWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.consumeSharedIntArrayBySegments${numberOfWorkers}Workerks" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runConsumeSharedIntArrayBySegmentsWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.consumeSharedCharArrayBySegments${numberOfWorkers}Workerks" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runConsumeSharedCharArrayBySegmentsWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.consumeSharedStringBySegments${numberOfWorkers}Workerks" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runConsumeSharedStringBySegmentsWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.consumeSharedFloatArrayBySegments${numberOfWorkers}Workerks" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runConsumeSharedFloatArrayBySegmentsWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.consumeSharedUIntArrayBySegments${numberOfWorkers}Workerks" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runConsumeSharedUIntArrayBySegmentsWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.consumeSharedUShortArrayBySegments${numberOfWorkers}Workerks" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runConsumeSharedUShortArrayBySegmentsWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.consumeSharedULongArrayBySegments${numberOfWorkers}Workerks" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runConsumeSharedULongArrayBySegmentsWorkers() }, { tearDownWorkers() }),
+                    // bad ordered accesses benchmarks
+                    "MultithreadedLoops.badOrderedReads${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runBadOrderedReadsWorkers() }, { tearDownWorkers() }),
+                    "MultithreadedLoops.badOrderedWrites${numberOfWorkers}Workers" to BenchmarkEntryWithInitAndValidation.create({ MultithreadedLoopsBenchmark(numberOfWorkers) }, { runBadOrderedWritesWorkers() }, { tearDownWorkers() }),
+            )
+
     init {
         @OptIn(kotlin.ExperimentalStdlibApi::class)
         if (!isExperimentalMM()) {
@@ -248,6 +295,12 @@ class RingLauncher : Launcher() {
             baseBenchmarksSet -= listOf("SplayWithMarkHelpers")
             extendedBenchmarksSet -= listOf("LifeWithMarkHelpers")
         }
+    }
+
+    init {
+        baseBenchmarksSet += buildMultithreadedBenchmarksSet(numberOfWorkers=5)
+        baseBenchmarksSet += buildMultithreadedBenchmarksSet(numberOfWorkers=20)
+        baseBenchmarksSet += buildMultithreadedBenchmarksSet(numberOfWorkers=100)
     }
 }
 

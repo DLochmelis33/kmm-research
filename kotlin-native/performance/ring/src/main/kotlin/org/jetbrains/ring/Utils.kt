@@ -16,7 +16,10 @@
 
 package org.jetbrains.ring
 
-const val BENCHMARK_SIZE = 10000
+const val BENCHMARK_SIZE = 20000
+
+data class Triple<T, U, V>(val comp1: T, val comp2: U, val comp3: V)
+data class Quadruple<T, U, V, S>(val comp1: T, val comp2: U, val comp3: V, val comp4: S)
 
 expect class AtomicRef<T> {
     /**
