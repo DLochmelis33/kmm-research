@@ -3,12 +3,15 @@ set -e
 
 measureUpub() {
     index=$1
-    baseline_name="x2-size-30-attempts-baseline-$index"
-    upubfixed_name="x2-size-30-attempts-upubfixed-$index"
+    baseline_name="test-x2-size-30-attempts-baseline-$index"
+    upubfixed_name="test-x2-size-30-attempts-upubfixed-$index"
 
     # run benchmarks
-    # ./runPassBenchmark.sh "$baseline_name" "baseline.kt" "30"
-    # ./runPassBenchmark.sh "$upubfixed_name" "upubfixed.kt" "30"
+    ./runPassBenchmark.sh "$baseline_name" "baseline.kt" "30"
+    ./runPassBenchmark.sh "$upubfixed_name" "upubfixed.kt" "30"
+
+    # ./runPassBenchmark.sh "$baseline_name" "baseline.kt" "10" :ring:konanRun "--filter=ForLoops.charArrayIndicesLoop"
+    # ./runPassBenchmark.sh "$unordered_name" "upubfixed.kt" "10" :ring:konanRun "--filter=ForLoops.charArrayIndicesLoop"
 
     # compile comparison
     ./buildBenchmarksAnalyzer.sh

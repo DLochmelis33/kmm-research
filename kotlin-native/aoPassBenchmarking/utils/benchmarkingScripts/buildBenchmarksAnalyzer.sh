@@ -12,11 +12,12 @@ echo
 cd $root_dir
 # ./gradlew linux_x64PlatformLibs
 # --- mac
-./gradlew macos_arm64PlatformLibs -PcheckXcodeVersion=false
-./gradlew macos_x64PlatformLibs -PcheckXcodeVersion=false
+# ./gradlew macos_arm64PlatformLibs -PcheckXcodeVersion=false # no?
+# ./gradlew macos_x64PlatformLibs -PcheckXcodeVersion=false
 # --- mac
 cd kotlin-native/tools/benchmarksAnalyzer
-../../../gradlew build
+# ../../../gradlew build
+../../../gradlew macosArm64Binaries # TRY
 
 echo "FINISHED benchmarksAnalyzer build"
 echo

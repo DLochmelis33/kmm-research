@@ -34,11 +34,8 @@ elif [ "$3" != "" ]; then
     run_args+=("-Pattempts=$3")
 fi
 
-if [[ "$5" == "--filter=*" ]]; then
+if [[ "$5" != "" ]]; then
     run_args+=("$5")
-elif [ "$5" != "" ]; then
-    echo "invalid filter argument"
-    exit 0
 fi
 
 root_dir="../../../../"
