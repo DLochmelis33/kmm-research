@@ -2558,6 +2558,17 @@ internal class CodeGeneratorVisitor(
             }
             evaluateSimpleFunctionCall(callee.symbol.owner,
                     listOf(thisValue) + args, Lifetime.IRRELEVANT /* constructor doesn't return anything */)
+            
+            // TODO: Is this correct?
+            LLVMBuildFence(
+                functionGenerationContext.builder, 
+                LLVMAtomicOrdering.LLVMAtomicOrderingRelease, 
+                singleThread = 0, 
+                Name = ""
+            )
+            // TODO: Do we need to move builder's position by ourselves?
+            // functionGenerationContext.positionAtEnd(functionGenerationContext.currentBlock)
+
             thisValue
         }
     }
