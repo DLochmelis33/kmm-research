@@ -8,7 +8,7 @@ measureUnordered() {
 
     echo STARTED ITERATION \#"$index"
 
-    # run baseline a couple of times
+    # run compiler configurations
     ./runPassBenchmark.sh "$baseline_name" "baseline.kt" "30"
     ./runPassBenchmark.sh "$unordered_name" "unordered.kt" "30"
 
