@@ -12,6 +12,8 @@ This project directory contains several `.md` files, that explain the structure 
 * The [PRELIMINARY_RESULTS.md](./benchmarkReports/compilation-schemes-comparison/PRELIMINARY_RESULTS.md) report describes the preliminary results of different simple compilation schemes comparisons, that we obtained in the beggining of the research.
 * The [UNORDERED_VS_BASELINE_METHODOLOGIE.md](./benchmarkReports/compilation-schemes-comparison/UNORDERED_VS_BASELINE_METHODOLOGIE.md) report describes the way we conducted the final evaluation of performance degradation of *NotAtomic* to *Unordered* change.
 * Finally, the [UNORDERED_VS_BASELINE_RESULTS.md](./benchmarkReports/compilation-schemes-comparison/UNORDERED_VS_BASELINE_RESULTS.md) briefly reports the main research results, i.e. the preformance degradation of `NotAtomic` to `Unordered` change.
+
+Additionally, the [BENCHMARKING_SCRIPTS_DOCUMENTATION.md](./utils/benchmarkingScripts/BENCHMARKING_SCRIPTS_DOCUMENTATION.md) describes the usage of the bash scripts used to automatize the benchmarking process.
   
 ## Intro: project setup
 
@@ -107,7 +109,7 @@ To get benchmark results run from `testOnSmallProject` directory:
 
 Output will be shown in stdout.
 
-This method of benchmarking _**is kind of legacy**_. Its main goal is to check that all variants for calling the compiler are properly working and to compare their performance in the simplest way. To run proper benchmarks, even for custom tests, `konanRun` from main compiler project should be used.
+This method of benchmarking _**is legacy**_. Its main goal was to check that all variants for calling the compiler are properly working and to compare their performance in the simplest way. To run proper benchmarks, even for custom tests, see the section below.
 
 ## Proper benchmarking
 
@@ -150,19 +152,17 @@ P. S. Of course, the commands above are valid for linuxX64 platform, others will
 To automate the benchmarking of different passes, the scripts in [`utils`](utils) directory can be used. They are not very smart, but extremely useful. 
 * The [`passTemplates`](utils/passTemplates) directory contains templates of different passes (that is, versions of the [ChangeAtomicOrdering.kt](../backend.native/compiler/ir/backend.native/src/org/jetbrains/kotlin/backend/konan/aopass/ChangeAtomicOrdering.kt) file). 
 * The [`benchmarkingScripts`](utils/benchmarkingScripts) directory contains the scripts themselves. So far, they are only for linuxX64, but can be easily adapted to any platform. 
+  
+The documentation for the benchmarking scripts can be found in the [BENCHMARKING_SCRIPTS_DOCUMENTATION.md](./utils/benchmarkingScripts/BENCHMARKING_SCRIPTS_DOCUMENTATION.md) file.
 
-The entry point script is [`benchmarkAllPasses.sh`](utils/benchmarkingScripts/benchmarkAllPasses.sh). That is, to reproduce the results presented below, it is enough to run the script from the [`benchmarkingScripts`](utils/benchmarkingScripts) directory:
+The entry point script to obtain preliminary results is [`benchmarkAllPassesPreliminary.sh`](./utils/benchmarkingScripts/benchmarkAllPassesPreliminary.sh). That is, to reproduce the results described in the [PRELIMINARY_RESULTS.md](./benchmarkReports/compilation-schemes-comparison/PRELIMINARY_RESULTS.md), it is enough to run the script from the [`benchmarkingScripts`](utils/benchmarkingScripts) directory:
 ```bash
-./benchmarkAllPasses.sh
+./benchmarkAllPassesPreliminary.sh
  ```
-You can find more details on the order of execution of certain commands and a few useful tricks in the scripts code.
+You can find more details on the order of execution of certain commands and more useful tricks in the scripts' code.
 
-## Current benchmark results 
-
-Check [BENCHMARK_RESULTS.md](benchmarkReports/BENCHMARK_RESULTS.md) file for details. [benchmarkReports](benchmarkReports) directory contains both benchmark reports sources and their analysis.
-
-## How to add a new benchmark test
+### How to add a new benchmark test
 
 It's pretty straightforward: place your test in a separate class in [this directory](../performance/ring/src/main/kotlin/org/jetbrains/ring) and plug into `baseBenchmarksSet` [here](../../kotlin-native/performance/ring/src/main/kotlin/main.kt). 
 
-This is a way to add a test to the `ring` suite. You can create your suite by analogy with the ones in the [`performance`](../performance) directory. 
+This is a way to add a test to the `Ring` suite. You can create your suite by analogy with the ones in the [`performance`](../performance) directory. 

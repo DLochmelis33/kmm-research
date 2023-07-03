@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-# usage: ./compareResults.sh target-pass-name baseline-pass-name
-# example: ./compareResults.sh unordered baseline
+# usage: ./compareResults.sh target_pass_name baseline_pass_name
+# example:
+# ./compareResults.sh unordered baseline
 
 target_pass_name=$1
 baseline_pass_name=$2

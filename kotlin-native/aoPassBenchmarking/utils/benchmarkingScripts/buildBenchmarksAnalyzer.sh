@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+# usage: ./buildBenchmarksAnalyzer.sh
+
 root_dir="../../../../"
 
 echo "STARTED benchmarksAnalyzer build"
