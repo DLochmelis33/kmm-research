@@ -8,6 +8,7 @@ This project directory contains several `.md` files, that explain the structure 
 
 * This [README.md](./README.md) contains brief practical information on building a modified compiler and running, analyzing and adding benchmark tests.
 * The [ABOUT_KN_BENCHMARKS.md](./benchmarkReports/ABOUT_KN_BENCHMARKS.md) file introduces the structure of the Kotlin/Native benchmarking framework, as well as their shortcomings and how to overcome the issues.
+* The [RESEARCH_MACHINES.md](./benchmarkReports/RESEARCH_MACHINES.md) document contains an overview of the technical characteristics of the machines used in the research.
 * The [NOISE_ANALYSIS_REPORT.md](./benchmarkReports/noise-analysis/NOISE_ANALYSIS_REPORT.md) describes the techniques (and their development process) that we used to deal with noise in the results of the Kotlin/Native benchmarks.
 * The [PRELIMINARY_RESULTS.md](./benchmarkReports/compilation-schemes-comparison/PRELIMINARY_RESULTS.md) report describes the preliminary results of different simple compilation schemes comparisons, that we obtained in the beggining of the research.
 * The [UNORDERED_VS_BASELINE_METHODOLOGIE.md](./benchmarkReports/compilation-schemes-comparison/UNORDERED_VS_BASELINE_METHODOLOGIE.md) report describes the way we conducted the final evaluation of performance degradation of *NotAtomic* to *Unordered* change.
