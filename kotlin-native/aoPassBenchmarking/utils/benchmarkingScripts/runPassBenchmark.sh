@@ -11,6 +11,8 @@ set -e
 # ./runPassBenchmark.sh 30-attempts-int-cinterop baseline.kt 30 :cinterop:konanRun --filter=int,boxedInt
 # ./runPassBenchmark.sh 30-attempts-multithreading baseline.kt 30 :ring:konanRun --filterRegex=MultithreadedLoops.*
 
+is_mac=$(./validateMachineType.sh)
+
 pass_name=$1
 pass_template_filename=$2
 attempts_number=$3
@@ -62,7 +64,12 @@ echo
 echo SET "$pass_name" pass
 echo pass source template: "$pass_template_filename"
 cp ../passTemplates/"$pass_template_filename" "$pass_path"
-sed -i 's/^\/\/ //g' "$pass_path"
+if [ "$is_mac" == true ]; then
+    sed -i'.sedtmp' -e 's/^\/\/ //g' "$pass_path"
+    rm "$pass_path.sedtmp"
+else
+    sed -i 's/^\/\/ //g' "$pass_path"
+fi
 cd $root_dir
 echo now at: "$(pwd)"
 echo

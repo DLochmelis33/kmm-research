@@ -8,9 +8,12 @@ The *usage* sections notation:
 * square brackets `[...]` mean argument inside them is optional;
 * pipe `|` sign delimits different options.
 
-All scripts are expected to be executed only from the [benchmarkingScripts](./) directory.
+Besides, "aopass" in the text simply stands for "atomic ordering pass".
 
-Finally, "aopass" in the text simply stands for "atomic ordering pass".
+## Important notes
+
+* All scripts are expected to be executed only from the [benchmarkingScripts](./) directory.
+* All scripts can be run on both *Linux x64* and *MacOS Arm64* machines, described in the [RESEARCH_MACHINES.md](../../benchmarkReports/RESEARCH_MACHINES.md). However, scripts should be manulally verified before using on another machines.
 
 ## Build and run aopass benchmarks: [`runPassBenchmark.sh`](./runPassBenchmark.sh)
 
