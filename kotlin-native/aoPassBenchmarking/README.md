@@ -20,7 +20,11 @@ Additionally, the [BENCHMARKING_SCRIPTS_DOCUMENTATION.md](./utils/benchmarkingSc
 
 [Here](../README.md), in the _Building from source_ section, you can find necessary prerequisites for building the compiler and get acquainted with building the project in general.
 
-_Helping note:_ at the root of the project, you will most likely need to create a `local.properties` file once with the following content:
+Notes below will help you learn how to solve the most common problems with ease.
+
+### Create `local.properties` file
+
+At the root of the project, you will most likely need to create a `local.properties` file once with the following content:
 * for *Linux*:
   ```
   kotlin.native.enabled=true
@@ -31,6 +35,21 @@ _Helping note:_ at the root of the project, you will most likely need to create 
   kotlin.build.isObsoleteJdkOverrideEnabled=true
   ```
 The first `kotlin.native.enabled=true` line is just necessary, while the `...ObsoleteJdk..` one will avoid using (and, therefore, installing) `JDK_1_6` and `JDK_1_7` in *MacOS* (in *Linux*, unfortunately, it causes a build error).
+
+### Set up proper `Xcode` version on *MacOS*
+
+In case of a *MacOS* machine, building the kotlin-native project currently requires the `14` version of `Xcode`. If another version is set by default on your machine, the build will fail due to a corresponding `Xcode` version check or sometimes due to an error about missing some library files.
+
+To check the `Xcode` version, that will be used during the build, run this command:
+```bash
+/usr/bin/xcodebuild -version
+```
+The output major version should be `14` (for example, `Xcode 14.1` is fine).
+
+If this condition isn't fulfilled, you should set the proper `Xcode` version. Perhaps, there is one already installed on your machine, then it's enough to set the `DEVELOPER_DIR` environment variable to its path. For example, it can be done in the following way:
+```bash
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+``` 
 
 ## Pass implementation
 
