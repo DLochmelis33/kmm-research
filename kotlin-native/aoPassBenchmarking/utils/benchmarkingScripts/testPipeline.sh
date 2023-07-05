@@ -5,7 +5,7 @@ test() {
     test_name="test"
 
     # benchmark baseline compiler on a pair of test
-    ./runPassBenchmark.sh $test_name baseline.kt 5 :ring:konanRun "--filter=ForLoops.intArrayLoop,ClassList.copy"
+    ./runPassBenchmark.sh $test_name baseline 5 :ring:konanRun "--filter=ForLoops.intArrayLoop,ClassList.copy"
 
     ./buildBenchmarksAnalyzer.sh
 
