@@ -10,9 +10,6 @@ measureUpub() {
     ./runPassBenchmark.sh "$baseline_name" "baseline.kt" "30"
     ./runPassBenchmark.sh "$upubfixed_name" "upubfixed.kt" "30"
 
-    # ./runPassBenchmark.sh "$baseline_name" "baseline.kt" "10" :ring:konanRun "--filter=ForLoops.charArrayIndicesLoop"
-    # ./runPassBenchmark.sh "$unordered_name" "upubfixed.kt" "10" :ring:konanRun "--filter=ForLoops.charArrayIndicesLoop"
-
     # compile comparison
     ./buildBenchmarksAnalyzer.sh
     ./compareResults.sh "$upubfixed_name" "$baseline_name"
@@ -21,16 +18,9 @@ measureUpub() {
 echo STARTED MEASURE BASELINE-VS-UPUB-FIXED
 echo
 
-measureUpub 1
-# measureUpub 2
-# measureUpub 3
-# measureUpub 4
-# measureUpub 5
-# measureUpub 6
-# measureUpub 7
-# measureUpub 8
-# measureUpub 9
-# measureUpub 10
+for i in {1..10}; do
+    measureUpub "$i"
+done
 
 echo FINISHED MEASURE BASELINE-VS-UPUB-FIXED
 echo

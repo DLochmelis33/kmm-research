@@ -1,23 +1,29 @@
 #!/usr/bin/env bash
 set -e
 
+# usage: ./buildBenchmarksAnalyzer.sh
+
+is_mac=$(./validateMachineType.sh)
+
 root_dir="../../../../"
 
 echo "STARTED benchmarksAnalyzer build"
 echo
 
 # we want to build analyzer tool using a standard compiler
-# ./runPassBenchmark.sh baseline-build baseline.kt BUILD_ONLY
+./runPassBenchmark.sh baseline-build baseline.kt BUILD_ONLY
 
 cd $root_dir
-# ./gradlew linux_x64PlatformLibs
-# --- mac
-# ./gradlew macos_arm64PlatformLibs -PcheckXcodeVersion=false # no?
-# ./gradlew macos_x64PlatformLibs -PcheckXcodeVersion=false
-# --- mac
+if [ "$is_mac" == true ]; then
+    ./gradlew macos_arm64PlatformLibs
+    ./gradlew macos_x64PlatformLibs
+else
+    ./gradlew linux_x64PlatformLibs
+fi
 cd kotlin-native/tools/benchmarksAnalyzer
+
 # ../../../gradlew build
-../../../gradlew macosArm64Binaries # TRY
+../../../gradlew macosArm64Binaries # SUGGESTED FIX
 
 echo "FINISHED benchmarksAnalyzer build"
 echo
