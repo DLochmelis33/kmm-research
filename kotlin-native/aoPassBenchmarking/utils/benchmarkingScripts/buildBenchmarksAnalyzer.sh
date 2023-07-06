@@ -11,7 +11,7 @@ echo "STARTED benchmarksAnalyzer build"
 echo
 
 # we want to build analyzer tool using a standard compiler
-./runPassBenchmark.sh baseline-build baseline.kt BUILD_ONLY
+./runPassBenchmark.sh baseline-build baseline BUILD_ONLY
 
 cd $root_dir
 if [ "$is_mac" == true ]; then
@@ -23,7 +23,7 @@ fi
 cd kotlin-native/tools/benchmarksAnalyzer
 
 # ../../../gradlew build
-../../../gradlew macosArm64Binaries # SUGGESTED FIX
+../../../gradlew macosArm64Binaries
 
 echo "FINISHED benchmarksAnalyzer build"
 echo
