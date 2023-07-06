@@ -1,0 +1,1 @@
+cmd_/home/denis/prog/kmm/kotlin-native/litmus/herd/X/Module.symvers := sed 's/\.ko$$/\.o/' /home/denis/prog/kmm/kotlin-native/litmus/herd/X/modules.order | scripts/mod/modpost -m -a  -o /home/denis/prog/kmm/kotlin-native/litmus/herd/X/Module.symvers -e -i Module.symvers   -T -
