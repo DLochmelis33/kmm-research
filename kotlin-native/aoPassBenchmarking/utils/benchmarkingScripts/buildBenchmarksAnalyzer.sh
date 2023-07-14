@@ -20,10 +20,14 @@ if [ "$is_mac" == true ]; then
 else
     ./gradlew linux_x64PlatformLibs
 fi
+
 cd kotlin-native/tools/benchmarksAnalyzer
 
-# ../../../gradlew build
-../../../gradlew macosArm64Binaries
+if [ "$is_mac" == true ]; then
+    ../../../gradlew macosArm64Binaries
+else
+    ../../../gradlew linuxBinaries
+fi
 
 echo "FINISHED benchmarksAnalyzer build"
 echo
