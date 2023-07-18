@@ -3,7 +3,7 @@ set -e
 
 # usage: ./decompileToAsm.sh executable_file.kexe output_directory
 # example:
-# ./decompileToAsm.sh main.kexe output
+# ./decompileToAsm.sh main.kexe output/bincode
 
 exe_file=$1
 output_dir=$2
