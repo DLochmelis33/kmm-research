@@ -78,3 +78,4 @@ outTmp/
 /test.output
 /kotlin-native/dist
 kotlin-ide/
+yarn.lock

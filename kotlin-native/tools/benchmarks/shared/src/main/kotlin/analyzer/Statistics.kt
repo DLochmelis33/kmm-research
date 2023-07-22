@@ -135,7 +135,7 @@ fun collectMeanResults(benchmarks: Map<String, List<BenchmarkResult>>): Benchmar
             val runtimeInUsMeanVariance = computeMeanVariance(resultsSet.map { it.runtimeInUs })
             val meanBenchmark = MeanVarianceBenchmark(name, currentStatus, scoreMeanVariance.mean, metric,
                     runtimeInUsMeanVariance.mean, repeatedSequence[resultsSet.size - 1],
-                    currentWarmup, scoreMeanVariance.variance)
+                    currentWarmup, max(scoreMeanVariance.variance, 0.001))
             name to meanBenchmark
         }
     }.toMap()
